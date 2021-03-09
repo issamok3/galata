@@ -3,7 +3,7 @@ Site.destroy_all
 
 # SITE SEEDS
 galata_tower = Site.new(name: 'Galata Tower',
-                      address: 'Bereketzade, Galata Kulesi, 34421 Beyoğlu/Istanbul',
+                      address: 'Galata Tower',
                       description: "The Galata Tower (Turkish: Galata Kulesi), 
                       called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese, 
                       is a medieval stone tower in the Galata/Karaköy quarter of Istanbul, Turkey, 
@@ -33,7 +33,7 @@ taksim_square = Site.new( name: 'Taksim Square',
 taksim_square.save!
 
 hagia_sophia = Site.new(name: 'Hagia Sophia',
-                        address: 'Sultan Ahmet, Ayasofya Meydanı No:1, 34122 Fatih/İstanbul',
+                        address: 'Hagia Sophia',
                         description: "Hagia Sophia, officially the Hagia Sophia Holy Grand Mosque 
                         and formerly the Church of Hagia Sophia, is a Late Antique place of worship 
                         in Istanbul, designed by the Greek geometers Isidore of Miletus and Anthemius of Tralles.
@@ -46,7 +46,7 @@ hagia_sophia = Site.new(name: 'Hagia Sophia',
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
-                                     address: 'Kılıçali Paşa, Defterdar Ykş. No:2, 34433 Beyoğlu/İstanbul',
+                                     address: 'Tophane fountain',
                                      description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century 
                                      public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture 
                                      and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
