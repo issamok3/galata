@@ -14,21 +14,14 @@
       </div>
     </div>
 
-  <div class="search-bar">
-    <div class="search-bar-right-side">
-      <div class="cards m-3">
+      <div class="sites-container">
+      <ul>
         <% @sites.each do |site| %>
-          <% background_url = cl_image_path site.photos.first.key, height: 300, width: 500, crop: :fill %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= background_url %>')">
-            <p><%= link_to site.name, site_path(site) %></p>
-            <p><span>£</span>
-            <%= "#{site.rate}/month" %></p>
-          </div>
+          <li><h4><%= site.name %></h4>
+              <p><i><%= site.address %></i></p>
+              <p class="text-muted"><%= site.description %></p></li>
+          <%-# background_url = cl_image_path site.photos.first.key, height: 300, width: 500, crop: :fill %>
         <% end %>
+      </ul>
       </div>
-    <div class= "mx-3">
-        <%= link_to 'Add a new site', new_site_path, class: 'button'  %>
-      </div>
-    </div>
-  </div>
 </div>
