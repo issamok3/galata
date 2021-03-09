@@ -1,6 +1,14 @@
 #CLEANING UP DATABASE
+User.destroy_all
 Site.destroy_all
+Content.destroy_all
 
+# USER SEEDS
+User.create(username: 'Henver', full_name: "Hendrik Vermeersch", address: 'Hacımimi, Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
+# User.create(username: 'Lilium', full_name:, address: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
+# User.create(username:'Issam',full_nname: , address:, email:, password: )
+
+puts "created #{User.count} new users"
 # SITE SEEDS
 galata_tower = Site.new(name: 'Galata Tower',
                       address: 'Galata Tower',
@@ -51,4 +59,39 @@ tophane_fountain = Site.new(name: 'Tophane Fountain',
                                      public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture 
                                      and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
 tophane_fountain.save!
+
 puts "created #{Site.count} new sites"
+
+# CONTENT SEEDS
+# Without actual content or thumbnail images for now
+
+formats = %w[.txt .mp3 .mpg4]
+titles_text = %w[A\ brief\ history\ 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about\ ]
+titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatesT Turkish songs of all time"]
+Site.all.each do |site|
+  # text seeds
+  titles_text.each do |title|
+    text = Content.new(title: "#{title} #{site.name}", format: formats.first )
+    text.site = site
+    text.user = User.all.sample
+    text.save!
+  end
+  # audio seeds
+  audio = Content.new(title: "Ten minute audioguide for #{site.name}", format: formats.second)
+  audio.site = site
+  audio.user= User.all.sample
+  audio.save!
+  titles_audio.each do |title|
+    audio = Content.new(title: title, format: formats.second)
+    audio.site = site
+    audio.user = User.all.sample
+    audio.save!
+  end
+  # video seeds
+  video = Content.new(title: "Cool drone footage of #{site.name}", format: formats.last)
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+end
+
+puts "created #{Content.count} new pieces of content"
