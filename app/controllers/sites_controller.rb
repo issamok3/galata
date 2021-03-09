@@ -41,4 +41,3 @@ class SitesController < ApplicationController
     params.require(:site).permit(:name, :description, :address, :rate, photos: [])
   end
 end
-end
