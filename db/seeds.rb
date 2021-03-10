@@ -20,7 +20,7 @@ galata_tower = Site.new(name: 'Galata Tower',
                       just to the north of the Golden Horn's junction with the Bosphorus. 
                       It is a high, cone-capped cylinder that dominates the skyline and offers a 
                       panoramic vista of Istanbul's historic peninsula and its environs." )
-file = URI.open('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80')
+file = URI.open('https://theistanbulinsider.com/wp-content/uploads/2019/12/galata-tower-istanbul-night.jpg')
 galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 galata_tower.save!
 
