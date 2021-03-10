@@ -10,9 +10,6 @@ galata_tower = Site.new(name: 'Galata Tower',
                       just to the north of the Golden Horn's junction with the Bosphorus. 
                       It is a high, cone-capped cylinder that dominates the skyline and offers a 
                       panoramic vista of Istanbul's historic peninsula and its environs." )
-file = URI.open('https://cdn.britannica.com/24/189624-050-F3C5BAA9/Mona-Lisa-oil-wood-panel-Leonardo-da.jpg')
-galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
-galata_tower.user = User.all.sample
 galata_tower.save!
 
 topkapi_palace = Site.new(name: 'Topkapi Palace',
@@ -21,7 +18,6 @@ topkapi_palace = Site.new(name: 'Topkapi Palace',
                           is a large museum in the east of the Fatih district of Istanbul in Turkey. 
                           In the 15th and 16th centuries it served as the main residence and 
                           administrative headquarters of the Ottoman sultans." )
-
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',

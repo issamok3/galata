@@ -1,10 +1,7 @@
 <div class="container justify-content-center">
   <div>
     <div class="site-info m-2">
-        <% @site.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 500, width: 400, crop: :fill, class: "photo" %>
-        <% end %>
-
+      <%= link_to 'Back', sites_path, class: 'button' %>
       <h1 class="my-2"><%= @site.name %></h1>
       <p>Address: <%= @site.address %></p>
       <p class="description"><%= @site.description %></p>
