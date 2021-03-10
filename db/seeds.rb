@@ -1,3 +1,5 @@
+require 'open-uri'
+
 #CLEANING UP DATABASE
 User.destroy_all
 Site.destroy_all
@@ -18,6 +20,8 @@ galata_tower = Site.new(name: 'Galata Tower',
                       just to the north of the Golden Horn's junction with the Bosphorus. 
                       It is a high, cone-capped cylinder that dominates the skyline and offers a 
                       panoramic vista of Istanbul's historic peninsula and its environs." )
+file = URI.open('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80')
+galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 galata_tower.save!
 
 topkapi_palace = Site.new(name: 'Topkapi Palace',
@@ -26,7 +30,8 @@ topkapi_palace = Site.new(name: 'Topkapi Palace',
                           is a large museum in the east of the Fatih district of Istanbul in Turkey. 
                           In the 15th and 16th centuries it served as the main residence and 
                           administrative headquarters of the Ottoman sultans." )
-
+file = URI.open('https://tourscanner.com/blog/wp-content/uploads/2019/05/Topkapi-Palace-tickets.jpg')
+topkapi_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',
@@ -38,6 +43,8 @@ taksim_square = Site.new( name: 'Taksim Square',
                           of the Republic Monument (Turkish: Cumhuriyet Anıtı) which was crafted by Pietro Canonica 
                           and inaugurated in 1928. The monument commemorates the 5th anniversary of the foundation 
                           of the Republic of Turkey in 1923, following the Turkish War of Independence." )
+file = URI.open('https://massispost.com/wp-content/uploads/2014/10/Taksim_Square-Istanbul.jpg')
+taksim_square.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 taksim_square.save!
 
 hagia_sophia = Site.new(name: 'Hagia Sophia',
@@ -51,13 +58,17 @@ hagia_sophia = Site.new(name: 'Hagia Sophia',
                         when it became the city's Roman Catholic cathedral. In 1453, after the Fall of Constantinople 
                         to the Ottoman Empire, it was converted into a mosque. In 1935 the secular Turkish Republic 
                         established it as a museum. In 2020, it re-opened as a mosque." )
+file = URI.open('https://images.unsplash.com/photo-1602137968838-8e64b4b45a72?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80')
+hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
-                                     address: 'Tophane fountain',
-                                     description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century 
-                                     public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture 
-                                     and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
+                            address: 'Tophane fountain',
+                            description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century 
+                            public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture 
+                            and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
+file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
+tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 tophane_fountain.save!
 
 puts "created #{Site.count} new sites"
