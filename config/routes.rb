@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get :videos
       get :articles
       get :audios
+      get :photos
     end
   end
 end

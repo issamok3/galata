@@ -17,7 +17,7 @@ class SitesController < ApplicationController
 
   def create
     @site = Site.new(site_params)
-    @site.user = User.first 
+    @site.user = User.first
     if @site.save!
       redirect_to site_path(@site)
     else
@@ -33,6 +33,18 @@ class SitesController < ApplicationController
     @site = Site.find(params[:id])
     @site.destroy
     redirect_to sites_path
+  end
+
+  def videos
+  end
+
+  def audios
+  end
+
+  def articles
+  end
+
+  def photos
   end
 
   private
