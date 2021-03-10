@@ -1,0 +1,9 @@
+<div class="container">
+  <h1> My Uploads</h1>
+  <% @my_uploads.each do |content| %>
+    <div class="container mt-3, class: 'my-uploads-card'">
+      <p><%= "Name: #{content.title}" %></p>
+      <p><%= "Format: #{content.format}" %></p>
+    </div>
+  <% end %>
+</div>  
