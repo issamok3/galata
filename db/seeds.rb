@@ -26,7 +26,6 @@ topkapi_palace = Site.new(name: 'Topkapi Palace',
                           is a large museum in the east of the Fatih district of Istanbul in Turkey. 
                           In the 15th and 16th centuries it served as the main residence and 
                           administrative headquarters of the Ottoman sultans." )
-
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',
