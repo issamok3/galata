@@ -66,7 +66,7 @@ puts "created #{Site.count} new sites"
 # Without actual content or thumbnail images for now
 
 formats = %w[.txt .mp3 .mpg4]
-titles_text = %w[A\ brief\ history\ 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about\ ]
+titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
 titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatesT Turkish songs of all time"]
 Site.all.each do |site|
   # text seeds
