@@ -18,9 +18,8 @@
       <ul>
         <% @sites.each do |site| %>
           <li><h4><%= site.name %></h4>
-              <p><i><%= site.address %></i></p>
-              <p class="text-muted"><%= site.description %></p></li>
-          <%-# background_url = cl_image_path site.photos.first.key, height: 300, width: 500, crop: :fill %>
+            <p><i><%= site.address %></i></p>
+            <p class="text-muted"><%= site.description %></p></li>
         <% end %>
       </ul>
       </div>
