@@ -76,6 +76,7 @@ puts "created #{Site.count} new sites"
 
 # CONTENT SEEDS
 # Without actual content or thumbnail images for now
+# Should also add description to each piece of content
 
 formats = %w[.txt .mp3 .mpg4]
 category = %w[article audio photo video]
