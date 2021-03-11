@@ -67,12 +67,6 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
-<<<<<<< HEAD
-                                     address: 'Tophane fountain',
-                                     description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
-                                     public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
-                                     and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
-=======
 
 address: 'Tophane fountain',
 description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
@@ -80,7 +74,6 @@ public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo arc
 and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
 file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
->>>>>>> f966bebd1f8667919ed9e113a2ee2c0e3cb4df82
 tophane_fountain.save!
 
 puts "created #{Site.count} new sites"
