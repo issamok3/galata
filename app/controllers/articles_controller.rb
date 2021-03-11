@@ -1,16 +1,16 @@
 class ArticlesController < ApplicationController
-  before_action :set_site
 
   def index
+    @site = Site.find(params[:site_id])
     @articles = Article.where(site: @site)
   end
 
   def show
   end
 
-  private
-
-  def set_site
-    @site = Site.find(params[:site_id])
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to dashboard_path
   end
 end
