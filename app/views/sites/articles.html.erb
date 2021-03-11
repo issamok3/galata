@@ -1,7 +1,10 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url();">
-  <div class="container">
-    <% @articles.each do |article| %>
-      <%= article.title %>
-  </div>
+<% @articles.each do |article| %>
+  <%= link_to content_path(article) do %>
+    <div class="card-product">
+      <i class="fas fa-book-open"></i>
+      <div class="card-product-infos">
+        <%= article.title %>
+      </div>
+    </div>
   <% end %>
-</div>
+<% end %>

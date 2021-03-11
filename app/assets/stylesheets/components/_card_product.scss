@@ -1,4 +1,4 @@
-.card-audio {
+.card-product {
   overflow: hidden;
   height: 120px;
   background: white;
@@ -8,19 +8,19 @@
   margin: 5px;
 }
 
-.card-audio img {
-  height: 100%;
-  width: 120px;
+.card-product i {
   object-fit: cover;
+  width: 20%;
+  text-align: center;
 }
 
-.card-audio h2 {
+.card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-audio p {
+.card-product p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -28,6 +28,6 @@
   margin-top: 8px;
 }
 
-.card-audio .card-audio-infos {
+.card-product .card-product-infos {
   padding: 16px;
 }

@@ -1,4 +1,6 @@
 class SitesController < ApplicationController
+  before_action :set_site, only: [:videos, :audios, :articles, :photos]
+
   def index
     @sites = Site.near(current_user.address, 5)
   end
@@ -6,24 +8,44 @@ class SitesController < ApplicationController
   def show
     @site = Site.find(params[:id])
   end
-  
-  def videos
+
+  def new
+    @site = Site.new
+  end
+
+  def create
+    @site = Site.new(site_params)
+    @site.user = User.first
+    if @site.save!
+      redirect_to site_path(@site)
+    else
+      render :new
+    end
+  end
+
+  def edit
     @site = Site.find(params[:id])
+  end
+
+  def destroy
+    @site = Site.find(params[:id])
+    @site.destroy
+    redirect_to sites_path
+  end
+
+  def videos
     @videos = Content.where(site: @site, category: 'video')
   end
 
   def audios
-    @site = Site.find(params[:id])
     @audios = Content.where(site: @site, category: 'audio')
   end
 
   def articles
-    @site = Site.find(params[:id])
     @articles = Content.where(site: @site, category: 'article')
   end
 
   def photos
-    @site = Site.find(params[:id])
     @photos = Content.where(site: @site, category: 'photo')
   end
 
@@ -31,5 +53,9 @@ class SitesController < ApplicationController
 
   def site_params
     params.require(:site).permit(:name, :address, :description, photos: [])
+  end
+
+  def set_site
+    @site = Site.find(params[:id])
   end
 end
