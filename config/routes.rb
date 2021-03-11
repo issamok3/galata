@@ -10,4 +10,7 @@ Rails.application.routes.draw do
     end
   end
   resource :dashboard, only: :show
+  resources :contents, only: :show do
+    resources :reviews, only: [:new, :create]
+  end
 end
