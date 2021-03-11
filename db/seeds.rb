@@ -64,9 +64,10 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
+
 address: 'Tophane fountain',
-description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century 
-public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture 
+description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
+public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
 and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
 file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
@@ -77,7 +78,7 @@ puts "created #{Site.count} new sites"
 # CONTENT SEEDS
 # Without actual content or thumbnail images for now
 
-type = %w[article audio photo video]
+# type = %w[article audio photo video]
 titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
 titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
 Site.all.each do |site|

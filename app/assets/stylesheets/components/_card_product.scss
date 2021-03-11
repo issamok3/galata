@@ -1,26 +1,26 @@
-.card-uploads {
+.card-product {
   overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin: 5px;
 }
 
-.card-uploads img {
-  height: 100%;
-  width: 120px;
+.card-product i {
   object-fit: cover;
+  width: 20%;
+  text-align: center;
 }
 
-.card-uploads h2 {
+.card-product h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-uploads p {
+.card-product p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -28,6 +28,6 @@
   margin-top: 8px;
 }
 
-.card-uploads .card-uploads-infos {
+.card-product .card-product-infos {
   padding: 16px;
 }
