@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def create
-    @conversation = Conversations.find(params[:conversation_id])
+    @conversation = Conversation.find(params[:conversation_id])
     @message = Message.new(message_params)
     @message.conversation = @conversation
     @message.user = current_user
@@ -9,11 +9,16 @@ class MessagesController < ApplicationController
     else
       render "conversations/show"
     end
+
+    ChatroomChannel.broadcast_to(
+      @chatroom,
+      render_to_string(partial: "message", locals: { message: @message })
+    )
   end
 
   private
 
   def message_params
-     params.require(:message).permit(:content)
+    params.require(:message).permit(:content)
   end
 end
