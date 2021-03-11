@@ -1,6 +1,6 @@
 class SitesController < ApplicationController
   def index
-    @sites = Site.all
+    @sites = Site.near(current_user.address, 5)
   end
 
   def show
