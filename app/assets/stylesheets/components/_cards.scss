@@ -1,26 +1,26 @@
-.card-audio {
+.card-uploads {
   overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 5px;
+  margin-top: 20px;
 }
 
-.card-audio img {
+.card-uploads img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.card-audio h2 {
+.card-uploads h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-audio p {
+.card-uploads p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -28,6 +28,6 @@
   margin-top: 8px;
 }
 
-.card-audio .card-audio-infos {
+.card-uploads .card-uploads-infos {
   padding: 16px;
 }

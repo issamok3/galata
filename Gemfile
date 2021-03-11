@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # adds functionality for geocoding
 gem 'geocoder'
+
+# adds functionality for user-side picture upload
+gem 'cloudinary', '~> 1.16.0'

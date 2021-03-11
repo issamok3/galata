@@ -1,10 +1,6 @@
 class SitesController < ApplicationController
   def index
-    if params[:query].present?
-      @sites = Site.global_search(params[:query])
-    else
-      @sites = Site.all
-    end
+    @sites = Site.all
   end
 
   def show
@@ -58,6 +54,6 @@ class SitesController < ApplicationController
   private
 
   def site_params
-    params.require(:site).permit(:name, :description, :address, :rate, photos: [])
+    params.require(:site).permit(:name, :address, :description, photos: [])
   end
 end
