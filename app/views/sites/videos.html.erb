@@ -1,10 +1,11 @@
-<div class="card-video">
-  <% @videos.each do |video| %>
-  <div class="card-video-infos">
-      <%= video.title%>
-    <div></div>
-    <h2 class=""></h2>
+<%= link_to "#" do %>
+  <div class="card-video">
+    <% @videos.each do |video| %>
+    <div class="card-video-infos">
+        <%= video.title%>
+      <div></div>
+      <h2 class=""></h2>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
-
+<% end %>

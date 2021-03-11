@@ -1,9 +1,10 @@
-<% @articles.each do |article| %>
-  <div class="card-product">
-    <i class="fas fa-book-open"></i>
-    <div class="card-product-infos">
-      <%= article.title %>
+<%= link_to "#" do %>
+  <% @articles.each do |article| %>
+    <div class="card-product">
+      <i class="fas fa-book-open"></i>
+      <div class="card-product-infos">
+        <%= article.title %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
-

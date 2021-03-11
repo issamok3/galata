@@ -1,4 +1,6 @@
 class SitesController < ApplicationController
+  before_action :set_site, only: [:videos, :audios, :articles, :photos]
+
   def index
     @sites = Site.all
   end
@@ -32,22 +34,18 @@ class SitesController < ApplicationController
   end
 
   def videos
-    @site = Site.find(params[:id])
     @videos = Content.where(site: @site, category: 'video')
   end
 
   def audios
-    @site = Site.find(params[:id])
     @audios = Content.where(site: @site, category: 'audio')
   end
 
   def articles
-    @site = Site.find(params[:id])
     @articles = Content.where(site: @site, category: 'article')
   end
 
   def photos
-    @site = Site.find(params[:id])
     @photos = Content.where(site: @site, category: 'photo')
   end
 
@@ -55,5 +53,9 @@ class SitesController < ApplicationController
 
   def site_params
     params.require(:site).permit(:name, :address, :description, photos: [])
+  end
+
+  def set_site
+    @site = Site.find(params[:id])
   end
 end
