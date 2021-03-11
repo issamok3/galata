@@ -2,7 +2,7 @@ class SitesController < ApplicationController
   before_action :set_site, only: [:videos, :audios, :articles, :photos]
 
   def index
-    @sites = Site.all
+    @sites = Site.near(current_user.address, 5)
   end
 
   def show

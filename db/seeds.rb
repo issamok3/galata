@@ -6,7 +6,7 @@ Site.destroy_all
 Content.destroy_all
 
 # USER SEEDS
-User.create(username: 'Henver', full_name: "Hendrik Vermeersch", address: 'Hacımimi, Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
+User.create(username: 'Henver', full_name: "Hendrik Vermeersch", address: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
 # User.create(username: 'Lilium', full_name:, address: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
 # User.create(username:'Issam',full_nname: , address:, email:, password: )
 
@@ -64,19 +64,13 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
-<<<<<<< HEAD
-                                     address: 'Tophane fountain',
-                                     description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
-                                     public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
-                                     and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
-=======
-                            address: 'Tophane fountain',
-                            description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
-                            public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
-                            and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
+
+address: 'Tophane fountain',
+description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
+public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
+and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
 file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
->>>>>>> cfc44961007fec06dfd81feedc65e6edfb24c65b
 tophane_fountain.save!
 
 puts "created #{Site.count} new sites"
@@ -86,9 +80,9 @@ puts "created #{Site.count} new sites"
 
 formats = %w[.txt .mp3 .mpg4]
 category = %w[article audio photo video]
-titles_text = %w[A\ brief\ history\ 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about\ ]
 
-titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatesT Turkish songs of all time"]
+titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
+titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
 Site.all.each do |site|
   # text seeds
   titles_text.each do |title|
