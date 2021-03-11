@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+
+#map {
+  display: flex;
+  justify-content: center;
+  a {
+  position: relative;
+  z-index: 1;
+  top: 10px;
+  height: 40px;
+  margin: 10px;
+  }
+}

@@ -1,27 +1,21 @@
 <div class="container">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(https://upload.wikimedia.org/wikipedia/commons/1/1a/Istanbul_Galata_Tower_%28243781971%29.jpeg)">
+  <div>
     <h1>Galata</h1>
-      <div class="m-2">
-        <%= form_tag sites_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find a site" %>
-        <% end %>
-      </div>
-      <div class="mt-2">
-        <p><strong>Add a new site</strong></p>
-      </div>
-    </div>
-
       <div class="sites-container">
       <ul>
         <% @sites.each do |site| %>
-          <li><h4><%= site.name %></h4>
-              <p><i><%= site.address %></i></p>
-              <p class="text-muted"><%= site.description %></p></li>
-          <%-# background_url = cl_image_path site.photos.first.key, height: 300, width: 500, crop: :fill %>
+          <li>
+            <%= link_to site_path(site) do %>
+            <h4><%= site.name %></h4>
+            <% end %>
+            <p><i><%= site.address %></i></p>
+            <p><%= site.description %></p>
+            <% site.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 200, width: 300 %>
+            <% end %>
+          </li>
         <% end %>
       </ul>
       </div>
+  </div>
 </div>
