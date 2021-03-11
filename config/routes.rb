@@ -10,4 +10,5 @@ Rails.application.routes.draw do
       get :photos
     end
   end
-  resource :dashboard, only: :show 
+  resource :dashboard, only: :show
+end
