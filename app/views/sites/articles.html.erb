@@ -1,5 +1,5 @@
-<%= link_to "#" do %>
-  <% @articles.each do |article| %>
+<% @articles.each do |article| %>
+  <%= link_to content_path(article) do %>
     <div class="card-product">
       <i class="fas fa-book-open"></i>
       <div class="card-product-infos">
