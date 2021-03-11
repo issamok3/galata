@@ -8,31 +8,7 @@ class SitesController < ApplicationController
   def show
     @site = Site.find(params[:id])
   end
-
-  def new
-    @site = Site.new
-  end
-
-  def create
-    @site = Site.new(site_params)
-    @site.user = User.first
-    if @site.save!
-      redirect_to site_path(@site)
-    else
-      render :new
-    end
-  end
-
-  def edit
-    @site = Site.find(params[:id])
-  end
-
-  def destroy
-    @site = Site.find(params[:id])
-    @site.destroy
-    redirect_to sites_path
-  end
-
+  
   def videos
     @videos = Content.where(site: @site, category: 'video')
   end
