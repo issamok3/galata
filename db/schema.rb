@@ -10,24 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2021_03_11_122309) do
-=======
-ActiveRecord::Schema.define(version: 2021_03_11_131056) do
->>>>>>> master
+ActiveRecord::Schema.define(version: 2021_03_12_121135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "action_text_rich_texts", force: :cascade do |t|
-    t.string "name", null: false
-    t.text "body"
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
-  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -74,7 +60,6 @@ ActiveRecord::Schema.define(version: 2021_03_11_131056) do
     t.string "format"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.string "type"
     t.index ["site_id"], name: "index_contents_on_site_id"
     t.index ["user_id"], name: "index_contents_on_user_id"
@@ -95,18 +80,17 @@ ActiveRecord::Schema.define(version: 2021_03_11_131056) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
-<<<<<<< HEAD
+  create_table "photos", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
+    t.text "feedback"
     t.bigint "content_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["content_id"], name: "index_reviews_on_content_id"
-=======
-  create_table "photos", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
->>>>>>> master
   end
 
   create_table "sites", force: :cascade do |t|
