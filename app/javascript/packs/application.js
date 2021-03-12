@@ -32,3 +32,6 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initConversationCable();
 });
+
+require("trix")
+require("@rails/actiontext")

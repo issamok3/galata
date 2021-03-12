@@ -11,15 +11,16 @@ Rails.application.routes.draw do
     #   get :photos
     # end
     resources :articles, only: [:index, :show, :destroy]
-    resources :photos, only: [:index, :destroy]
-    resources :audios, only: [:index, :destroy]
-    resources :videos, only: [:index, :destroy]
+    resources :photos, only: [:index, :new, :destroy]
+    resources :audios, only: [:index, :new, :destroy]
+    resources :videos, only: [:index, :new, :destroy]
   end
   resource :dashboard, only: :show
-  # resources :contents, only: :show
+  resources :articles, only: [:new, :create]
   resources :conversations, only: [:show, :index] do
   resources :messages, only: :create
   end
   resources :user do
     resources :conversations, only: :create
   end
+

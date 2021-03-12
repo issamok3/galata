@@ -88,6 +88,7 @@ puts "created #{Site.count} new sites"
 
 # CONTENT SEEDS
 # Without actual content or thumbnail images for now
+# Should also add description to each piece of content
 
 # type = %w[article audio photo video]
 titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]

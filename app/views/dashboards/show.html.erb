@@ -1,12 +1,16 @@
 <div class="container mt-3">
   <h1> My Uploads</h1>
+  <%= link_to "Add a new article", new_article_path, class: 'btn btn-primary'  %>
+  <%= link_to "Add new photos", '#', class: 'btn btn-primary'  %>
+  <%= link_to "Add new audio", '#', class: 'btn btn-primary'  %>
+  <%= link_to "Add a new video", '#', class: 'btn btn-primary'  %>
   <% @my_uploads.each do |content| %>
     <div class="card-uploads">
       <%= image_tag "https://source.unsplash.com/random" %>
       <div class="card-uploads-infos">
         <h2><%= "#{content.title}" %></h2>
-        <p><%= "Description:" %></p> 
-        <p><%= "Format: #{content.format}" %></p>
+        <p><%= "Description: #{content.description}" %></p> 
+        <p><%= "Category: #{content.type}" %></p>
       </div>
       <% if content.type == 'Article' %>
         <%= link_to "X", site_article_path(content.site, content), method: :delete, data: {confirm: "Are you sure?"} %>
