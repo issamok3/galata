@@ -1,0 +1,7 @@
+<%= simple_form_for @video do |f| %>
+  <%= f.association :site, label: 'Pick a site' %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :url %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
