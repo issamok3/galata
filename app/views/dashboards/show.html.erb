@@ -5,8 +5,8 @@
       <%= image_tag "https://source.unsplash.com/random" %>
       <div class="card-uploads-infos">
         <h2><%= "#{content.title}" %></h2>
-        <p><%= "Description:" %></p> 
-        <p><%= "Format: #{content.format}" %></p>
+        <p><%= "Description:#{content.description}" %></p> 
+        <p><%= "Format: #{content.type}" %></p>
       </div>
     </div>
   <% end %>

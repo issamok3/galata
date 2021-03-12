@@ -9,10 +9,10 @@ Rails.application.routes.draw do
     #   get :audios
     #   get :photos
     # end
-    resources :articles, only: [:index, :show]
-    resources :photos, only: :index
-    resources :audios, only: :index
-    resources :videos, only: :index
   end
   resource :dashboard, only: :show
+  resources :articles, only: [:index, :show]
+  resources :photos, only: [:index, :new, :create]
+  resources :audios, only: :index
+  resources :videos, only: :index
 end
