@@ -23,4 +23,4 @@ Rails.application.routes.draw do
   resources :user do
     resources :conversations, only: :create
   end
-
+end
