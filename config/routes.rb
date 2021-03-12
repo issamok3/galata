@@ -2,12 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :sites, only: [:index, :show ] do
-    member do
-      get :videos
-      get :articles
-      get :audios
-      get :photos
-    end
+    # member do
+    #   get :videos
+    #   get :articles
+    #   get 'articles/:id'
+    #   get :audios
+    #   get :photos
+    # end
+    resources :articles, only: [:index, :show]
+    resources :photos, only: :index
+    resources :audios, only: :index
+    resources :videos, only: :index
   end
   resource :dashboard, only: :show
   resources :contents, only: :show do

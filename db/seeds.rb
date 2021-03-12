@@ -64,9 +64,10 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
+
 address: 'Tophane fountain',
-description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century 
-public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture 
+description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
+public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
 and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
 file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
@@ -77,31 +78,30 @@ puts "created #{Site.count} new sites"
 # CONTENT SEEDS
 # Without actual content or thumbnail images for now
 
-formats = %w[.txt .mp3 .mpg4]
-category = %w[article audio photo video]
+# type = %w[article audio photo video]
 titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
 titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
 Site.all.each do |site|
   # text seeds
   titles_text.each do |title|
-    text = Content.new(title: "#{title} #{site.name}", category: category.first )
+    text = Article.new(title: "#{title} #{site.name}" )
     text.site = site
     text.user = User.all.sample
     text.save!
   end
   # audio seeds
-  audio = Content.new(title: "Ten minute audioguide for #{site.name}", category: category.second)
+  audio = Audio.new(title: "Ten minute audioguide for #{site.name}" )
   audio.site = site
   audio.user= User.all.sample
   audio.save!
   titles_audio.each do |title|
-    audio = Content.new(title: title, category: category.second)
+    audio = Audio.new(title: title )
     audio.site = site
     audio.user = User.all.sample
     audio.save!
   end
   # video seeds
-  video = Content.new(title: "Cool drone footage of #{site.name}", category: category.last)
+  video = Video.new(title: "Cool drone footage of #{site.name}")
   video.site = site
   video.user = User.all.sample
   video.save!

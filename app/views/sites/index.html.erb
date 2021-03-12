@@ -1,18 +1,18 @@
 <div class="container">
   <div>
-    <h1>Galata</h1>
+    <%= link_to 'Show Map', root_path, class: 'btn btn-primary my-3' %>
     <div class="sites-container">
-    <ul>
       <% @sites.each do |site| %>
-        <li>
-          <h4><%= site.name %></h4>
-          <p><i><%= site.address %></i></p>
-          <p><%= site.description %></p>
-          <% site.photos.each do |photo| %>
-            <%= cl_image_tag photo.key, height: 200, width: 300 %>
-          <% end %>
-        </li>
+          <div class="card my-3">
+            <% site.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 200, width: 300 %>
+            <% end %>
+            <%= link_to site_path(site) do %>
+              <h4><%= site.name %></h4>
+            <% end %>
+            <p><%= site.description %></p>
+          </div>
       <% end %>
-    </ul>
     </div>
+  </div>
 </div>
