@@ -1,0 +1,17 @@
+<div>
+    <%= link_to "Add a new conversation", "#" %>
+  <div>
+    <% @conversations.each do |conversation| %>
+      <% conversation.messages.each do |message| %>
+        <div class="card-product">
+          <%= image_tag "https://i.pinimg.com/564x/17/92/e9/1792e924edca6931e8d4ccd17a5cc286.jpg", class: "avatar dropdown-toggle mx-2" %>
+          <div class="card-product-infos">
+            <%= link_to conversation_path(conversation) do %>
+              <%= message.user.username %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

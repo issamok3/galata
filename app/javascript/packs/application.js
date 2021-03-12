@@ -7,6 +7,7 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import { initConversationCable } from '../channels/conversation_channel';
 
 Rails.start()
 Turbolinks.start()
@@ -29,4 +30,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initConversationCable();
 });

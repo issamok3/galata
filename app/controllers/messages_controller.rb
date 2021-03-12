@@ -10,8 +10,8 @@ class MessagesController < ApplicationController
       render "conversations/show"
     end
 
-    ChatroomChannel.broadcast_to(
-      @chatroom,
+    ConversationChannel.broadcast_to(
+      @conversationChannel,
       render_to_string(partial: "message", locals: { message: @message })
     )
   end

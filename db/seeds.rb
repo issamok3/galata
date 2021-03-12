@@ -7,8 +7,8 @@ Content.destroy_all
 
 # USER SEEDS
 
-User.create(username: 'Henver', full_name: "Hendrik Vermeersch", address: 'Hacımimi, Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
-User.create(username: 'Lilium', full_name: "Sevil Hatipoglu", address: '2D Mitre Road Se1 8PY London', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", address: 'Hacımimi, Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
+User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", address: '2D Mitre Road Se1 8PY London', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
 
 # User.create(username: 'Lilium', full_name:, address: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
 # User.create(username:'Issam',full_nname: , address:, email:, password: )
