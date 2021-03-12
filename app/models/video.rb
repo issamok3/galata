@@ -1,3 +1,2 @@
-class Video < ApplicationRecord
-  validates :url, presence: true
+class Video < Content
 end

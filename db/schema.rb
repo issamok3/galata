@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.string "type"
+    t.string "url"
     t.index ["site_id"], name: "index_contents_on_site_id"
     t.index ["user_id"], name: "index_contents_on_user_id"
   end
@@ -129,7 +130,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
   create_table "videos", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "url"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
