@@ -25,4 +25,10 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:title, :description, photos: [])
   end
+  
+  def destroy
+    @photo = Photo.find(params[:id])
+    @photo.destroy
+    redirect_to dashboard_path
+  end
 end
