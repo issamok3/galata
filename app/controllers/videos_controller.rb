@@ -19,6 +19,12 @@ class VideosController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+   @video = Video.find(params[:id])
+   @video.destroy
+   redirect_to dashboard_path
+  end
 
   private
 

@@ -1,0 +1,7 @@
+<%= simple_form_for(@article) do |f| %>
+  <%= f.association :site, label: 'Select a site' %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.rich_text_area :body %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
