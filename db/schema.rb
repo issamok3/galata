@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_03_12_112759) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +55,16 @@ ActiveRecord::Schema.define(version: 2021_03_12_112759) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "audios", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "contents", force: :cascade do |t|
     t.bigint "site_id", null: false
     t.bigint "user_id", null: false
@@ -50,7 +72,8 @@ ActiveRecord::Schema.define(version: 2021_03_12_112759) do
     t.string "format"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "category"
+    t.text "description"
+    t.string "type"
     t.index ["site_id"], name: "index_contents_on_site_id"
     t.index ["user_id"], name: "index_contents_on_user_id"
   end
@@ -77,6 +100,10 @@ ActiveRecord::Schema.define(version: 2021_03_12_112759) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_participants_on_conversation_id"
     t.index ["user_id"], name: "index_participants_on_user_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sites", force: :cascade do |t|
@@ -106,6 +133,11 @@ ActiveRecord::Schema.define(version: 2021_03_12_112759) do
     t.boolean "locatable", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
