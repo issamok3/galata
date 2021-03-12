@@ -12,6 +12,15 @@
         <p><%= "Description: #{content.description}" %></p> 
         <p><%= "Category: #{content.type}" %></p>
       </div>
+      <% if content.type == 'Article' %>
+        <%= link_to "X", site_article_path(content.site, content), method: :delete, data: {confirm: "Are you sure?"} %>
+      <% elsif content.type == 'Photo' %>
+        <%= link_to "X", site_photo_path(content.site, content), method: :delete, data: {confirm: "Are you sure?"} %>
+      <% elsif content.type == 'Audio' %>
+        <%= link_to "X", site_audio_path(content.site, content), method: :delete, data: {confirm: "Are you sure?"} %>
+      <% elsif content.type == 'Video' %>
+        <%= link_to "X", site_video_path(content.site, content), method: :delete, data: {confirm: "Are you sure?"} %>
+      <% end %>
     </div>
   <% end %>
 </div>  

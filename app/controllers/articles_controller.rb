@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_site, except: [:new, :create]
 
   def index
+    @site = Site.find(params[:site_id])
     @articles = Article.where(site: @site)
   end
 
@@ -28,6 +29,12 @@ class ArticlesController < ApplicationController
 
   def set_site
     @site = Site.find(params[:site_id])
+  end
+  
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to dashboard_path
   end
 
   def article_params
