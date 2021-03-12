@@ -9,8 +9,8 @@
       <%= image_tag "https://source.unsplash.com/random" %>
       <div class="card-uploads-infos">
         <h2><%= "#{content.title}" %></h2>
-        <p><%= "Description: #{content.description}" %></p> 
-        <p><%= "Category: #{content.type}" %></p>
+        <p><%= "Description:#{content.description}" %></p> 
+        <p><%= "Format: #{content.type}" %></p>
       </div>
       <% if content.type == 'Article' %>
         <%= link_to "X", site_article_path(content.site, content), method: :delete, data: {confirm: "Are you sure?"} %>

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     #   get :photos
     # end
     resources :articles, only: [:index, :show, :destroy]
-    resources :photos, only: [:index, :new, :destroy]
+    resources :photos, only: [:index, :new, :destroy, :create]
     resources :audios, only: [:index, :new, :destroy]
     resources :videos, only: [:index, :new, :destroy]
   end
