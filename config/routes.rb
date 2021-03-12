@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   end
   resource :dashboard, only: :show
   resources :contents, only: :show
-  resources :conversations, only: [:show, :index, :create] do
+  resources :conversations, only: [:show, :index] do
   resources :messages, only: :create
+  end
+  resources :user do
+    resources :conversations, only: :create
   end
 end

@@ -6,24 +6,13 @@ class ConversationsController < ApplicationController
 
   def index
     @conversations = Conversation.all
+    @nearby_users = User.near(current_user.address, 10)
   end
 
   def create
-    @conversation = Conversation.new
-    @message = Message.new(message_params)
-    @conversation.message = @message
-    @message.user = current_user
-    if @conversation.save
-       redirect_to conversation_path(@conversation, anchor: "message-#{@message.id}")
-     else
-       render "conversations/show"
-     end
-    redirect_to "conversations/index"
-  end
-
-  private
-
-  def message_params
-    params.require(:message).permit(:content)
+    @conversation = Conversation.create
+    Participant.create(user: current_user, conversation: @conversation)
+    Participant.create(user: User.find(params[:user_id]), conversation: @conversation)
+    redirect_to @conversation
   end
 end
