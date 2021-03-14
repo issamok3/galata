@@ -10,7 +10,7 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    @conversation = Conversation.create
+    @conversation = Conversation.new
     Participant.create(user: current_user, conversation: @conversation)
     Participant.create(user: User.find(params[:user_id]), conversation: @conversation)
     redirect_to @conversation
