@@ -11,6 +11,16 @@
         <h2><%= "#{content.title}" %></h2>
         <p><%= "Description:#{content.description}" %></p> 
         <p><%= "Format: #{content.type}" %></p>
+        <% if content.type == 'Audio' && content.spotify_uri != nil %>
+          <% split_uri = content.spotify_uri.split(':') %>
+          <% spotify_uri_type = split_uri.second %>
+          <% spotify_uri_id = split_uri.last %>
+          <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+          <iframe src=<% complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <% elsif content.type == 'Video' && content.url != nil %>
+        <% raise %>
+          <iframe src="https://www.youtube.com/embed/#{content.url}" height="150" width="200" frameborder="0"></iframe>
+        <% end %>
       </div>
       <% if content.type == 'Article' %>
         <%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
