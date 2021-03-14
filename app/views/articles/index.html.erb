@@ -1,10 +1,14 @@
-<% @articles.each do |article| %>
-  <%= link_to site_article_path(@site, article) do %>
-    <div class="card-product">
-      <i class="fas fa-book-open"></i>
-      <div class="card-product-infos">
-        <%= article.title %>
+<div class="container">
+  <% @articles.each do |article| %>
+    <%= link_to site_article_path(@site, article) do %>
+      <div class="card-product">
+        <i class="fas fa-book-open"></i>
+        <div class="card-product-infos">
+          <%= article.title %>
+        </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+  <%= link_to 'Back', site_path(@site) %>
+</div>
+
