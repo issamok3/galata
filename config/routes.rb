@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :videos, only: [:index]
   end
   resource :dashboard, only: :show
+  resource :settings, only: :show
   resources :contents, only: :show do
     resources :reviews, only: [:create, :new, :index]
   end

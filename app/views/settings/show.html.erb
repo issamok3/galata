@@ -1,0 +1,41 @@
+<div class="container">
+  <table>
+    <thead>
+        <tr>
+          <th colspan="2">My Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Username</td>
+          <td><%= current_user.username %></td>
+        </tr>
+        <tr>
+          <td>Full Name</td>
+          <td><%= current_user.full_name %></td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td><%= current_user.age %></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><%= current_user.address %></td>
+          <td>
+            <%= simple_form_for current_user do |f| %>
+              <%= f.input :address %>
+              <% f.button :submit %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td>Location-sharing</td>
+          <% if current_user.locatable == false %>
+            <td>Off</td>
+          <% else %>
+            <td>On</td>
+          <% end %>
+        </tr>
+    </tbody>
+</table>
+</div>
