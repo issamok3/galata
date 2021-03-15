@@ -2,6 +2,7 @@ require 'open-uri'
 
 #CLEANING UP DATABASE
 User.destroy_all
+Review.destroy_all
 Site.destroy_all
 Content.destroy_all
 
@@ -75,12 +76,18 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
-
-address: 'Tophane fountain',
-description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
-public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
-and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
+                            address: 'Tophane fountain',
+                            description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
+                            public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
+                            and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
 file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
+tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+tophane_fountain.save!
+
+halic_bridge = Site.new(name: 'Haliç Bridge',
+                        address: 'Haliç Bridge',
+                        description: "Known as the Golden Horn Bridge, is a highway bridge on the Golden Horn (Turkish: Haliç) in Istanbul, Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries the O-1 motorway, also known as the Istanbul Inner Beltway. It was constructed between 1971 and 1974, and entered service on 10 September 1974. The engineering firms which undertook the construction works were IHI Corporation of Japan and Julius Berger-Bauboag AG of Germany. The bridge has a length of 995 m (3,264 ft), a width of 32 m (105 ft), and a height of 22 m (72 ft) above sea level.")
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Halic_Bridge%2C_Istanbul.jpg/1024px-Halic_Bridge%2C_Istanbul.jpg')
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 tophane_fountain.save!
 
