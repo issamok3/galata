@@ -21,30 +21,13 @@
           <% match_data = content.url.match(/.*\/(.*)/) %>
           <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
           <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+          <%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% elsif content.type == 'Article' %>
+          <%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% elsif content.type == 'Audio' %>
+          <%= link_to "X", audio_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
         <% end %>
       </div>
-      <% if content.type == 'Article' %>
-        <%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-      <% elsif content.type == 'Photo' %>
-        <%= link_to "X", photo_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-      <% elsif content.type == 'Audio' %>
-        <%= link_to "X", audio_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-      </div>
-    <% elsif content.type == 'Video' %>
-      <div class="card-uploads">
-        <%= image_tag "https://source.unsplash.com/random" %>
-        <div class="card-uploads-infos">
-          <h2><%= "#{content.title}" %></h2>
-          <p><%= "Description:#{content.description}" %></p> 
-          <p><%= "Type: #{content.type}" %></p>
-          <% content.url != nil %>
-            <% source_url = "https://www.youtube.com/embed/#{content.url}" %>
-            <iframe src=<% source_url %> height="150" width="200" frameborder="0"></iframe>
-            <iframe src="https://www.youtube.com/embed/UQcHyHoZ9Ys" height="150" width="200" frameborder="0" allowfullscreen></iframe>
-          <% end %>
-         </div>
-        <%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-      </div>
-    <% end %>
+    </div>
   <% end %>
 </div>  
