@@ -5,12 +5,12 @@ class ConversationsController < ApplicationController
   end
 
   def index
-    @conversations = Conversation.all
+    @conversations = Conversation.joins(:participants).where(participants: {user: current_user}).distinct
     @nearby_users = User.near(current_user.address, 10)
   end
 
   def create
-    @conversation = Conversation.new
+    @conversation = Conversation.create
     Participant.create(user: current_user, conversation: @conversation)
     Participant.create(user: User.find(params[:user_id]), conversation: @conversation)
     redirect_to @conversation
