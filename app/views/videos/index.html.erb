@@ -1,14 +1,18 @@
 <div class="container">
-  <div class="card-video">
-    <% @videos.each do |video| %>
-      <div class="card-video-infos">
-          <%= video.title%>
-        <div></div>
-        <h2 class=""></h2>
-        <%= link_to "See reviews", content_reviews_path(video)  %>
-      </div>
-    <% end %>
-  </div>
+  <% @videos.each do |video| %>
+    <div class="card-video">
+        <div class="card-video-infos my-5">
+          <p><%= video.title%></p>
+          <p><%= video.description %></p>
+          <% if video.url != nil %>
+            <% match_data = video.url.match(/.*\/(.*)/) %>
+            <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+            <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+          <% end %>
+          <p><%= link_to "See reviews", content_reviews_path(video)  %></p>
+        </div>
+    </div>
+  <% end %>
   <%= link_to 'Back', site_path(@site) %>
 </div>
 
