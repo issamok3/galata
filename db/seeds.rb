@@ -27,6 +27,7 @@ User.create(username: 'tournz', full_name: "Zacharie", address: 'Dibek Sk. 22-2,
 puts "created #{User.count} new users"
 # SITE SEEDS
 galata_tower = Site.new(name: 'Galata Tower',
+                      category: 'History',
                       address: 'Galata Tower',
                       description: "The Galata Tower (Turkish: Galata Kulesi),
                       called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese,
@@ -39,6 +40,7 @@ galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 galata_tower.save!
 
 topkapi_palace = Site.new(name: 'Topkapi Palace',
+                          category: 'History',
                           address: 'Cankurtaran, 34122 Fatih/İstanbul',
                           description: "The Topkapı Palace (Turkish: Topkapı Sarayı),
                           is a large museum in the east of the Fatih district of Istanbul in Turkey.
@@ -50,6 +52,7 @@ topkapi_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'imag
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',
+                          category: 'Landmark',
                           address: 'Taksim Square',
                           description: "Taksim Square (Turkish: Taksim Meydanı), situated in Beyoğlu
                           in the European part of Istanbul, Turkey, is a major tourist and leisure district
@@ -63,6 +66,7 @@ taksim_square.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image
 taksim_square.save!
 
 hagia_sophia = Site.new(name: 'Hagia Sophia',
+                        category: 'Religious',
                         address: 'Hagia Sophia',
                         description: "Hagia Sophia, officially the Hagia Sophia Holy Grand Mosque
                         and formerly the Church of Hagia Sophia, is a Late Antique place of worship
@@ -78,6 +82,7 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
+                            category: 'Architechture',
                             address: 'Tophane fountain',
                             description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
                             public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
@@ -87,11 +92,12 @@ tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'im
 tophane_fountain.save!
 
 halic_bridge = Site.new(name: 'Haliç Bridge',
+                        category: 'View point',
                         address: 'Haliç Bridge',
                         description: "Known as the Golden Horn Bridge, is a highway bridge on the Golden Horn (Turkish: Haliç) in Istanbul, Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries the O-1 motorway, also known as the Istanbul Inner Beltway. It was constructed between 1971 and 1974, and entered service on 10 September 1974. The engineering firms which undertook the construction works were IHI Corporation of Japan and Julius Berger-Bauboag AG of Germany. The bridge has a length of 995 m (3,264 ft), a width of 32 m (105 ft), and a height of 22 m (72 ft) above sea level.")
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Halic_Bridge%2C_Istanbul.jpg/1024px-Halic_Bridge%2C_Istanbul.jpg')
-tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
-tophane_fountain.save!
+halic_bridge.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+halic_bridge.save!
 
 puts "created #{Site.count} new sites"
 

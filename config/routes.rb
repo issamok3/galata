@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: :show
   resources :contents, only: :show do
     resources :reviews, only: [:create, :new, :index]
+  end
   resources :articles, only: [:new, :create, :destroy]
   resources :photos, only: [:new, :create, :destroy]
   resources :audios, only: [:new, :create, :destroy]

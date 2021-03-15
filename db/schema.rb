@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, null: falsemig
     t.datetime "updated_at", precision: 6, null: false
   end
 
@@ -148,9 +148,5 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
   add_foreign_key "reviews", "contents"
   add_foreign_key "participants", "conversations"
   add_foreign_key "participants", "users"
-<<<<<<< HEAD
   add_foreign_key "reviews", "contents"
-=======
-
->>>>>>> master
 end
