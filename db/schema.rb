@@ -9,9 +9,21 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2021_03_14_115154) do
+
+ActiveRecord::Schema.define(version: 2021_03_14_153722) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "action_text_rich_texts", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "body"
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["record_type", "record_id", "name"], name: "index_action_text_rich_texts_uniqueness", unique: true
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -58,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_115154) do
     t.string "format"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "description"
     t.string "type"
     t.string "url"
     t.string "spotify_uri"
@@ -142,8 +155,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_115154) do
   add_foreign_key "contents", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
-  add_foreign_key "reviews", "contents"
   add_foreign_key "participants", "conversations"
   add_foreign_key "participants", "users"
-
+  add_foreign_key "reviews", "contents"
 end
