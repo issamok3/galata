@@ -20,13 +20,11 @@ User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Dibek Sk. 
 User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example5@gmail.com', password: 'asdasd', locatable: true )
 User.create(username: 'tournz', full_name: "Zacharie", location: 'Dibek Sk. 22-2, 34425 Beyoğlu/İstanbul', email: 'example6@gmail.com', password: 'asdasd', locatable: true )
 
-# User.create(username: 'Lilium', full_name:, location: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
-# User.create(username:'Issam',full_nname: , location:, email:, password: )
 
 puts "created #{User.count} new users"
 # SITE SEEDS
 galata_tower = Site.new(name: 'Galata Tower',
-                      location: 'Galata Tower',
+                      address: 'Galata Tower',
                       description: "The Galata Tower (Turkish: Galata Kulesi),
                       called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese,
                       is a medieval stone tower in the Galata/Karaköy quarter of Istanbul, Turkey,
@@ -38,7 +36,7 @@ galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 galata_tower.save!
 
 topkapi_palace = Site.new(name: 'Topkapi Palace',
-                          location: 'Cankurtaran, 34122 Fatih/İstanbul',
+                          address: 'Cankurtaran, 34122 Fatih/İstanbul',
                           description: "The Topkapı Palace (Turkish: Topkapı Sarayı),
                           is a large museum in the east of the Fatih district of Istanbul in Turkey.
                           In the 15th and 16th centuries it served as the main residence and
@@ -49,11 +47,11 @@ topkapi_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'imag
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',
-                          location: 'Taksim Square',
+                          address: 'Taksim Square',
                           description: "Taksim Square (Turkish: Taksim Meydanı), situated in Beyoğlu
                           in the European part of Istanbul, Turkey, is a major tourist and leisure district
                           famed for its restaurants, shops, and hotels. It is considered the heart of modern Istanbul,
-                          with the central station of the Istanbul Metro network. Taksim Square is also the location
+                          with the central station of the Istanbul Metro network. Taksim Square is also the address
                           of the Republic Monument (Turkish: Cumhuriyet Anıtı) which was crafted by Pietro Canonica
                           and inaugurated in 1928. The monument commemorates the 5th anniversary of the foundation
                           of the Republic of Turkey in 1923, following the Turkish War of Independence." )
@@ -62,7 +60,7 @@ taksim_square.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image
 taksim_square.save!
 
 hagia_sophia = Site.new(name: 'Hagia Sophia',
-                        location: 'Hagia Sophia',
+                        address: 'Hagia Sophia',
                         description: "Hagia Sophia, officially the Hagia Sophia Holy Grand Mosque
                         and formerly the Church of Hagia Sophia, is a Late Antique place of worship
                         in Istanbul, designed by the Greek geometers Isidore of Miletus and Anthemius of Tralles.
@@ -78,7 +76,7 @@ hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
 
-location: 'Tophane fountain',
+address: 'Tophane fountain',
 description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
 public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
 and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")

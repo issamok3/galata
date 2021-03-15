@@ -8,29 +8,29 @@
     <tbody>
         <tr>
           <td>Username</td>
-          <td><%= current_user.username %></td>
+          <td><%= @user.username %></td>
         </tr>
         <tr>
           <td>Full Name</td>
-          <td><%= current_user.full_name %></td>
+          <td><%= @user.full_name %></td>
         </tr>
         <tr>
           <td>Age</td>
-          <td><%= current_user.age %></td>
+          <td><%= @user.age %></td>
         </tr>
         <tr>
-          <td>Address</td>
-          <td><%= current_user.address %></td>
+          <td>Location</td>
+          <td><%= @user.location %></td>
           <td>
-            <%= simple_form_for current_user do |f| %>
-              <%= f.input :address, label: false %>
+            <%= simple_form_for(@user) do |f| %>
+              <%= f.input :location, label: false %>
               <% f.button :submit %>
             <% end %>
           </td>
         </tr>
         <tr>
           <td>Location-sharing</td>
-          <% if current_user.locatable == false %>
+          <% if @user.locatable == false %>
             <td>Off</td>
           <% else %>
             <td>On</td>
