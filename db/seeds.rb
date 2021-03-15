@@ -9,24 +9,24 @@ Conversation.destroy_all
 
 # USER SEEDS
 
-User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", address: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
-User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", address: 'Dibek Sk. 17-2, 34425 Beyoğlu/İstanbul', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", address: 'Dibek Sk. 20-2, 34425 Beyoğlu/İstanbul', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Euydice', full_name: "Merve Hatipoglu", address: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", address: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'issamok3', full_name: "Issam", address: 'Dibek Sk. 14-2, 34425 Beyoğlu/İstanbul', email: 'example2@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Shahabal', full_name: "Shahabal", address: 'Dibek Sk. 23-2, 34425 Beyoğlu/İstanbul', email: 'example3@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'nikiforov5000', full_name: "Boris", address: 'Dibek Sk. 16-2, 34425 Beyoğlu/İstanbul', email: 'example4p@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'syrashid', full_name: "Sy Rashid", address: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example5@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'tournz', full_name: "Zacharie", address: 'Dibek Sk. 22-2, 34425 Beyoğlu/İstanbul', email: 'example6@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
+User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Dibek Sk. 17-2, 34425 Beyoğlu/İstanbul', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Dibek Sk. 20-2, 34425 Beyoğlu/İstanbul', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'issamok3', full_name: "Issam", location: 'Dibek Sk. 14-2, 34425 Beyoğlu/İstanbul', email: 'example2@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Dibek Sk. 23-2, 34425 Beyoğlu/İstanbul', email: 'example3@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Dibek Sk. 16-2, 34425 Beyoğlu/İstanbul', email: 'example4p@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example5@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'tournz', full_name: "Zacharie", location: 'Dibek Sk. 22-2, 34425 Beyoğlu/İstanbul', email: 'example6@gmail.com', password: 'asdasd', locatable: true )
 
-# User.create(username: 'Lilium', full_name:, address: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
-# User.create(username:'Issam',full_nname: , address:, email:, password: )
+# User.create(username: 'Lilium', full_name:, location: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
+# User.create(username:'Issam',full_nname: , location:, email:, password: )
 
 puts "created #{User.count} new users"
 # SITE SEEDS
 galata_tower = Site.new(name: 'Galata Tower',
-                      address: 'Galata Tower',
+                      location: 'Galata Tower',
                       description: "The Galata Tower (Turkish: Galata Kulesi),
                       called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese,
                       is a medieval stone tower in the Galata/Karaköy quarter of Istanbul, Turkey,
@@ -38,7 +38,7 @@ galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 galata_tower.save!
 
 topkapi_palace = Site.new(name: 'Topkapi Palace',
-                          address: 'Cankurtaran, 34122 Fatih/İstanbul',
+                          location: 'Cankurtaran, 34122 Fatih/İstanbul',
                           description: "The Topkapı Palace (Turkish: Topkapı Sarayı),
                           is a large museum in the east of the Fatih district of Istanbul in Turkey.
                           In the 15th and 16th centuries it served as the main residence and
@@ -49,7 +49,7 @@ topkapi_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'imag
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',
-                          address: 'Taksim Square',
+                          location: 'Taksim Square',
                           description: "Taksim Square (Turkish: Taksim Meydanı), situated in Beyoğlu
                           in the European part of Istanbul, Turkey, is a major tourist and leisure district
                           famed for its restaurants, shops, and hotels. It is considered the heart of modern Istanbul,
@@ -62,7 +62,7 @@ taksim_square.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image
 taksim_square.save!
 
 hagia_sophia = Site.new(name: 'Hagia Sophia',
-                        address: 'Hagia Sophia',
+                        location: 'Hagia Sophia',
                         description: "Hagia Sophia, officially the Hagia Sophia Holy Grand Mosque
                         and formerly the Church of Hagia Sophia, is a Late Antique place of worship
                         in Istanbul, designed by the Greek geometers Isidore of Miletus and Anthemius of Tralles.
@@ -78,7 +78,7 @@ hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
 
-address: 'Tophane fountain',
+location: 'Tophane fountain',
 description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
 public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
 and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
