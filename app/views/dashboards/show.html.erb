@@ -2,7 +2,7 @@
   <h1> My Uploads</h1>
   <%= link_to "Add a new article", new_article_path, class: 'btn btn-primary'  %>
   <%= link_to "Add new photos", new_photo_path, class: 'btn btn-primary'  %>
-  <%= link_to "Add new audio", '#', class: 'btn btn-primary'  %>
+  <%= link_to "Add new audio", new_audio_path, class: 'btn btn-primary'  %>
   <%= link_to "Add a new video", new_video_path, class: 'btn btn-primary'  %>
   <% @my_uploads.each do |content| %>
     <% if content.type == 'Article' %>
@@ -13,6 +13,14 @@
             <h2><%= "#{content.title}" %></h2>
             <p><%= "Description:#{content.description}" %></p> 
             <p><%= "Type: #{content.type}" %></p>
+            <% if content.spotify_uri != nil %>
+              <% split_uri = content.spotify_uri.split(':') %>
+              <% spotify_uri_type = split_uri.second %>
+              <% spotify_uri_id = split_uri.last %>
+              <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+              <iframe src=<% complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <iframe src="https://open.spotify.com/embed/track/43sdRsmJFcSnlTWTVRhYtz" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+             <% end %>
           </div>
           <%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
         </div>
@@ -46,7 +54,12 @@
           <h2><%= "#{content.title}" %></h2>
           <p><%= "Description:#{content.description}" %></p> 
           <p><%= "Type: #{content.type}" %></p>
-        </div>
+          <% content.url != nil %>
+            <% source_url = "https://www.youtube.com/embed/#{content.url}" %>
+            <iframe src=<% source_url %> height="150" width="200" frameborder="0"></iframe>
+            <iframe src="https://www.youtube.com/embed/UQcHyHoZ9Ys" height="150" width="200" frameborder="0" allowfullscreen></iframe>
+          <% end %>
+         </div>
         <%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
       </div>
     <% end %>
