@@ -2,11 +2,11 @@ class ArticlesController < ApplicationController
   before_action :set_site, except: [:new, :create, :destroy]
 
   def index
-    @site = Site.find(params[:site_id])
     @articles = Article.where(site: @site)
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def new
