@@ -1,9 +1,12 @@
-<% @audios.each do |audio| %>
-    <div class="card-product">
-    <i class="fas fa-headphones"></i>
-      <div class="card-product-infos">
-        <%= audio.title %>
-         <%= link_to "See reviews", content_reviews_path(audio)  %>
+<div class="container">
+  <% @audios.each do |audio| %>
+      <div class="card-product">
+      <i class="fas fa-headphones"></i>
+        <div class="card-product-infos">
+          <%= audio.title %>
+          <%= link_to "See reviews", content_reviews_path(audio)  %>
+        </div>
       </div>
-    </div>
-<% end %>
+  <% end %>
+  <%= link_to 'Back', site_path(@site) %>
+</div>

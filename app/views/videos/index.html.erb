@@ -1,11 +1,14 @@
-<div class="card-video">
-  <% @videos.each do |video| %>
-    <div class="card-video-infos">
-        <%= video.title%>
-      <div></div>
-      <h2 class=""></h2>
-      <%= link_to "See reviews", content_reviews_path(video)  %>
-    </div>
-  <% end %>
+<div class="container">
+  <div class="card-video">
+    <% @videos.each do |video| %>
+      <div class="card-video-infos">
+          <%= video.title%>
+        <div></div>
+        <h2 class=""></h2>
+        <%= link_to "See reviews", content_reviews_path(video)  %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to 'Back', site_path(@site) %>
 </div>
 

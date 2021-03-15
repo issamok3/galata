@@ -9,9 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 2021_03_12_121135) do
-
+ActiveRecord::Schema.define(version: 2021_03_14_115154) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_03_12_121135) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "type"
+    t.string "url"
+    t.string "spotify_uri"
     t.index ["site_id"], name: "index_contents_on_site_id"
     t.index ["user_id"], name: "index_contents_on_user_id"
   end
@@ -78,6 +78,15 @@ ActiveRecord::Schema.define(version: 2021_03_12_121135) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "conversation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["conversation_id"], name: "index_participants_on_conversation_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -134,4 +143,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_121135) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "contents"
+  add_foreign_key "participants", "conversations"
+  add_foreign_key "participants", "users"
+
 end

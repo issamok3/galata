@@ -1,12 +1,32 @@
 <div class="container mt-3">
   <h1> My Uploads</h1>
+  <%= link_to "Add a new article", new_article_path, class: 'btn btn-primary'  %>
+  <%= link_to "Add new photos", new_photo_path, class: 'btn btn-primary'  %>
+  <%= link_to "Add new audio", new_audio_path, class: 'btn btn-primary'  %>
+  <%= link_to "Add a new video", new_video_path, class: 'btn btn-primary'  %>
   <% @my_uploads.each do |content| %>
     <div class="card-uploads">
       <%= image_tag "https://source.unsplash.com/random" %>
       <div class="card-uploads-infos">
         <h2><%= "#{content.title}" %></h2>
-        <p><%= "Description:" %></p> 
-        <p><%= "Format: #{content.format}" %></p>
+        <p><%= "Description:#{content.description}" %></p> 
+        <p><%= "Format: #{content.type}" %></p>
+        <% if content.type == 'Audio' && content.spotify_uri != nil %>
+          <% split_uri = content.spotify_uri.split(':') %>
+          <% spotify_uri_type = split_uri.second %>
+          <% spotify_uri_id = split_uri.last %>
+          <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+          <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <% elsif content.type == 'Video' && content.url != nil %>
+          <% match_data = content.url.match(/.*\/(.*)/) %>
+          <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+          <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+          <%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% elsif content.type == 'Article' %>
+          <%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% elsif content.type == 'Audio' %>
+          <%= link_to "X", audio_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
       </div>
     </div>
   <% end %>

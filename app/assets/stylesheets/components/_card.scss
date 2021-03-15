@@ -1,11 +1,11 @@
 .card-uploads {
   overflow: hidden;
-  height: 120px;
+  height: 400;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .card-uploads img {
@@ -24,7 +24,6 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
   margin-top: 8px;
 }
 
