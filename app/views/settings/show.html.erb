@@ -23,7 +23,7 @@
           <td><%= current_user.address %></td>
           <td>
             <%= simple_form_for current_user do |f| %>
-              <%= f.input :address %>
+              <%= f.input :address, label: false %>
               <% f.button :submit %>
             <% end %>
           </td>
