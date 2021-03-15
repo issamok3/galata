@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_site, except: [:new, :create]
+  before_action :set_site, except: [:new, :create, :destroy]
 
   def index
     @site = Site.find(params[:site_id])
@@ -25,16 +25,16 @@ class ArticlesController < ApplicationController
     end
   end
 
-  private
-
-  def set_site
-    @site = Site.find(params[:site_id])
-  end
-  
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to dashboard_path
+  end
+
+  private
+
+  def set_site
+    @site = Site.find(params[:site_id])
   end
 
   def article_params

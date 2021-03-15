@@ -16,12 +16,11 @@
           <% spotify_uri_type = split_uri.second %>
           <% spotify_uri_id = split_uri.last %>
           <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
-          <iframe src=<% complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          <iframe src="https://open.spotify.com/embed/track/43sdRsmJFcSnlTWTVRhYtz" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         <% elsif content.type == 'Video' && content.url != nil %>
-          <% source_url = "https://www.youtube.com/embed/#{content.url}" %>
-          <iframe src=<% source_url %> height="150" width="200" frameborder="0"></iframe>
-          <iframe src="https://www.youtube.com/embed/UQcHyHoZ9Ys" height="150" width="200" frameborder="0" allowfullscreen></iframe>
+          <% match_data = content.url.match(/.*\/(.*)/) %>
+          <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+          <iframe src=<%= source_url %> height="150" width="200" frameborder="0"></iframe>
         <% end %>
       </div>
       <% if content.type == 'Article' %>
