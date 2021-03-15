@@ -115,7 +115,7 @@ Site.all.each do |site|
     audio.save!
   end
   # video seeds
-  video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded", url: "#")
+  video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded")
   video.site = site
   video.user = User.all.sample
   video.save!
