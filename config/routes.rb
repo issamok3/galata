@@ -9,12 +9,15 @@ Rails.application.routes.draw do
     resources :videos, only: [:index]
   end
   resource :dashboard, only: :show
+  resources :contents, only: :show do
+    resources :reviews, only: [:create, :new, :index]
+  end
   resources :articles, only: [:new, :create, :destroy]
   resources :photos, only: [:new, :create, :destroy]
   resources :audios, only: [:new, :create, :destroy]
   resources :videos, only: [:new, :create, :destroy]
   resources :conversations, only: [:show, :index] do
-  resources :messages, only: :create
+    resources :messages, only: :create
   end
   resources :user do
     resources :conversations, only: :create

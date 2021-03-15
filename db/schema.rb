@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.string "type"
+    t.text "description"
     t.string "url"
     t.string "spotify_uri"
     t.index ["site_id"], name: "index_contents_on_site_id"
@@ -103,8 +104,16 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
   end
 
   create_table "photos", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: falsemig
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "feedback"
+    t.bigint "content_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["content_id"], name: "index_reviews_on_content_id"
   end
 
   create_table "sites", force: :cascade do |t|
@@ -149,4 +158,5 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "conversations"
   add_foreign_key "participants", "users"
+  add_foreign_key "reviews", "contents"
 end

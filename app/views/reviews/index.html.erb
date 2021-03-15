@@ -1,0 +1,21 @@
+<h1>Content Reviews Page</h1>
+<h2><%= @content.title %></h2>
+
+<h3>
+<%= pluralize @content.reviews.size, "Review" %>
+</h3>
+
+<div id="reviews">
+  <% if @content.reviews.blank? %>
+    Be the first to leave a review for <%= @content.title %>
+  <% else %>
+    <% @content.reviews.each do |review| %>
+      <p><%= review.feedback %></p>
+    <% end %>
+  <% end %>
+</div>
+
+<%= simple_form_for([@content, @review], url: content_reviews_path(@content, content_id: @content.id)) do |f| %>
+  <%= f.input :feedback %>
+  <%= f.button :submit %>
+<% end %>

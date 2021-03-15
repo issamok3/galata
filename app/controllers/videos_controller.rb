@@ -19,7 +19,7 @@ class VideosController < ApplicationController
       render :new
     end
   end
-  
+
   def destroy
    @video = Video.find(params[:id])
    @video.destroy

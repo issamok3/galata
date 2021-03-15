@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= @article.title %></h1>
   <p><%= @article.body %></p>
+  <%= link_to "See reviews", content_reviews_path(@article)  %>
   <p><%= link_to 'Back', site_articles_path(@site) %></p>
 </div>
