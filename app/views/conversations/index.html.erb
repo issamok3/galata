@@ -1,11 +1,27 @@
-<% @nearby_users.each do |user| %>
-  <% if current_user != user%>
-    <div class="card-product">
-      <div class="card-product-infos">
-        <%= link_to user_conversations_path(user), method: :post do %>
-          <%= user.username %>
-        <% end %>
-      </div>
+<% @conversations.each do |conversation| %>
+  <div class="card-product">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{conversation.find_other_participant(current_user).username}", class: "avatar dropdown-toggle" %>
+    <div class="card-product-infos">
+      <%= link_to conversation_path(conversation) do %>
+        <%= conversation.find_other_participant(current_user).username %>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 <% end %>
+<div>
+  <h3>-</h3>
+  <% @nearby_users.each do |user| %>
+    <% if user != current_user %>
+      <% if !user.conversations.present? %>
+        <div class="card-product">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{user.username}", class: "avatar dropdown-toggle" %>
+          <div class="card-product-infos">
+            <%= link_to user_conversations_path(user), method: :post do %>
+              <%= user.username %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
