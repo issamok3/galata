@@ -14,9 +14,9 @@
         <li class="nav-item active">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item btn-group" data-behavior="notifications" >
           <%= link_to  conversations_path, class: "nav-link" do %>
-            <i class="far fa-comments"></i>
+            <i class="far fa-comments"><span data-behavior="unread-count" id="js-notifications" class="badge badge-light"></span></i>
           <% end %>
         </li>
         <li class="nav-item dropdown">

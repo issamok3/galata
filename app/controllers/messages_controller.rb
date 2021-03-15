@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
 
       # Create the notifications
       (@conversation.users.uniq - [current_user]).each do |user|
-        Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @messages)
+        Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @message)
       end
 
       redirect_to conversation_path(@conversation, anchor: "message-#{@message.id}")
