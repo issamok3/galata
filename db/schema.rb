@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.string "type"
+    t.text "description"
     t.string "url"
     t.string "spotify_uri"
     t.index ["site_id"], name: "index_contents_on_site_id"
@@ -103,7 +104,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_153722) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, null: falsemig
     t.datetime "updated_at", precision: 6, null: false
   end
 
