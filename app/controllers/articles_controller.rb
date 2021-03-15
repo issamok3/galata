@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_site, only: [:index, :show]
+  before_action :set_site, except: [:new, :create, :destroy]
 
   def index
     @articles = Article.where(site: @site)
