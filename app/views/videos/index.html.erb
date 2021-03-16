@@ -9,8 +9,10 @@
             <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
             <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
           <% end %>
-          <p><%= link_to "See reviews", content_reviews_path(video)  %></p>
         </div>
+          <p></p>
+          <i class="fas fa-heart"></i>
+          <p><%= link_to "See reviews", content_reviews_path(video)  %></p>
     </div>
   <% end %>
   <%= link_to 'Back', site_path(@site) %>

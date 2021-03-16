@@ -3,9 +3,9 @@ class UsersController < ApplicationController
     @user = current_user
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to settings_path, notice: 'Location was succesfully updated'}
-      else 
-        format.html { redirect_to settings_path, notice: 'Please try again'}
+        format.html { redirect_to settings_path, notice: 'User was succesfully updated' }
+      else
+        format.html { redirect_to settings_path, notice: 'Please try again' }
       end
     end
   end
@@ -13,6 +13,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:location)
+    params.require(:user).permit(:username, :full_name, :age, :location, :locatable)
   end
 end
