@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resource :dashboard, only: :show
   resource :settings, only: :show
+  resource :bucketlist, only: :show
   resources :contents, only: :show do
     resources :reviews, only: [:create, :new, :index]
     resources :likes, only: [:create]
