@@ -10,19 +10,17 @@ Conversation.destroy_all
 
 # USER SEEDS
 
-User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", address: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
-User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", address: 'Dibek Sk. 17-2, 34425 Beyoğlu/İstanbul', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", address: 'Dibek Sk. 20-2, 34425 Beyoğlu/İstanbul', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Euydice', full_name: "Merve Hatipoglu", address: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", address: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'issamok3', full_name: "Issam", address: 'Dibek Sk. 14-2, 34425 Beyoğlu/İstanbul', email: 'example2@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Shahabal', full_name: "Shahabal", address: 'Dibek Sk. 23-2, 34425 Beyoğlu/İstanbul', email: 'example3@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'nikiforov5000', full_name: "Boris", address: 'Dibek Sk. 16-2, 34425 Beyoğlu/İstanbul', email: 'example4p@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'syrashid', full_name: "Sy Rashid", address: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example5@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'tournz', full_name: "Zacharie", address: 'Dibek Sk. 22-2, 34425 Beyoğlu/İstanbul', email: 'example6@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
+User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Dibek Sk. 17-2, 34425 Beyoğlu/İstanbul', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Dibek Sk. 20-2, 34425 Beyoğlu/İstanbul', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'issamok3', full_name: "Issam", location: 'Dibek Sk. 14-2, 34425 Beyoğlu/İstanbul', email: 'example2@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Dibek Sk. 23-2, 34425 Beyoğlu/İstanbul', email: 'example3@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Dibek Sk. 16-2, 34425 Beyoğlu/İstanbul', email: 'example4p@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example5@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'tournz', full_name: "Zacharie", location: 'Dibek Sk. 22-2, 34425 Beyoğlu/İstanbul', email: 'example6@gmail.com', password: 'asdasd', locatable: true )
 
-# User.create(username: 'Lilium', full_name:, address: 'se18py', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd')
-# User.create(username:'Issam',full_nname: , address:, email:, password: )
 
 puts "created #{User.count} new users"
 # SITE SEEDS
@@ -57,7 +55,7 @@ taksim_square = Site.new( name: 'Taksim Square',
                           description: "Taksim Square (Turkish: Taksim Meydanı), situated in Beyoğlu
                           in the European part of Istanbul, Turkey, is a major tourist and leisure district
                           famed for its restaurants, shops, and hotels. It is considered the heart of modern Istanbul,
-                          with the central station of the Istanbul Metro network. Taksim Square is also the location
+                          with the central station of the Istanbul Metro network. Taksim Square is also the address
                           of the Republic Monument (Turkish: Cumhuriyet Anıtı) which was crafted by Pietro Canonica
                           and inaugurated in 1928. The monument commemorates the 5th anniversary of the foundation
                           of the Republic of Turkey in 1923, following the Turkish War of Independence." )
