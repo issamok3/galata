@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @sites = Site.all
-    @users = User.all
+    @users = User.where(locatable: true)
     if params["categories"]
       sites_array = @sites.select { |site| params["categories"].include?(site.category) }
       @sites = Site.where(id: sites_array.map(&:id))
