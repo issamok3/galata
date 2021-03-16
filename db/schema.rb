@@ -152,7 +152,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_145156) do
     t.float "latitude"
     t.float "longitude"
     t.boolean "locatable", default: false
-    t.integer "range"
+    t.integer "range", default: 5
+
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
