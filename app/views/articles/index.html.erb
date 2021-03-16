@@ -6,10 +6,10 @@
         <div class="card-product-infos">
           <%= article.title %>
         </div>
-          <p></p>
-          <i class="fas fa-heart"></i>
       </div>
     <% end %>
+  <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %>
+  <span><%= article.likes.count  %></span>
   <% end %>
   <%= link_to 'Back', site_path(@site) %>
 </div>

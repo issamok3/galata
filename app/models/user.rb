@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :participants, dependent: :destroy
   has_many :conversations, through: :participants
   has_many :conversations, through: :messages
+  has_many :likes, dependent: :destroy
   validates :username, presence: true, uniqueness: true
   validates :full_name, presence: true
   validates :location, presence: true

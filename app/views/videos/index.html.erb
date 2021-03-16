@@ -10,8 +10,8 @@
             <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
           <% end %>
         </div>
-          <p></p>
-          <i class="fas fa-heart"></i>
+        <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %>
+        <span><%= video.likes.count  %></span>
           <p><%= link_to "See reviews", content_reviews_path(video)  %></p>
     </div>
   <% end %>
