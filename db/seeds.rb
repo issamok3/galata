@@ -287,6 +287,72 @@ Site.all.each do |site|
   video.site = site
   video.user = User.all.sample
   video.save!
+
 end
+
+  site = Site.first
+  file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
+  file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
+  file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
+  photo = Photo.new(user: User.all.sample, title: 'Galata')
+  photo.site = site
+  photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Galata')
+  photo.site = site
+  photo.photos.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Galata')
+  photo.site = site
+  photo.photos.attach(io: file3, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+
+  site = Site.fourth
+  file = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_1216x1217x2_b8ivq5.jpg'))
+  file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_2240x3360x2_oi6vog.jpg'))
+  file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_csf_u3t0xv.jpg'))
+  file4 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_efw_qputp9.jpg'))
+  file5 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_efwe_d7hdw2.jpg'))
+  file6 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_lx3qamaqhbqalzp35fszmye2d5yk.jpg'))
+  file7 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_sf_gxohlv.jpg'))
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file3, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file4, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file5, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file6, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
+  photo.site = site
+  photo.photos.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+
+  file = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_Sunset_golden_horn_tl3mf7.jpg'))
+  file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_the_golden_horn_from_r9acxr.jpg'))
+  photo = Photo.new(user: User.all.sample, title: 'Haliç Bridge')
+  photo.site = halic_bridge
+  photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
+  photo = Photo.new(user: User.all.sample, title: 'Haliç Bridge')
+  photo.site = halic_bridge
+  photo.photos.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
+  photo.save!
 
 puts "created #{Content.count} new pieces of content"
