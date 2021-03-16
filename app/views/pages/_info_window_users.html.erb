@@ -1,5 +1,6 @@
 <div class="info-window text-align-center">
-  <%= link_to conversation_path(user) do %>
+  <% conversation = Conversation.where(participants: user )%>
+  <%= link_to conversation_path(conversation.to_a) do %>
     <p><%= "Talk to #{user.username}" %></p>
   <% end %>
 </div>
