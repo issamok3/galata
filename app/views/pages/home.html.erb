@@ -1,7 +1,8 @@
 <div class="container">
   <div id="map"
      style="width: 100%; height: 100vh;"
-     data-markers="<%= @markers.to_json %>"
+     data-markers="<%= @site_markers.to_json %>
+     data-userMarkers="<%= @user_markers.to_json %>
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     <%= link_to  "Nearby sites", sites_path, class: 'btn btn-info' %>
     <%= link_to "Filter", "#", class: 'btn btn-info' %>
