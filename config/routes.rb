@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :videos, only: [:index]
   end
   resource :dashboard, only: :show
+  resource :settings, only: :show
   resources :contents, only: :show do
     resources :reviews, only: [:create, :new, :index]
   end
@@ -19,7 +20,7 @@ Rails.application.routes.draw do
   resources :conversations, only: [:show, :index] do
     resources :messages, only: :create
   end
-  resources :user do
-    resources :conversations, only: :create
+  resources :users do
+    resources :conversations, only: [:create, :update]
   end
 end
