@@ -5,8 +5,10 @@
     <%= form.collection_check_boxes :categories, [['History'], ['Landmark']], :first, :first, include_hidden: false %>
     <%= form.submit "Filter by Category" %>
   <% end %>
+  <% if user_signed_in? %>
   <%= link_to "Find Sites Near Me (Current Address)", root_path(location: true), class: "btn btn-primary" %>
-  <a class="btn btn-info" id="js-geolocate-btn">Find Sites Near Me (Geolocation)</a>
+    <a class="btn btn-info" id="js-geolocate-btn">Find Sites Near Me (Geolocation)</a>
+  <% end %>
 </div>
 <div class="container">
     <div class="loader d-none">

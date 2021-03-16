@@ -9,9 +9,9 @@ class PagesController < ApplicationController
       sites_array = @sites.select { |site| params["categories"].include?(site.category) }
       @sites = Site.where(id: sites_array.map(&:id))
     elsif params["location"]
-      @sites = Site.near(current_user.location, 2)
+      @sites = Site.near(current_user.location, current_user.range)
     elsif params["latitude"] && params["longitude"]
-      @sites = Site.near([params["latitude"].to_f, params["longitude"].to_f], 0.5)
+      @sites = Site.near([params["latitude"].to_f, params["longitude"].to_f], current_user.range)
     end
     @markers = @sites.geocoded.map do |site|
       {

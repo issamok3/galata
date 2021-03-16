@@ -12,17 +12,16 @@ Message.destroy_all
 Conversation.destroy_all
 
 # USER SEEDS
-
-User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
-User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Sultanahmet', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Taksim Square', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobaoglu Sokak, Sisli, Istanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'issamok3', full_name: "Issam", location: 'Dibek Sk. 14-2, 34425 Beyoğlu/İstanbul', email: 'example2@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Dibek Sk. 23-2, 34425 Beyoğlu/İstanbul', email: 'example3@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Dibek Sk. 16-2, 34425 Beyoğlu/İstanbul', email: 'example4p@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example5@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'tournz', full_name: "Zacharie", location: 'Dibek Sk. 22-2, 34425 Beyoğlu/İstanbul', email: 'example6@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true, range: 5 )
+User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Sultanahmet', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: ''Taksim Square', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobanoglu Sokak, Sisli, Istanbul'', email: 'example@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'issamok3', full_name: "Issam", location: 'Sishane', email: 'example2@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Galata Tower', email: 'example3@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Halic Bridge', email: 'example4p@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Besiktas', email: 'example5@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'tournz', full_name: "Zacharie", location: 'Cihangir Stairs', email: 'example6@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 
 
 puts "created #{User.count} new users"
