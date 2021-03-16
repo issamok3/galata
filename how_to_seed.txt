@@ -1,0 +1,29 @@
+FOR ISSAM - INSTRUCTIONS ON HOW TO SET UP THE SEED FILE
+ADD CONTENTS TO SITES
+
+SITES
+- Galata Tower (category: history)
+- Hagia Sophia (category: religious)
+- Haliç Bridge (category: viewpoint) (still need to creat a Site instance for this one)
+
+For each of these sites it would be nice to show several instances of each type of content.
+1. Articles:
+  - we'll do it manually before the presentation
+2. Photos:
+  - using cloudinary
+  - how to:
+    1. Install and configure cloudinary (should already be done, let me know if you're experiencing any issues)
+    2. Retrieve the url of the image you want to attach to a given Photo instance (you can add multiple
+       images to the same intance). This can be the url of any location on the internet, including
+       a cloudinary url (we'll use this for Sevil's and Hendrik's pictures - Hendrik will upload them to cloudinary)
+    3. Write the code according to the following example:
+      file = URI.open(url)
+      photo_instance.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg'
+  3. Audio:
+    - Hendrik will do this seeing as you need a Spotify account to retrieve the necessary url (I think)
+  4. Video:
+    - Retrieve the right url for a given video: on youtube, when viewing a video, click the share button. 
+      You will see a link. Copy this link.
+    - assign the link to the .url attribute of the Video instance you are creating.
+    - Example: Video.create(title: 'Random', description: 'random', url: 'paste the link here')
+

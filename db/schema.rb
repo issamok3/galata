@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_120137) do
+ActiveRecord::Schema.define(version: 2021_03_15_194148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
   create_table "articles", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "body"
   end
 
   create_table "audios", force: :cascade do |t|
@@ -71,9 +70,10 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
     t.string "format"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.string "type"
+    t.text "description"
     t.string "url"
+    t.string "spotify_uri"
     t.index ["site_id"], name: "index_contents_on_site_id"
     t.index ["user_id"], name: "index_contents_on_user_id"
   end
@@ -107,6 +107,14 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "feedback"
+    t.bigint "content_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["content_id"], name: "index_reviews_on_content_id"
+  end
+
   create_table "sites", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -115,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,7 +136,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "full_name"
-    t.string "address"
+    t.string "location"
     t.integer "age"
     t.float "latitude"
     t.float "longitude"
@@ -149,4 +158,5 @@ ActiveRecord::Schema.define(version: 2021_03_12_120137) do
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "conversations"
   add_foreign_key "participants", "users"
+  add_foreign_key "reviews", "contents"
 end

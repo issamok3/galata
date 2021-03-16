@@ -1,0 +1,77 @@
+<div class="container">
+  <table>
+    <thead>
+        <tr>
+          <th colspan="2">My Settings</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>Username</td>
+          <td><%= @user.username %></td>
+        </tr>
+        <tr>
+          <td>Full Name</td>
+          <td><%= @user.full_name %></td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td><%= @user.age %></td>
+        </tr>
+        <tr>
+          <td>Location</td>
+          <td><%= @user.location %></td>
+        </tr>
+        <tr>
+          <td>Share your location?</td>
+          <% if @user.locatable %>
+            <td>Yes</td>
+          <% else %>
+            <td>No</td>
+          <% end %>
+          <td>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Edit</th>
+        </tr>
+        <%= simple_form_for(@user) do |f| %>
+          <tr>
+            <td>Username</td>
+            <td>
+              <%= f.input :username, label: false %>
+            </td>
+          </tr>
+          <tr>
+            <td>Full Name</td>
+            <td>
+              <%= f.input :full_name, label: false %>
+            </td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>
+              <%= f.input :age, label: false %>
+            </td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>
+              <%= f.input :location, label: false %>
+            </td>
+          </tr>
+          <tr>
+            <td>Share your location?</td>
+            <td>
+              <%= f.input :locatable, as: :boolean, label: false %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <%= f.button :submit ,class: "btn btn-success"%>
+            </td>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>

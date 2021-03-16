@@ -1,8 +1,22 @@
-<% @audios.each do |audio| %>
-    <div class="card-product">
-    <i class="fas fa-headphones"></i>
-      <div class="card-product-infos">
-        <%= audio.title %>
+<div class="container">
+  <% @audios.each do |audio| %>
+      <div class="card-product">
+      <i class="fas fa-headphones"></i>
+        <div class="card-product-infos">
+          <p><%= audio.title %></p>
+          <p><%= audio.description %></p>
+          <% if audio.spotify_uri != nil %>
+            <% split_uri = audio.spotify_uri.split(':') %>
+            <% spotify_uri_type = split_uri.second %>
+            <% spotify_uri_id = split_uri.last %>
+            <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+            <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <% end %>
+          <p><%= link_to "See reviews", content_reviews_path(audio) %></p>
+        </div>
+          <p></p>
+          <i class="fas fa-heart"></i>
       </div>
-    </div>
-<% end %>
+  <% end %>
+  <%= link_to 'Back', site_path(@site) %>
+</div>
