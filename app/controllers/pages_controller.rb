@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
     @sites = Site.all
     @users = User.all
-
     if params["categories"]
       sites_array = @sites.select { |site| params["categories"].include?(site.category) }
       @sites = Site.where(id: sites_array.map(&:id))
@@ -13,7 +12,7 @@ class PagesController < ApplicationController
     elsif params["latitude"] && params["longitude"]
       @sites = Site.near([params["latitude"].to_f, params["longitude"].to_f], current_user.range)
     end
-    @markers = @sites.geocoded.map do |site|
+    @site_markers = @sites.geocoded.map do |site|
       {
         lat: site.latitude,
         lng: site.longitude,
