@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 2021_03_15_194148) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "description"
     t.string "type"
-    t.text "description"
     t.string "url"
     t.string "spotify_uri"
     t.index ["site_id"], name: "index_contents_on_site_id"
@@ -104,7 +103,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_194148) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: falsemig
+    t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
@@ -124,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_194148) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
   end
 
   create_table "users", force: :cascade do |t|
