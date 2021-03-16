@@ -6,7 +6,7 @@ class ConversationsController < ApplicationController
 
   def index
     @conversations = Conversation.joins(:participants).where(participants: {user: current_user}).distinct
-    @nearby_users = User.near(current_user.address, 10)
+    @nearby_users = User.near(current_user.location, 10)
   end
 
   def create
