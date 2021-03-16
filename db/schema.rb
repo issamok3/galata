@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_141055) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.string "full_name"
-    t.string "address"
+    t.string "location"
     t.integer "age"
     t.float "latitude"
     t.float "longitude"

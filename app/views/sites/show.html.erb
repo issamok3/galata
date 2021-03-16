@@ -1,7 +1,7 @@
 <div class="container justify-content-center">
   <div>
     <div class="site-info m-2">
-      <img class="w-100"  src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Istanbul_Galata_Tower_%28243781971%29.jpeg" alt="">
+        <%= cl_image_tag @site.photos.first.key, height: 200, width: 300  %>
       <%= link_to 'Back', sites_path, class: 'button' %>
       <h1 class="my-2"><%= @site.name %></h1>
       <p>Address: <%= @site.address %></p>
