@@ -1,11 +1,9 @@
 <div class="container">
-  <%= form_with url: '/', method: :get do |form| %>
-    <%= form.collection_check_boxes :categories, [['History'], ['Landmark'], ['Viewpoint'], ['Museum'], ['Popular'], ['Architechture'], ['Religious']], :first, :first, include_hidden: false %>
-    <%= form.submit "Filter by Category" %>
-  <% end %>
+  <%= render "filter_by_category" %>
   <%= link_to "Find Sites Near Me (Current Address)", root_path(location: true), class: "btn btn-primary" %>
   <a class="btn btn-info" id="js-geolocate-btn">Find Sites Near Me (Geolocation)</a>
 </div>
+
 <div class="container">
     <div class="loader d-none">
       <span></span>
@@ -23,5 +21,4 @@
     <%= link_to "Filter", "#", class: 'btn btn-info' %>
   </div>
 </div>
-
 
