@@ -16,14 +16,14 @@
         </li>
         <li class="nav-item btn-group" data-behavior="notifications" >
           <%= link_to  conversations_path, class: "nav-link" do %>
-            <i class="far fa-comments"><span data-behavior="unread-count" id="js-notifications" class="badge badge-light"></span></i>
+            <i class="far fa-comments"><span data-behavior="unread-count" id="js-notifications" class="badge badge-danger mx-1"></span></i>
           <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My uploads", dashboard_path, class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Edit your Profile", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
