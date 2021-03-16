@@ -11,8 +11,8 @@ const buildMap = (mapElement) => {
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-
     if (marker.image_url) {
+      console.log(marker)
       const element = document.createElement('div');
       element.className = 'user-marker';
       element.style.backgroundImage = `url('${marker.image_url}')`;
@@ -43,7 +43,7 @@ const initMapbox = () => {
   if (mapElement) {
     const map = buildMap(mapElement);
     const site_markers = JSON.parse(mapElement.dataset.markers);
-    const user_markers = JSON.parse(mapElement.dataset.userMarkers);
+    const user_markers = JSON.parse(mapElement.dataset.usermarkers);
     addMarkersToMap(map, site_markers);
     addMarkersToMap(map, user_markers);
     fitMapToMarkers(map, site_markers);

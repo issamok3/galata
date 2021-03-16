@@ -14,9 +14,9 @@ Conversation.destroy_all
 # USER SEEDS
 
 User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true )
-User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Dibek Sk. 17-2, 34425 Beyoğlu/İstanbul', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Dibek Sk. 20-2, 34425 Beyoğlu/İstanbul', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
-User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Dibek Sk. 25-2, 34425 Beyoğlu/İstanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Sultanahmet', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Taksim Square', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true )
+User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobaoglu Sokak, Sisli, Istanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true )
 User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true )
 User.create(username: 'issamok3', full_name: "Issam", location: 'Dibek Sk. 14-2, 34425 Beyoğlu/İstanbul', email: 'example2@gmail.com', password: 'asdasd', locatable: true )
 User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Dibek Sk. 23-2, 34425 Beyoğlu/İstanbul', email: 'example3@gmail.com', password: 'asdasd', locatable: true )
