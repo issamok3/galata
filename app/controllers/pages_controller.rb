@@ -12,12 +12,16 @@ class PagesController < ApplicationController
     elsif params["latitude"] && params["longitude"]
       @sites = Site.near([params["latitude"].to_f, params["longitude"].to_f], current_user.range)
     end
-    @site_markers = @sites.geocoded.map do |site|
-      {
-        lat: site.latitude,
-        lng: site.longitude,
-        infoWindow: render_to_string(partial: "info_window_sites", locals: { site: site })
-      }
+    if @sites.empty?
+      redirect_to root_path, notice: "There are no sites near you"
+    else
+      @site_markers = @sites.geocoded.map do |site|
+        {
+          lat: site.latitude,
+          lng: site.longitude,
+          infoWindow: render_to_string(partial: "info_window_sites", locals: { site: site })
+        }
+      end
     end
     @user_markers = @users.geocoded.map do |user|
       {
