@@ -5,8 +5,9 @@ class ConversationsController < ApplicationController
   end
 
   def index
-    @conversations = Conversation.joins(:participants).where(participants: {user: current_user}).distinct
-    @nearby_users = User.near(current_user.location, 10) # User.all
+    @conversations = Conversation.joins(:participants).where(participants: { user: current_user }).distinct
+    @nearby_users = User.near(current_user.location, 10)
+    # User.all
     # maybe change to only include users within a certain range
   end
 
