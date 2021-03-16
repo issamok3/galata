@@ -96,22 +96,10 @@ file = URI.open('https://images.freeimages.com/images/premium/previews/2744/2744
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 tophane_fountain.save!
 
-halic_bridge = Site.new(name: 'Haliç Bridge',
-                        category: 'View point',
-                        address: 'Haliç Bridge',
-                        description: "Known as the Golden Horn Bridge, is a highway bridge on the Golden Horn (Turkish: Haliç) in Istanbul,
-                        Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries
-                        the O-1 motorway, also known as the Istanbul Inner Beltway. It was constructed between 1971 and 1974, and entered service
-                        on 10 September 1974. The engineering firms which undertook the construction works were IHI Corporation of Japan and Julius
-                        Berger-Bauboag AG of Germany. The bridge has a length of 995 m (3,264 ft), a width of 32 m (105 ft), and a height of 22 m (72 ft)
-                         above sea level.")
-file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Halic_Bridge%2C_Istanbul.jpg/1024px-Halic_Bridge%2C_Istanbul.jpg')
-halic_bridge.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
-halic_bridge.save!
 
 archaeology_museum = Site.new(name: 'Istanbul Archaeology Museums',
                               category: 'History',
-                              address: 'İstanbul Archaeology Museums',
+                              address: 'Istanbul Archaeology Museums',
                               description: "The Istanbul Archaeology Museums (Turkish: İstanbul Arkeoloji Müzeleri) are a group
                               of three archaeological museums located in the Eminönü quarter of Istanbul, Turkey, near Gülhane Park and
                               Topkapı Palace. The Istanbul Archaeology Museums consists of three museums: 1)Archaeological Museum (in the main building)
@@ -122,7 +110,7 @@ archaeology_museum.save!
 
 dolmabahce_palace = Site.new(name: 'Dolmabahçe Palace',
                             category: ["History", "Architechture"],
-                            address: 'Dolmabahçe Caddesi, Besiktas',
+                            address: 'Dolmabahçe Palace',
                             description: "Dolmabahce Palace built in 19 th century is one of the most glamorous palaces in the world.After the foundation
                             of the Turkish Republic in Ankara, Mustafa Kemal Ataturk transferred all government functions to the youthful capital but on his
                              visits to Istanbul Ataturk occupied only a small room at Dolmabahce Palace as his own. He stayed, welcomed his foreign guests and
@@ -133,7 +121,7 @@ dolmabahce_palace.save!
 
 pierre_loti = Site.new(name: "Pierre Loti Hill",
                       category: "Viewpoint",
-                      address: "Gümüşsuyu Balmumcu Sokak 1, Eyüp",
+                      address: "Pierre Loti",
                       description: "Many visitors head to this hilltop cafe after visiting the Eyüp Sultan Mosque. Named for the famous French novelist who is said
                       to have come here for inspiration, it offers views across the Golden Horn and is a popular weekend destination for locals, who relax here over
                       cheap tea, coffee and ice cream. A cable car to the cafe leaves from near the mosque.")
@@ -143,7 +131,7 @@ pierre_loti.save!
 
 camlica_hill = Site.new(name: "Camlica Hill",
                         category: "Viewpoint",
-                        address: "Camlica Hill, Uskudar",
+                        address: "Camlica Hill",
                         description: "Çamlıca Hill (Turkish: Çamlıca Tepesi). Situated on the Asian part of the city at 288 m (945 ft)
                         above sea level, Çamlıca Hill has a panoramic view of the southern part of Bosphorus and the mouth of Golden Horn.
                          There is historical-designed teahouses, cafes and a restaurant inside a public park with monumental trees, flower
@@ -154,7 +142,7 @@ camlica_hill.save!
 
 basilica_cistern = Site.new(name: 'Basilica Cistern',
                             category: ["History", "Architechture"],
-                            address: 'Alemdar, Yerebatan Cd. 1/3, 34110 Fatih/İstanbul, Türkiye',
+                            address: 'Basilica Cistern',
                             description: "The Basilica Cistern, or Cisterna Basilica (Turkish: Yerebatan Sarnıcı), is the largest of several
                             hundred ancient cisterns that lie beneath the city of Istanbul, Turkey. The cistern, located 150 metres (490 ft)
                              southwest of the Hagia Sophia on the historical peninsula of Sarayburnu, was built in the 6th century during the
@@ -165,7 +153,7 @@ basilica_cistern.save!
 
 blue_mosque = Site.new(name: 'Blue Mosque',
                        category: ['Religious', 'Architechture'],
-                       address: 'Sultan Ahmet, Atmeydanı Cd. No:7, 34122 Fatih/İstanbul',
+                       address: 'Blue Mosque',
                        description: "After the Peace of Zsitvatorok and the crushing loss in the 1603–18 war with Persia, Sultan Ahmet I decided
                        o build a large mosque in Istanbul to reassert Ottoman power. It would be the first imperial mosque for more than forty years.
                        While his predecessors had paid for their mosques with the spoils of war, Ahmet I procured funds from the Treasury, because he
@@ -176,7 +164,7 @@ blue_mosque.save!
 
 ortakoy_mosque = Site.new(name: "Ortakoy Mosque",
                           category: ['Religious', 'Architechture'],
-                          address: "Mecidiye, Mecidiye Köprüsü Sk. No:1 D:1, 34347 Beşiktaş/İstanbul",
+                          address: "Ortakoy Mosque",
                           description: "Ortaköy Mosque officially the Büyük Mecidiye Camii (Grand Imperial Mosque of Sultan Abdülmecid) in Beşiktaş, Istanbul,
                           Turkey, is situated at the waterside of the Ortaköy pier square, one of the most popular locations on the Bosphorus. This
                           structure is symbolic of the district of Ortaköy as it has a distinctive view of the Bosphorus Strait of Istanbul and the Bosphorus Bridge.
@@ -208,7 +196,7 @@ karakoy.save!
 
 haydarpasa = Site.new(name: "Haydarpasa Railway Station",
                       category: "Landmark",
-                      address: "Rasimpaşa, 34716 Kadıköy/İstanbul, Türkiye",
+                      address: "Haydarpasa Railway Station",
                       description: "Funded by the German government, this railway station was built in the first decade of the 20th century
                       as the İstanbul stop for a planned Berlin to Baghdad railway service. The station building was designed by German architects,
                       but the lovely tile-adorned station iskele (ferry dock) was designed by noted Turkish architect Vedat Tek.")
@@ -225,9 +213,31 @@ file = URI.open('https://pbs.twimg.com/media/DpbGAh0WsAEmnD5.jpg')
 mihrimah_sultan.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 mihrimah_sultan.save!
 
+rumelian_castle = Site.new(name: "Rumelian Castle",
+                          category: ["History", "Landmark"],
+                          address: "Rumelian Castle",
+                          description: "Rumelihisarı(Rumelian Castle) is a medieval fortress located in Istanbul, Turkey, on a series of hills on the
+                          European banks of the Bosphorus. The fortress also lends its name to the immediate neighborhood around it in the city's Sarıyer district.")
+file = URI.open('https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/129141_Destination_Istanbul_Rumeli%20Fortress_shutterstock_123729073.jpg')
+rumelian_castle.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+rumelian_castle.save!
+
+halic_bridge = Site.new(name: 'Haliç Bridge',
+                        category: 'View point',
+                        address: 'Haliç Bridge',
+                        description: "Known as the Golden Horn Bridge, is a highway bridge on the Golden Horn (Turkish: Haliç) in Istanbul,
+                        Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries
+                        the O-1 motorway, also known as the Istanbul Inner Beltway. It was constructed between 1971 and 1974, and entered service
+                        on 10 September 1974. The engineering firms which undertook the construction works were IHI Corporation of Japan and Julius
+                        Berger-Bauboag AG of Germany. The bridge has a length of 995 m (3,264 ft), a width of 32 m (105 ft), and a height of 22 m (72 ft)
+                         above sea level.")
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Halic_Bridge%2C_Istanbul.jpg/1024px-Halic_Bridge%2C_Istanbul.jpg')
+halic_bridge.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+halic_bridge.save!
+
 museum_of_innocence = Site.new(name: "Museum of Innocence",
                               category: "Museum",
-                              address: "Çukurcuma Caddesi, Dalgıç Çıkmazı, 2, 34425, Beyoğlu, İstanbul, Türkiye",
+                              address: "Museum of Innocence",
                               description: "The painstaking attention to detail in this fascinating museum/piece of conceptual art will certainly provide
                               every amateur psychologist with a theory or two about its creator, Nobel Prize–winning novelist Orhan Pamuk. Vitrines display
                               a quirky collection of objects that evoke the minutiae of İstanbullu life in the mid- to late 20th century, when Pamuk's
@@ -235,6 +245,16 @@ museum_of_innocence = Site.new(name: "Museum of Innocence",
 file = URI.open('https://sizvebiz.blog/wp-content/uploads/2017/07/orhan-pamuk-masumiyet.jpg')
 museum_of_innocence.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 museum_of_innocence.save!
+
+pera_museum = Site.new(name: "Pera Museum",
+                      category: ["Art", "Museum"],
+                      address: "Pera Museum",
+                      description: "The Pera Museum was founded by the Suna and İnan Kıraç Foundation in 2005.The museum is located in the historic building of the
+                      former Bristol Hotel, which was designed by architect Achille Manoussos and built in 1893.[2] It was renovated between 2003 and 2005 by architect
+                      Sinan Genim, who preserved the facade of the building and transformed the interior into a modern and fully equipped museum")
+file = URI.open('https://i2.milimaj.com/i/milliyet/75/0x0/5ed77cff55427e1638064a21.jpg')
+pera_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+pera_museum.save!
 
 
 puts "created #{Site.count} new sites"
