@@ -1,6 +1,6 @@
 <div class="container">
   <%= form_with url: '/', method: :get do |form| %>
-    <%= form.collection_check_boxes :categories, [['History'], ['Landmark']], :first, :first, include_hidden: false %>
+    <%= form.collection_check_boxes :categories, [['History'], ['Landmark'], ['Viewpoint'], ['Museum'], ['Popular'], ['Architechture'], ['Religious']], :first, :first, include_hidden: false %>
     <%= form.submit "Filter by Category" %>
   <% end %>
   <%= link_to "Find Sites Near Me (Current Address)", root_path(location: true), class: "btn btn-primary" %>

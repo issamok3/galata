@@ -96,7 +96,7 @@ tophane_fountain.save!
 
 
 archaeology_museum = Site.new(name: 'Istanbul Archaeology Museums',
-                              category: 'History',
+                              category: 'Museum',
                               address: 'Istanbul Archaeology Museums',
                               description: "The Istanbul Archaeology Museums (Turkish: İstanbul Arkeoloji Müzeleri) are a group
                               of three archaeological museums located in the Eminönü quarter of Istanbul, Turkey, near Gülhane Park and
@@ -107,7 +107,7 @@ archaeology_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: '
 archaeology_museum.save!
 
 dolmabahce_palace = Site.new(name: 'Dolmabahçe Palace',
-                            category: ["History", "Architechture"],
+                            category: "Architechture",
                             address: 'Dolmabahçe Palace',
                             description: "Dolmabahce Palace built in 19 th century is one of the most glamorous palaces in the world.After the foundation
                             of the Turkish Republic in Ankara, Mustafa Kemal Ataturk transferred all government functions to the youthful capital but on his
@@ -139,7 +139,7 @@ camlica_hill.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 camlica_hill.save!
 
 basilica_cistern = Site.new(name: 'Basilica Cistern',
-                            category: ["History", "Architechture"],
+                            category: "Architechture",
                             address: 'Basilica Cistern',
                             description: "The Basilica Cistern, or Cisterna Basilica (Turkish: Yerebatan Sarnıcı), is the largest of several
                             hundred ancient cisterns that lie beneath the city of Istanbul, Turkey. The cistern, located 150 metres (490 ft)
@@ -150,7 +150,7 @@ basilica_cistern.photos.attach(io: file, filename: 'temp.jpg', content_type: 'im
 basilica_cistern.save!
 
 blue_mosque = Site.new(name: 'Blue Mosque',
-                       category: ['Religious', 'Architechture'],
+                       category: 'Religious',
                        address: 'Blue Mosque',
                        description: "After the Peace of Zsitvatorok and the crushing loss in the 1603–18 war with Persia, Sultan Ahmet I decided
                        o build a large mosque in Istanbul to reassert Ottoman power. It would be the first imperial mosque for more than forty years.
@@ -161,7 +161,7 @@ blue_mosque.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.j
 blue_mosque.save!
 
 ortakoy_mosque = Site.new(name: "Ortakoy Mosque",
-                          category: ['Religious', 'Architechture'],
+                          category: 'Architechture',
                           address: "Ortakoy Mosque",
                           description: "Ortaköy Mosque officially the Büyük Mecidiye Camii (Grand Imperial Mosque of Sultan Abdülmecid) in Beşiktaş, Istanbul,
                           Turkey, is situated at the waterside of the Ortaköy pier square, one of the most popular locations on the Bosphorus. This
@@ -203,7 +203,7 @@ haydarpasa.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jp
 haydarpasa.save!
 
 mihrimah_sultan = Site.new(name: "Mihrimah Sultan Mosque",
-                          category: ["Religious", "Architechture"],
+                          category: "Religious",
                           address: "Mihrimah Sultan Mosque",
                           description: "This spectacular, very feminine mosque, designed by the great Ottoman architect Mimar Sinan, is among the finest
                            achievements of the highest period of Ottoman architecture.")
@@ -212,7 +212,7 @@ mihrimah_sultan.photos.attach(io: file, filename: 'temp.jpg', content_type: 'ima
 mihrimah_sultan.save!
 
 rumelian_castle = Site.new(name: "Rumelian Castle",
-                          category: ["History", "Landmark"],
+                          category: "Landmark",
                           address: "Rumeli Hisarı, Yahya Kemal Cd., 34470 Sariyer",
                           description: "Rumelihisarı(Rumelian Castle) is a medieval fortress located in Istanbul, Turkey, on a series of hills on the
                           European banks of the Bosphorus. The fortress also lends its name to the immediate neighborhood around it in the city's Sarıyer district.")
@@ -245,7 +245,7 @@ museum_of_innocence.photos.attach(io: file, filename: 'temp.jpg', content_type: 
 museum_of_innocence.save!
 
 pera_museum = Site.new(name: "Pera Museum",
-                      category: ["Art", "Museum"],
+                      category: "Museum",
                       address: "Pera Museum",
                       description: "The Pera Museum was founded by the Suna and İnan Kıraç Foundation in 2005.The museum is located in the historic building of the
                       former Bristol Hotel, which was designed by architect Achille Manoussos and built in 1893.[2] It was renovated between 2003 and 2005 by architect
