@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @sites = Site.all
+    @users = User.all
+
     if params["categories"]
       sites_array = @sites.select { |site| params["categories"].include?(site.category) }
       @sites = Site.where(id: sites_array.map(&:id))
@@ -15,8 +17,17 @@ class PagesController < ApplicationController
       {
         lat: site.latitude,
         lng: site.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { site: site })
+        infoWindow: render_to_string(partial: "info_window_sites", locals: { site: site })
+      }
+    end
+    @user_markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        image_url: "https://kitt.lewagon.com/placeholder/users/#{user.username}",
+        infoWindow: render_to_string(partial: "info_window_users", locals: { user: user })
       }
     end
   end
 end
+
