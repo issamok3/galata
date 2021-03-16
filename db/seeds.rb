@@ -119,7 +119,7 @@ dolmabahce_palace.save!
 
 pierre_loti = Site.new(name: "Pierre Loti Hill",
                       category: "Viewpoint",
-                      address: "Pierre Loti",
+                      address: "Pierre Loti, Eyup/ Istanbul",
                       description: "Many visitors head to this hilltop cafe after visiting the Eyüp Sultan Mosque. Named for the famous French novelist who is said
                       to have come here for inspiration, it offers views across the Golden Horn and is a popular weekend destination for locals, who relax here over
                       cheap tea, coffee and ice cream. A cable car to the cafe leaves from near the mosque.")
@@ -129,7 +129,7 @@ pierre_loti.save!
 
 camlica_hill = Site.new(name: "Camlica Hill",
                         category: "Viewpoint",
-                        address: "Camlica Hill",
+                        address: "Kısıklı, Çamlıca Tepesi yl, 34692 Uskudar",
                         description: "Çamlıca Hill (Turkish: Çamlıca Tepesi). Situated on the Asian part of the city at 288 m (945 ft)
                         above sea level, Çamlıca Hill has a panoramic view of the southern part of Bosphorus and the mouth of Golden Horn.
                          There is historical-designed teahouses, cafes and a restaurant inside a public park with monumental trees, flower
@@ -213,7 +213,7 @@ mihrimah_sultan.save!
 
 rumelian_castle = Site.new(name: "Rumelian Castle",
                           category: ["History", "Landmark"],
-                          address: "Rumelian Castle",
+                          address: "Rumeli Hisarı, Yahya Kemal Cd., 34470 Sariyer",
                           description: "Rumelihisarı(Rumelian Castle) is a medieval fortress located in Istanbul, Turkey, on a series of hills on the
                           European banks of the Bosphorus. The fortress also lends its name to the immediate neighborhood around it in the city's Sarıyer district.")
 file = URI.open('https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/129141_Destination_Istanbul_Rumeli%20Fortress_shutterstock_123729073.jpg')
