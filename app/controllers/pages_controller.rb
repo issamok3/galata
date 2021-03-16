@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     elsif params["location"]
       @sites = Site.near(current_user.location, 2)
     elsif params["latitude"] && params["longitude"]
-      @sites = Site.near([params["latitude"].to_f, params["longitude"].to_f], 5)
+      @sites = Site.near([params["latitude"].to_f, params["longitude"].to_f], 0.5)
     end
     @markers = @sites.geocoded.map do |site|
       {
