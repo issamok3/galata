@@ -7,6 +7,8 @@
 <% @photos.to_a.slice(1, @photos.length).each do |photo| %>
   <div class="carousel-item">
     <%= cl_image_tag photo.photos.first.key, height: 400, width: 1000, crop: :fill %>
+    <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(photo), method: "post" %>
+    <span><%= photo.likes.count  %></span>
   </div>
 <% end %>
     </div>

@@ -14,8 +14,8 @@
           <% end %>
           <p><%= link_to "See reviews", content_reviews_path(audio) %></p>
         </div>
-          <p></p>
-          <i class="fas fa-heart"></i>
+        <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(audio), method: "post" %>
+        <span><%= audio.likes.count  %></span>
       </div>
   <% end %>
   <%= link_to 'Back', site_path(@site) %>
