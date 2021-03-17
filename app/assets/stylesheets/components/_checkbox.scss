@@ -1,0 +1,15 @@
+input[type="checkbox"] {
+  position: absolute;
+  transform: scale(0);
+}
+
+input[type="checkbox"] + label {
+  cursor: pointer;
+  padding: 4px 8px;
+  border: 1px solid gray;
+  margin: 2px;
+}
+
+input[type="checkbox"]:checked + label {
+  opacity: 0.5;
+}
