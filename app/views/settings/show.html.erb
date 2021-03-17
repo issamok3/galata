@@ -45,7 +45,7 @@
     <%= f.input :age %>
     <%= f.input :location  %>
     <%= f.input :range %>
-    <%= f.input :locatable %>
+    <%= f.input :locatable, input_html: { class: 'custom-control-input' }, label_html: { class: 'custom-control-label' }, wrapper_html: { class: 'custom-control custom-switch' }  %>
     <%= f.submit "Edit" ,class: "btn btn-success" %>
   <% end %>
 </div>
