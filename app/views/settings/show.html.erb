@@ -23,15 +23,18 @@
           <td><%= @user.location %></td>
         </tr>
         <tr>
+          <td>Range of near me filter</td>
+          <td><%= "#{@user.range} km" %></td>
+        </tr>
+        <tr>
           <td>Share your location?</td>
           <% if @user.locatable %>
             <td>Yes</td>
           <% else %>
             <td>No</td>
           <% end %>
-          <td>
-          </td>
         </tr>
+        <tr>
         <tr>
           <th colspan="2">Edit</th>
         </tr>
@@ -58,6 +61,12 @@
             <td>Location</td>
             <td>
               <%= f.input :location, label: false %>
+            </td>
+          </tr>
+          <tr>
+            <td>Range(km)</td>
+            <td>
+              <%= f.input :range, label: false %>
             </td>
           </tr>
           <tr>

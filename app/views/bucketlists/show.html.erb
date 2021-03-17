@@ -1,0 +1,57 @@
+<div class="container">
+  <h1>My Bucket-List</h1>
+  <h2>Articles</h2>
+  <% unless @articles.nil? %>
+    <% @articles.each do |article| %>
+      <%= link_to site_article_path(article.site, article) do %>
+        <div class="card-product">
+          <i class="fas fa-book-open"></i>
+          <div class="card-product-infos">
+            <%= article.title %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  <h2>Photos</h2>
+  <% unless @photos.nil? %>
+    <% @photos.each do |photo| %>
+       <%= cl_image_tag photo.photos.first.key, height: 200, width: 500, crop: :fill %>
+       <%= link_to "#{photo.title}", site_photos_path(photo.site, photo) %>
+    <% end %>
+  <% end %>
+  <h2>Tracks & Podcasts</h2>
+  <% unless @audios.nil? %>
+    <% @audios.each do |audio| %>
+      <div class="card-product">
+        <div class="card-product-infos">
+          <p><%= audio.title %></p>
+          <p><%= audio.description %></p>
+          <% if audio.spotify_uri != nil %>
+            <% split_uri = audio.spotify_uri.split(':') %>
+            <% spotify_uri_type = split_uri.second %>
+            <% spotify_uri_id = split_uri.last %>
+            <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+            <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <h2>Videos</h2>
+  <% unless @videos.nil? %>
+    <% @videos.each do |video| %>
+      <div class="card-video">
+        <div class="card-video-infos my-5">
+          <p><%= video.title%></p>
+          <p><%= video.description %></p>
+          <% if video.url != nil %>
+            <% match_data = video.url.match(/.*\/(.*)/) %>
+            <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+            <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
