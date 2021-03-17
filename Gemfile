@@ -31,6 +31,9 @@ gem 'gemoji'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# For add multiple catagories in on site
+gem 'acts-as-taggable-on', '~> 7.0'
+
 gem 'devise'
 
 gem 'autoprefixer-rails'
