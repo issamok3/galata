@@ -1,10 +1,14 @@
 <div class="container">
+  <%= link_to  "Nearby sites", sites_path, class: 'btn btn-info' %>
+
   <%= form_with url: '/', method: :get do |form| %>
     <%= form.collection_check_boxes :categories, [['History'], ['Landmark']], :first, :first, include_hidden: false %>
     <%= form.submit "Filter by Category" %>
   <% end %>
+  <% if user_signed_in? %>
   <%= link_to "Find Sites Near Me (Current Address)", root_path(location: true), class: "btn btn-primary" %>
-  <a class="btn btn-info" id="js-geolocate-btn">Find Sites Near Me (Geolocation)</a>
+    <a class="btn btn-info" id="js-geolocate-btn">Find Sites Near Me (Geolocation)</a>
+  <% end %>
 </div>
 <div class="container">
     <div class="loader d-none">
@@ -16,11 +20,10 @@
     </div>
 <div class="container">
   <div id="map"
-     style="width: 100%; height: 100vh;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    <%= link_to  "Nearby sites", sites_path, class: 'btn btn-info' %>
-    <%= link_to "Filter", "#", class: 'btn btn-info' %>
+    style="width: 100%; height: 100vh;"
+    data-markers="<%= @site_markers.to_json %>"
+    data-usermarkers="<%= @user_markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
 

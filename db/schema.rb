@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_194148) do
+ActiveRecord::Schema.define(version: 2021_03_16_185835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -83,6 +83,15 @@ ActiveRecord::Schema.define(version: 2021_03_15_194148) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "content_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["content_id"], name: "index_likes_on_content_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "conversation_id", null: false
@@ -152,6 +161,7 @@ ActiveRecord::Schema.define(version: 2021_03_15_194148) do
     t.float "latitude"
     t.float "longitude"
     t.boolean "locatable", default: false
+    t.integer "range"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -165,6 +175,8 @@ ActiveRecord::Schema.define(version: 2021_03_15_194148) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "contents", "sites"
   add_foreign_key "contents", "users"
+  add_foreign_key "likes", "contents"
+  add_foreign_key "likes", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "participants", "conversations"
