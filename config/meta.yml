@@ -2,4 +2,4 @@
 meta_product_name: "Galata"
 meta_title: "Galata - Your digital tour guide"
 meta_description: "Galata is a digital tour guide in your pocket for an immersive; low-budget sightseeing experience"
-meta_image: "galata_banner" # should exist in `app/assets/images/`
+meta_image: "galata_cover_picture" # should exist in `app/assets/images/`
