@@ -5,6 +5,7 @@ class Conversation < ApplicationRecord
   has_many :users, through: :participants
 
   def find_other_participant(current_user)
+    raise
     participants.where.not(user: current_user).first.user
   end
 end

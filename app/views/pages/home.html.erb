@@ -1,12 +1,3 @@
-<div class="container">
-  <%= render "filter_by_category" %>
-  <%= link_to  "Nearby sites", sites_path, class: 'btn btn-info' %>
-
-  <% if user_signed_in? %>
-  <%= link_to "Find Sites Near Me (Current Address)", root_path(location: true), class: "btn btn-primary" %>
-    <a class="btn btn-info" id="js-geolocate-btn">Find Sites Near Me (Geolocation)</a>
-  <% end %>
-</div>
 
 <div class="container">
     <div class="loader d-none">
@@ -16,12 +7,11 @@
       <span></span>
       <span></span>
     </div>
-<div class="container">
   <div id="map"
     style="width: 100%; height: 100vh;"
     data-markers="<%= @site_markers.to_json %>"
     data-usermarkers="<%= @user_markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+    <%= render "filter_by_category" %>
 </div>
-

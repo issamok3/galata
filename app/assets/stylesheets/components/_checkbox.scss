@@ -5,11 +5,23 @@ input[type="checkbox"] {
 
 input[type="checkbox"] + label {
   cursor: pointer;
-  padding: 4px 8px;
-  border: 1px solid gray;
-  margin: 2px;
+  padding: 4px 10px;
+  border: 1px solid $green;
+  margin: 5px;
+  border-radius: 10px;
+  color: $green;
+    &:hover {
+    }
 }
 
 input[type="checkbox"]:checked + label {
-  opacity: 0.5;
+  opacity: 0.7;
+  transition-duration: 0.5s;
 }
+
+.filter-category {
+  position: absolute;
+  z-index: 1;
+  top: 70px;
+}
+
