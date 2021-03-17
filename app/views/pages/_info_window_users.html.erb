@@ -1,17 +1,8 @@
 <div class="info-window text-align-center">
   <% conversation = Conversation.where(participants: user )%>
   <% if conversation.empty? %>
-    <% conversation = Conversation.new %>
-    <% participant1 = Participant.new %>
-    <% participant1.user = user %>
-    <% participant1.conversation = conversation %>
-    <% participant1.save %>
-    <% participant2 = Participant.new %>
-    <% participant2.user = current_user %>
-    <% participant2.conversation = conversation %>
-    <% participant2.save %>
-    <% conversation.save %>
-    <p><%= link_to "Talk to #{user.username}", conversation_path(conversation) %></p>
+
+    <p><%= link_to "Talk to #{user.username}", user_conversations_path(user), method: :post %></p>
   <% else %>
     <p><%= link_to "Talk to #{user.username}", conversation_path(conversation.to_a)%></p>
   <% end %>

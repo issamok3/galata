@@ -182,7 +182,7 @@ balat.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 balat.save!
 
 karakoy = Site.new(name: "Karakoy",
-                  category_list: "Popular",
+                  category: "Popular",
                   address: "Karakoy, Istanbul",
                   description: "Istanbul's hippest neighbourhood. Edging the water on the northern side of İstanbul’s Galata Bridge, Karaköy is an exhilarating and
                   contradictory neighbourhood within Beyoğlu where tradesmen’s workshops share narrow streets with chic cafes and galleries, and where bohemian
@@ -202,7 +202,7 @@ haydarpasa.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jp
 haydarpasa.save!
 
 mihrimah_sultan = Site.new(name: "Mihrimah Sultan Mosque",
-                          category_list: "Religious",
+                          category: "Religious",
                           address: "Mihrimah Sultan Mosque",
                           description: "This spectacular, very feminine mosque, designed by the great Ottoman architect Mimar Sinan, is among the finest
                            achievements of the highest period of Ottoman architecture.")
