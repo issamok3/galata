@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @sites = Site.all
     if params["categories"]
-      sites_array = @sites.select { |site| params["categories"].include?(site.category) }
+      sites_array = @sites.select { |site| params["categories"].include?(site.category_list) }
       @sites = Site.where(id: sites_array.map(&:id))
     elsif params["location"]
       @sites = Site.near(current_user.location, 2)
