@@ -1,18 +1,23 @@
 .nearby-btn {
   position: absolute;
   z-index: 100;
-  top: 120px;
+  top: 130px;
 }
 
 .geo-btn {
   position: absolute;
   z-index: 100;
-  top: 120px;
+  top: 130px;
   right: 20px;
 }
 .address-btn {
   position: absolute;
   z-index: 100;
-  top: 70px;
+  top: 80px;
   right:20px;
+}
+.filter-modal {
+  position: absolute;
+  z-index: 100;
+  top: 80px;
 }
