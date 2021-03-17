@@ -7,7 +7,7 @@
           <% if video.url != nil %>
             <% match_data = video.url.match(/.*\/(.*)/) %>
             <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-            <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+            <iframe src=<%= source_url %> height="300" width="400" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
           <% end %>
         </div>
         <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %>

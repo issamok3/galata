@@ -293,15 +293,18 @@ end
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
   file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
-  video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'Galata Kulesi Belgeseli / Documentary', url: 'https://youtu.be/-d1IPIYI9fs')
+  video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'I attended film school at the University of Mardin with a minor in history. The tower of Galata had inspired me to make this short documentary on my first visit to Istanbul. I hope that you all enjoy it. Please feel free to leave your comments. Let me know what other type of content you would like to see about Galata tower in the future. Thanks for watching', url: 'https://youtu.be/-d1IPIYI9fs')
   video.site = site
   video.user = User.all.sample
   video.save!
-  video = Video.create(title: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', description: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', url: 'https://youtu.be/mLAwnocHaL0')
+  video = Video.create(title: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', description: 'A short magical film about the history of the Galata Tower and the significant symbolisms in it that demonstrate the different historical eras this monument has been through. Please consider supporting my work on patreon.', url: 'https://youtu.be/mLAwnocHaL0')
+  # galata_video = Video.new()
+  # galata_video.user = User.first
+  # galata_video.save
   video.site = site
   video.user = User.all.sample
   video.save!
-  video = Video.create(title: 'Galata Tower Istanbul in Details ( Istanbul Guide )', description: 'Galata Tower Istanbul in Details ( Istanbul Guide )', url: 'https://youtu.be/D0RSppm1oW4')
+  video = Video.create(title: 'Galata Tower Istanbul in Details ( Istanbul Guide )', description: 'Here is your Istanbul Guide, I am Fatih and I make videos about istanbul. I travel around the world and make travel videos all over the world. Istanbul is one of my favorite city in the world. The best place to see in Istanbul is the Galata Tower. In this video I showed you the galata tower in details and what to do in istanbul I will keep showing you.', url: 'https://youtu.be/D0RSppm1oW4')
   video.site = site
   video.user = User.all.sample
   video.save!
@@ -330,11 +333,11 @@ end
   video.site = site
   video.user = User.all.sample
   video.save!
-  video = Video.create(title: 'Why Hagia Sophia is So Important? The Whole History is Explained', description: 'Why Hagia Sophia is So Important? The Whole History is Explained', url: 'https://youtu.be/v6BAPskdJXc')
+  video = Video.create(title: 'Why Hagia Sophia is So Important? The Whole History is Explained', description: 'Hagia Sophia is also known as the great mosque of the Ayasofya and as the church of Hagia Sophia is a place of worship situated in the country of Turkey. This church was initially built in the year of 360 AD. It has been demolished and reconstructed many times in the past and it is one of the best architecture places of worship in Istanbul.', url: 'https://youtu.be/v6BAPskdJXc')
   video.site = site
   video.user = User.all.sample
   video.save!
-  video = Video.create(title: 'Hagia Sophia " The Sacred Wisdom " Director: Hikmet Yaşar Yenigün', description: 'Hagia Sophia " The Sacred Wisdom " Director: Hikmet Yaşar Yenigün', url: 'https://youtu.be/9cdLqE9NBJw')
+  video = Video.create(title: 'Hagia Sophia " The Sacred Wisdom " Director: Hikmet Yaşar Yenigün', description: 'A  wonder of the world dedicated the Sacred Wisdom… One of the most glorius monuments of human history…  Its beauty architectural proportions and harmony making it a singular structure…  For 916 years this monument has been the treasure of the Byzantine Empire and the center of the Orthodox world… And for 418 years it has been the jewel of the Islamic World and the Ottoman… As the most precious and most  important  mosque to the  Ottoman Sultans, it has been subject of countless legends...  Hagia Sophia is considered as the embodiment of “Divine Power” in both Byzantine and Ottoman sources… Today it is a museum that enthralls and deeply affects visitors... Hagia Sophia…The documentary presents Hagia Sophia through elabrote cinematography.', url: 'https://youtu.be/9cdLqE9NBJw')
   video.site = site
   video.user = User.all.sample
   video.save!
@@ -370,15 +373,15 @@ end
   site = halic_bridge
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_Sunset_golden_horn_tl3mf7.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_the_golden_horn_from_r9acxr.jpg'))
-  video = Video.create(title: 'İstanbul Halic Bridge Drone view, Haliç Köprüsü, Muhteşem Mimarisi', description: '', url: 'https://youtu.be/dYpIvT4ykvw')
+  video = Video.create(title: 'İstanbul Halic Bridge Drone view, Haliç Köprüsü, Muhteşem Mimarisi', description: 'Haliç Bridge is a highway bridge on the Golden Horn in Istanbul, Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries the O-1 motorway, also known as the Istanbul Inner Beltway. It was constructed between 1971 and 1974, and entered service on 10 September 1974. The engineering firms which undertook the construction works were IHI Corporation of Japan and Julius Berger-Bauboag AG of Germany. The bridge has a length of 995 m (3,264 ft), a width of 32 m (105 ft), and a height of 22 m (72 ft) above sea level.', url: 'https://youtu.be/dYpIvT4ykvw')
   video.site = site
   video.user = User.all.sample
   video.save!
-  video = Video.create(title: 'Haliç Bridge | Walking Tour | Istanbul 🇹🇷 [4K]', description: '', url: 'https://youtu.be/D-qTiSy_hXU')
+  video = Video.create(title: 'Haliç Bridge | Walking Tour | Istanbul 🇹🇷 [4K]', description: 'It is one of the 4 bridges on Istanbul Golden Horn Bay, one of which has not been opened yet.  It is located between Ayvansaray and Halicioglu.  Haliç Bridge was opened in 1974;  The Atatürk Bridge (Unkapanı Bridge) was opened in 1936 and the Historic Galata Bridge became the present in 1994.  A sister bridge to the Golden Horn Bridge will be the Haliç Metro Crossing Bridge which will be opened on 29 October 2013.  It frightened with the collapse that occurred in 2012 and caused hard time for the residents of Istanbul due to maintenance and repair works.', url: 'https://youtu.be/D-qTiSy_hXU')
   video.site = site
   video.user = User.all.sample
   video.save!
-  video = Video.create(title: 'Haliç Bridge view - İstanbul, Turkey', description: '', url: 'https://youtu.be/fjDnVH97bLI')
+  video = Video.create(title: 'Haliç Bridge view - İstanbul, Turkey', description: 'Peaceful moments at 4:20  in the afternoon with my homies as we were blazing and enjoying this serene view at the golden horn in Istanbul right across from Balat neighborhood.', url: 'https://youtu.be/fjDnVH97bLI')
   video.site = site
   video.user = User.all.sample
   video.save!
