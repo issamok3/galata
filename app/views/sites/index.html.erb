@@ -1,25 +1,32 @@
-<div class="container">
-  <div>
-    <%= link_to 'Show Map', root_path, class: 'btn btn-primary my-3' %>
-    <div class="sites-container">
-      <% @sites.each do |site| %>
-          <div class="card my-3">
-            <div>
-              <% site.photos.each do |photo| %>
-                <%= cl_image_tag photo.key, height: 200, width: 300 %>
-              <% end %>
-              <%= link_to site_path(site) do %>
-                <h4><%= site.name %></h4>
-              <% end %>
-              <p><%= site.description %></p>
-            </div>
-            <div>
-              <span><%= site.contents.where(type: "Audio").count %> </span><i class="fas fa-headphones"></i>
-              <span><%= site.contents.where(type: "Article").count %> </span><i class="fas fa-book-open"></i>
-              <span><%= site.contents.where(type: "Video").count %> </span><i class="fas fa-images"></i>
-            </div>
+<div class="container my-3">
+  <%= link_to 'Show Map', root_path, class: 'btn-green' %>
+    <% @sites.each do |site| %>
+      <div class="card-site-container">
+        <%= cl_image_tag site.photos.first.key, height: 100, width: '100%' %>
+        <div class="card-site-infos">
+          <div>
+            <h4><%= site.name %></h4>
+            <p><%= site.description %></p>
           </div>
-      <% end %>
-    </div>
+          <div class= "card-site-icons">
+            <span>
+              <%= site.contents.where(type: "Article").count %> 
+              <i class="fas fa-book-open"></i>
+            </span>
+              <%= site.contents.where(type: "Photo").count %> 
+              <i class="fas fa-book-open"></i>
+            </span>
+            <span>
+              <%= site.contents.where(type: "Audio").count %>
+              <i class="fas fa-headphones"></i>
+            </span>
+            <span>
+              <%= site.contents.where(type: "Video").count %>
+              <i class="fas fa-images"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
