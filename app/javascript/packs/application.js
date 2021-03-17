@@ -8,9 +8,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { initConversationCable } from '../channels/conversation_channel';
-import { initNotifications } from '../components/init_notifications'
-import { initMarkNotificationAsRead } from '../components/init_mark_as_read'
-
+import { initNotifications } from '../components/init_notifications';
+import { initMarkNotificationAsRead } from '../components/init_mark_as_read';
 
 Rails.start()
 Turbolinks.start()
