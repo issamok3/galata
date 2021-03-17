@@ -1,5 +1,5 @@
 class Site < ApplicationRecord
-  acts_as_taggable_on :category
+  acts_as_taggable_on :category_list
 
   has_many_attached :photos
   geocoded_by :address

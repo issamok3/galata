@@ -29,8 +29,8 @@ puts "created #{User.count} new users"
 # -SITE SEEDS------------------------------------------
 
 galata_tower = Site.new(name: 'Galata Tower',
-                      category_list: 'History',
-                      address_list: ['Galata Tower', 'Popilar'],
+                      category: 'History',
+                      address: 'Galata Tower',
                       description: "The Galata Tower (Turkish: Galata Kulesi),
                       called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese,
                       is a medieval stone tower in the Galata/Karaköy quarter of Istanbul, Turkey,
@@ -42,7 +42,7 @@ galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 galata_tower.save!
 
 topkapi_palace = Site.new(name: 'Topkapi Palace',
-                          category_list: 'History',
+                          category: 'History',
                           address: 'Cankurtaran, 34122 Fatih/İstanbul',
                           description: "The Topkapı Palace (Turkish: Topkapı Sarayı),
                           is a large museum in the east of the Fatih district of Istanbul in Turkey.
@@ -54,7 +54,7 @@ topkapi_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'imag
 topkapi_palace.save!
 
 taksim_square = Site.new( name: 'Taksim Square',
-                          category_list: 'Landmark',
+                          category: 'Landmark',
                           address: 'Taksim Square',
                           description: "Taksim Square (Turkish: Taksim Meydanı), situated in Beyoğlu
                           in the European part of Istanbul, Turkey, is a major tourist and leisure district
@@ -68,7 +68,7 @@ taksim_square.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image
 taksim_square.save!
 
 hagia_sophia = Site.new(name: 'Hagia Sophia',
-                        category_list: ['Religious', 'History'],
+                        category:'Religious',
                         address: 'Hagia Sophia',
                         description: "Hagia Sophia, officially the Hagia Sophia Holy Grand Mosque
                         and formerly the Church of Hagia Sophia, is a Late Antique place of worship
@@ -84,7 +84,7 @@ hagia_sophia.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 hagia_sophia.save!
 
 tophane_fountain = Site.new(name: 'Tophane Fountain',
-                            category_list: 'Architechture',
+                            category: 'Architechture',
                             address: 'Tophane fountain',
                             description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
                             public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
@@ -95,7 +95,7 @@ tophane_fountain.save!
 
 
 archaeology_museum = Site.new(name: 'Istanbul Archaeology Museums',
-                              category_list: 'Museum',
+                              category: 'Museum',
                               address: 'Istanbul Archaeology Museums',
                               description: "The Istanbul Archaeology Museums (Turkish: İstanbul Arkeoloji Müzeleri) are a group
                               of three archaeological museums located in the Eminönü quarter of Istanbul, Turkey, near Gülhane Park and
@@ -106,7 +106,7 @@ archaeology_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: '
 archaeology_museum.save!
 
 dolmabahce_palace = Site.new(name: 'Dolmabahçe Palace',
-                            category_list: ["Architechture", "History"],
+                            category: "Architechture",
                             address: 'Dolmabahçe Palace',
                             description: "Dolmabahce Palace built in 19 th century is one of the most glamorous palaces in the world.After the foundation
                             of the Turkish Republic in Ankara, Mustafa Kemal Ataturk transferred all government functions to the youthful capital but on his
@@ -117,7 +117,7 @@ dolmabahce_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'i
 dolmabahce_palace.save!
 
 pierre_loti = Site.new(name: "Pierre Loti Hill",
-                      category_list: ["Viewpoint", "Popular"],
+                      category: "Viewpoint",
                       address: "Pierre Loti, Eyup/ Istanbul",
                       description: "Many visitors head to this hilltop cafe after visiting the Eyüp Sultan Mosque. Named for the famous French novelist who is said
                       to have come here for inspiration, it offers views across the Golden Horn and is a popular weekend destination for locals, who relax here over
@@ -127,10 +127,10 @@ pierre_loti.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.j
 pierre_loti.save!
 
 camlica_hill = Site.new(name: "Camlica Hill",
-                        category_list: "Viewpoint",
+                        category: "Viewpoint",
                         address: "Kısıklı, Çamlıca Tepesi yl, 34692 Uskudar",
-                        description: "Çamlıca Hill (Turkish: Çamlıca Tepesi). Situated on the Asian part of the city at 288 m (945 ft)
-                        above sea level, Çamlıca Hill has a panoramic view of the southern part of Bosphorus and the mouth of Golden Horn.
+                        description: "Camlıca Hill (Turkish: Camlıca Tepesi). Situated on the Asian part of the city at 288 m (945 ft)
+                        above sea level, Camlıca Hill has a panoramic view of the southern part of Bosphorus and the mouth of Golden Horn.
                          There is historical-designed teahouses, cafes and a restaurant inside a public park with monumental trees, flower
                          gardens and fountains, run by the Metropolitan Municipality.")
 file = URI.open('https://gezimanya.com/sites/default/files/styles/800x600_/public/gezilecek-yerler/2019-11/image-image19.jpeg')
@@ -138,7 +138,7 @@ camlica_hill.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 camlica_hill.save!
 
 basilica_cistern = Site.new(name: 'Basilica Cistern',
-                            category_list: ["Architechture", "History"],
+                            category: "Architechture",
                             address: 'Basilica Cistern',
                             description: "The Basilica Cistern, or Cisterna Basilica (Turkish: Yerebatan Sarnıcı), is the largest of several
                             hundred ancient cisterns that lie beneath the city of Istanbul, Turkey. The cistern, located 150 metres (490 ft)
@@ -149,7 +149,7 @@ basilica_cistern.photos.attach(io: file, filename: 'temp.jpg', content_type: 'im
 basilica_cistern.save!
 
 blue_mosque = Site.new(name: 'Blue Mosque',
-                       category_list: ['Religious', 'History'],
+                       category: 'Religious',
                        address: 'Blue Mosque',
                        description: "After the Peace of Zsitvatorok and the crushing loss in the 1603–18 war with Persia, Sultan Ahmet I decided
                        o build a large mosque in Istanbul to reassert Ottoman power. It would be the first imperial mosque for more than forty years.
@@ -160,7 +160,7 @@ blue_mosque.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.j
 blue_mosque.save!
 
 ortakoy_mosque = Site.new(name: "Ortakoy Mosque",
-                          category_list: ['Architechture', 'Religious'],
+                          category: 'Religious',
                           address: "Ortakoy Mosque",
                           description: "Ortaköy Mosque officially the Büyük Mecidiye Camii (Grand Imperial Mosque of Sultan Abdülmecid) in Beşiktaş, Istanbul,
                           Turkey, is situated at the waterside of the Ortaköy pier square, one of the most popular locations on the Bosphorus. This
@@ -172,7 +172,7 @@ ortakoy_mosque.photos.attach(io: file, filename: 'temp.jpg', content_type: 'imag
 ortakoy_mosque.save!
 
 balat = Site.new(name: "Balat",
-                category_list: "Popular",
+                category: "Popular",
                 address: "Balat, Istanbul",
                 description: "Hidden behind the busy road that runs along the western bank of İstanbul’s Golden Horn, the intertwined neighbourhoods of Fener and
                  Balat have a rich history dating back to Byzantine times. These days, past and present mingle in colourful, maze-like streets, where third-wave
@@ -192,7 +192,7 @@ karakoy.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 karakoy.save!
 
 haydarpasa = Site.new(name: "Haydarpasa Railway Station",
-                      category_list: "Landmark",
+                      category: "Landmark",
                       address: "Haydarpasa Railway Station",
                       description: "Funded by the German government, this railway station was built in the first decade of the 20th century
                       as the İstanbul stop for a planned Berlin to Baghdad railway service. The station building was designed by German architects,
@@ -211,7 +211,7 @@ mihrimah_sultan.photos.attach(io: file, filename: 'temp.jpg', content_type: 'ima
 mihrimah_sultan.save!
 
 rumelian_castle = Site.new(name: "Rumelian Castle",
-                          category_list: ["Landmark", 'History'],
+                          category: "Landmark, History",
                           address: "Rumeli Hisarı, Yahya Kemal Cd., 34470 Sariyer",
                           description: "Rumelihisarı(Rumelian Castle) is a medieval fortress located in Istanbul, Turkey, on a series of hills on the
                           European banks of the Bosphorus. The fortress also lends its name to the immediate neighborhood around it in the city's Sarıyer district.")
@@ -220,7 +220,7 @@ rumelian_castle.photos.attach(io: file, filename: 'temp.jpg', content_type: 'ima
 rumelian_castle.save!
 
 halic_bridge = Site.new(name: 'Haliç Bridge',
-                        category_list: 'View point',
+                        category: 'View point',
                         address: 'Haliç Bridge',
                         description: "Known as the Golden Horn Bridge, is a highway bridge on the Golden Horn (Turkish: Haliç) in Istanbul,
                         Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries
@@ -233,7 +233,7 @@ halic_bridge.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.
 halic_bridge.save!
 
 museum_of_innocence = Site.new(name: "Museum of Innocence",
-                              category_list: "Museum",
+                              category: "Museum",
                               address: "Museum of Innocence",
                               description: "The painstaking attention to detail in this fascinating museum/piece of conceptual art will certainly provide
                               every amateur psychologist with a theory or two about its creator, Nobel Prize–winning novelist Orhan Pamuk. Vitrines display
@@ -244,7 +244,7 @@ museum_of_innocence.photos.attach(io: file, filename: 'temp.jpg', content_type: 
 museum_of_innocence.save!
 
 pera_museum = Site.new(name: "Pera Museum",
-                      category_list: "Museum",
+                      category: "Museum",
                       address: "Pera Museum",
                       description: "The Pera Museum was founded by the Suna and İnan Kıraç Foundation in 2005.The museum is located in the historic building of the
                       former Bristol Hotel, which was designed by architect Achille Manoussos and built in 1893.[2] It was renovated between 2003 and 2005 by architect

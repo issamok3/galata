@@ -5,7 +5,7 @@ class PagesController < ApplicationController
     @sites = Site.all
     @users = User.where(locatable: true)
     if params["categories"]
-      sites_array = @sites.select { |site| params["categories"].include?(site.category_list) }
+      sites_array = @sites.select { |site| params["categories"].include?(site.category) }
       @sites = Site.where(id: sites_array.map(&:id))
     elsif params["location"]
       @sites = Site.near(current_user.location, current_user.range)
