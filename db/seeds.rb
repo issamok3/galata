@@ -282,10 +282,10 @@ Site.all.each do |site|
     audio.save!
   end
   # video seeds
-  video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded")
-  video.site = site
-  video.user = User.all.sample
-  video.save!
+  # video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded")
+  # video.site = site
+  # video.user = User.all.sample
+  # video.save!
 
 end
 
@@ -293,6 +293,18 @@ end
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
   file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
+  video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'Galata Kulesi Belgeseli / Documentary', url: 'https://youtu.be/-d1IPIYI9fs')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+  video = Video.create(title: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', description: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', url: 'https://youtu.be/mLAwnocHaL0')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+  video = Video.create(title: 'Galata Tower Istanbul in Details ( Istanbul Guide )', description: 'Galata Tower Istanbul in Details ( Istanbul Guide )', url: 'https://youtu.be/D0RSppm1oW4')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
   photo = Photo.new(user: User.all.sample, title: 'Galata')
   photo.site = site
   photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -314,6 +326,18 @@ end
   file5 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_efwe_d7hdw2.jpg'))
   file6 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_lx3qamaqhbqalzp35fszmye2d5yk.jpg'))
   file7 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_sf_gxohlv.jpg'))
+  video = Video.create(title: 'Hagia Sophia Museum Turkey İstanbul documentary', description: 'Hagia Sophia Museum Turkey İstanbul documentary', url: 'https://youtu.be/Y2WNUWDoAM4')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+  video = Video.create(title: 'Why Hagia Sophia is So Important? The Whole History is Explained', description: 'Why Hagia Sophia is So Important? The Whole History is Explained', url: 'https://youtu.be/v6BAPskdJXc')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+  video = Video.create(title: 'Hagia Sophia " The Sacred Wisdom " Director: Hikmet Yaşar Yenigün', description: 'Hagia Sophia " The Sacred Wisdom " Director: Hikmet Yaşar Yenigün', url: 'https://youtu.be/9cdLqE9NBJw')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
   photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
   photo.site = site
   photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -343,8 +367,21 @@ end
   photo.photos.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
   photo.save!
 
+  site = halic_bridge
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_Sunset_golden_horn_tl3mf7.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_the_golden_horn_from_r9acxr.jpg'))
+  video = Video.create(title: 'İstanbul Halic Bridge Drone view, Haliç Köprüsü, Muhteşem Mimarisi', description: '', url: 'https://youtu.be/dYpIvT4ykvw')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+  video = Video.create(title: 'Haliç Bridge | Walking Tour | Istanbul 🇹🇷 [4K]', description: '', url: 'https://youtu.be/D-qTiSy_hXU')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+  video = Video.create(title: 'Haliç Bridge view - İstanbul, Turkey', description: '', url: 'https://youtu.be/fjDnVH97bLI')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
   photo = Photo.new(user: User.all.sample, title: 'Haliç Bridge')
   photo.site = halic_bridge
   photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
