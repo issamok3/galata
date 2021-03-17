@@ -43,3 +43,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+.card-site-infos {
+  display: flex;
+  justify-content: space-between;
+}
+.card-site-icons {
+  // display: flex;
+  // flex-direction: row;
+}

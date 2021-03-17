@@ -31,12 +31,7 @@ puts "created #{User.count} new users"
 galata_tower = Site.new(name: 'Galata Tower',
                       category: 'History',
                       address: 'Galata Tower',
-                      description: "The Galata Tower (Turkish: Galata Kulesi),
-                      called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese,
-                      is a medieval stone tower in the Galata/Karaköy quarter of Istanbul, Turkey,
-                      just to the north of the Golden Horn's junction with the Bosphorus.
-                      It is a high, cone-capped cylinder that dominates the skyline and offers a
-                      panoramic vista of Istanbul's historic peninsula and its environs." )
+                      description: "The Galata Tower, called Christea Turris (the 'Tower of Christ' in Latin) by the Genoese, is a medieval stone tower in the Galata/Karaköy quarter of Istanbul, Turkey,just to the north of the Golden Horn's junction with the Bosphorus.")
 file = URI.open('https://theistanbulinsider.com/wp-content/uploads/2019/12/galata-tower-istanbul-night.jpg')
 galata_tower.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 galata_tower.save!
@@ -44,10 +39,7 @@ galata_tower.save!
 topkapi_palace = Site.new(name: 'Topkapi Palace',
                           category: 'History',
                           address: 'Cankurtaran, 34122 Fatih/İstanbul',
-                          description: "The Topkapı Palace (Turkish: Topkapı Sarayı),
-                          is a large museum in the east of the Fatih district of Istanbul in Turkey.
-                          In the 15th and 16th centuries it served as the main residence and
-                          administrative headquarters of the Ottoman sultans." )
+                          description: "The Topkapı Palace is a large museum in the east of the Fatih district of Istanbul in Turkey. In the 15th and 16th centuries it served as the main residence and administrative headquarters of the Ottoman sultans." )
 
 file = URI.open('https://tourscanner.com/blog/wp-content/uploads/2019/05/Topkapi-Palace-tickets.jpg')
 topkapi_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
@@ -57,12 +49,7 @@ taksim_square = Site.new( name: 'Taksim Square',
                           category: 'Landmark',
                           address: 'Taksim Square',
                           description: "Taksim Square (Turkish: Taksim Meydanı), situated in Beyoğlu
-                          in the European part of Istanbul, Turkey, is a major tourist and leisure district
-                          famed for its restaurants, shops, and hotels. It is considered the heart of modern Istanbul,
-                          with the central station of the Istanbul Metro network. Taksim Square is also the address
-                          of the Republic Monument (Turkish: Cumhuriyet Anıtı) which was crafted by Pietro Canonica
-                          and inaugurated in 1928. The monument commemorates the 5th anniversary of the foundation
-                          of the Republic of Turkey in 1923, following the Turkish War of Independence." )
+                          in the European part of Istanbul, Turkey, is a major tourist and leisure district famed for its restaurants, shops, and hotels. It is considered the heart of modern Istanbul, with the central station of the Istanbul Metro network.")
 file = URI.open('https://massispost.com/wp-content/uploads/2014/10/Taksim_Square-Istanbul.jpg')
 taksim_square.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 taksim_square.save!
@@ -86,9 +73,9 @@ hagia_sophia.save!
 tophane_fountain = Site.new(name: 'Tophane Fountain',
                             category: 'Architechture',
                             address: 'Tophane fountain',
-                            description: "Tophane Fountain (Turkish: Tophane Çeşmesi) is an 18th-century
+                            description: "Tophane Fountain is an 18th-century
                             public water fountain built by Ottoman sultan Mahmud I in the Ottoman rococo architecture
-                            and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul, Turkey.")
+                            and situated in the square of Tophane neighborhood in Beyoğlu district of Istanbul.")
 file = URI.open('https://images.freeimages.com/images/premium/previews/2744/27441238-tophane-fountain-in-istanbul-turkey.jpg')
 tophane_fountain.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 tophane_fountain.save!
@@ -99,8 +86,7 @@ archaeology_museum = Site.new(name: 'Istanbul Archaeology Museums',
                               address: 'Istanbul Archaeology Museums',
                               description: "The Istanbul Archaeology Museums (Turkish: İstanbul Arkeoloji Müzeleri) are a group
                               of three archaeological museums located in the Eminönü quarter of Istanbul, Turkey, near Gülhane Park and
-                              Topkapı Palace. The Istanbul Archaeology Museums consists of three museums: 1)Archaeological Museum (in the main building)
-                               2) Museum of the Ancient Orient 3) Museum of Islamic Art ")
+                              Topkapı Palace.")
 file = URI.open('https://i.redd.it/jg4xy0sai8541.jpg')
 archaeology_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 archaeology_museum.save!
@@ -108,10 +94,9 @@ archaeology_museum.save!
 dolmabahce_palace = Site.new(name: 'Dolmabahçe Palace',
                             category: "Architechture",
                             address: 'Dolmabahçe Palace',
-                            description: "Dolmabahce Palace built in 19 th century is one of the most glamorous palaces in the world.After the foundation
+                            description: "Dolmabahce Palace built in 19 th century is one of the most glamorous palaces in the world. After the foundation
                             of the Turkish Republic in Ankara, Mustafa Kemal Ataturk transferred all government functions to the youthful capital but on his
-                             visits to Istanbul Ataturk occupied only a small room at Dolmabahce Palace as his own. He stayed, welcomed his foreign guests and
-                              made a practical center for national, historical and language congress and for international conferences.")
+                            visits to Istanbul Ataturk occupied only a small room at Dolmabahce Palace as his own.")
 file = URI.open('https://www.birdakikadageziyorum.com/wp-content/uploads/2018/01/dolmabah%C3%A7e-saray%C4%B1.jpg')
 dolmabahce_palace.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 dolmabahce_palace.save!
