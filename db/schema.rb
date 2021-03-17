@@ -70,8 +70,8 @@ ActiveRecord::Schema.define(version: 2021_03_16_185835) do
     t.string "format"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
     t.string "type"
+    t.text "description"
     t.string "url"
     t.string "spotify_uri"
     t.index ["site_id"], name: "index_contents_on_site_id"
@@ -161,7 +161,7 @@ ActiveRecord::Schema.define(version: 2021_03_16_185835) do
     t.float "latitude"
     t.float "longitude"
     t.boolean "locatable", default: false
-    t.integer "range"
+    t.integer "range", default: 5
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
