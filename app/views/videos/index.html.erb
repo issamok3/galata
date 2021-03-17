@@ -2,13 +2,16 @@
   <% @videos.each do |video| %>
     <div class="card-video">
         <div class="card-video-infos my-5">
-          <p><%= video.title%></p>
-          <p><%= video.description %></p>
           <% if video.url != nil %>
             <% match_data = video.url.match(/.*\/(.*)/) %>
             <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-            <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+            <iframe src=<%= source_url %> height="300" width="400" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
           <% end %>
+          <div>
+            <p><strong><%= video.title%></strong></p>
+            <p><%= video.description %></p>
+            <p><strong>Contributor:</strong> -<%= video.user.username %></p>
+          </div>
         </div>
         <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %>
         <span><%= video.likes.count  %></span>
@@ -17,4 +20,3 @@
   <% end %>
   <%= link_to 'Back', site_path(@site) %>
 </div>
-
