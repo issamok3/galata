@@ -1,6 +1,6 @@
 <div class="filter-category">
-    <%= form_with url: '/', method: :get do |form| %>
+    <%= form_with url: '/', method: :get, class: "filter-form" do |form| %>
     <%= form.collection_check_boxes :categories, [['History'], ['Landmark'], ['Viewpoint'], ['Museum'], ['Popular'], ['Architechture'], ['Religious']], :first, :first, include_hidden: false %>
-    <%= form.submit "Filter by Category", class: "btn-orange" %>
+    <%= form.submit "Filter by Category", class: "btn-orange filter-by-category" %>
   <% end %>
 </div>
