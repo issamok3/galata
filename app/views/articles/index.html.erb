@@ -1,7 +1,9 @@
 <div class="container navbar-margin">
   <% @articles.each do |article| %>
       <div class="card-article">
-        <%= cl_image_tag @site.photos.first.key %>
+      <%= link_to site_article_path(article.site, article) do %>
+        <%= cl_image_tag @site.photos.first.key, height: '100%', width: 120 %>
+      <% end %>
         <div class="card-article-infos"
           <h4><strong><%= article.title %></strong></h4>
           <p><%= article.description %></p>
