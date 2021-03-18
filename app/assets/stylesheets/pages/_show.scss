@@ -1,5 +1,36 @@
+.content-icon{
+  color: $green;
+  font-size: 70px;
+  &:hover {
+    font-size: 80px;
+    text-decoration: none;
+    color: $green;
+    transition: all 0.5s ease-in-out
+  }
+}
+.category-card {
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background: #F8F2E9;
+}
+
 .site-info {
-  .description {
+  h3{
+    color: $green;
     text-align: justify;
+    }
+  }
+
+.description {
+  text-align: left;
+}
+
+.address{
+  text-align:center;
+}
+.banner{
+  img{
+    object-fit: cover;
   }
 }
