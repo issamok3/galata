@@ -30,13 +30,6 @@
     margin-bottom: 0;
   }
 }
-.conversation-show{
-  h3{
-    color: $green;
-    font-size: 24px;
-    text-align: center;
-  }
-}
 
 .conv-info{
   text-align: center;
@@ -45,4 +38,8 @@
     color: $green;
     font-size: 24px;
   }
+}
+
+.conversation-margin{
+  margin-top: 70px;
 }
