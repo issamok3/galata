@@ -1,10 +1,13 @@
 <div class="container">
   <div class="message-container" id="message-<%= message.id %>">
     <i class="author">
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{message.user.username}", class: "avatar dropdown-toggle" %>
-      <span><%= message.user.username %></span>
-      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-    </i>
-    <p><%= emojify message.content %></p>
+    <div class="message-card">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{message.user.username}", class: "avatar avatar-message" %>
+      <span><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
+      <p>
+        <%= emojify message.content %>
+      </p>
+      </i>
+    </div>
   </div>
 </div>

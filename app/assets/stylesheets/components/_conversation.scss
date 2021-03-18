@@ -22,8 +22,24 @@
 #new_message {
   padding: 1rem;
   border-top: 1px solid $gray-200;
+  position: fixed;
+  width: 90vw;
+  bottom: 80px;
 
   .form-group {
     margin-bottom: 0;
   }
+}
+
+.conv-info{
+  text-align: center;
+  border-bottom: 1px solid $green;
+  p{
+    color: $green;
+    font-size: 24px;
+  }
+}
+
+.conversation-margin{
+  margin-top: 70px;
 }
