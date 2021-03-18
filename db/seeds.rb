@@ -277,7 +277,7 @@ puts "created #{Site.count} new sites"
 
   #audios
   Audio.create(user: User.second, site: site, title: 'Memo Aslan - Galata Kulesi', description: 'This famous Turkish song is an ode to the Galata Tower, a building that every inhabitant of Istanbul feels passionate about. I hope you enjoy it.', spotify_uri: 'spotify:track:28LLqIH6gKmbKDWxjlqmMX')
-  Audio.create(user: User.third, site: site, title: 'Ahmet Kaya - Kum Gibi', description: 'One of the greatest Turkish songs of all time, this song will get you into the right mood while visiting one of the iconic buildings of Turkey', spotify_uri: 'spotify:track:28LLqIH6gKmbKDWxjlqmMX')
+  Audio.create(user: User.third, site: site, title: 'Ahmet Kaya - Kum Gibi', description: 'One of the greatest Turkish songs of all time, this song will get you into the right mood while visiting one of the iconic buildings of Turkey', spotify_uri: 'spotify:track:1vmzfiQsd8PHgt8Kgp7TgR')
   Audio.create(user: User.fourth, site: site, title: 'Ümit Yasar Oguzcan - Galata Kulesi', description: 'A sad story of love, life and death involving the Galata Tower', spotify_uri: 'spotify:episode:10x7pYix68IkHu2S77ttc6')
 
   # HAGIA SOPHIA
