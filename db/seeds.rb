@@ -1,4 +1,6 @@
 require 'open-uri'
+require 'faker'
+require 'csv'
 
 #CLEANING UP DATABASE
 User.destroy_all
@@ -18,7 +20,7 @@ User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Taksi
 User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobanoglu Sokak, Sisli, Istanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'issamok3', full_name: "Issam", location: 'Sishane', email: 'example2@gmail.com', password: 'asdasd', locatable: true, range: 5 )
-User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Galata Tower', email: 'example3@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'Bruh-what', full_name: "Shahabal", location: 'Galata Tower', email: 'example3@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Halic Bridge', email: 'example4p@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Besiktas', email: 'example5@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'tournz', full_name: "Zacharie", location: 'Cihangir Stairs', email: 'example6@gmail.com', password: 'asdasd', locatable: true, range: 5 )
@@ -28,6 +30,7 @@ puts "created #{User.count} new users"
 
 ## SITE SEEDS------------------------------------------
 
+# Istanbul sites
 galata_tower = Site.new(name: 'Galata Tower',
                       category: 'History',
                       address: 'Galata Tower',
@@ -238,7 +241,52 @@ file = URI.open('https://i2.milimaj.com/i/milliyet/75/0x0/5ed77cff55427e1638064a
 pera_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 pera_museum.save!
 
+# Faker sites outside of Turkey
+# read out csv file of city names
+csv_options = { col_sep: ',', headers: :first_row }
+city_names = []
+CSV.foreach(Rails.root.join('lib/cities.csv'), csv_options) do |row|
+  city_names << row[0]
+end
+
+30.times do
+  Site.create(name: Faker::Mountain.name, address: city_names.sample, description: Faker::Lorem.sentence)
+end
+
 puts "created #{Site.count} new sites"
+# CONTENT SEEDS
+# Without actual content or thumbnail images for now
+# Should also add description to each piece of content
+
+# type = %w[article audio photo video]
+# titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
+# titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
+# Site.all.where do |site|
+#   # text seeds
+#   titles_text.each do |title|
+#     text = Article.new(title: "#{title} #{site.name}" )
+#     text.site = site
+#     text.user = User.all.sample
+#     text.save!
+#   end
+#   # audio seeds
+#   audio = Audio.new(title: "Ten minute audioguide for #{site.name}" )
+#   audio.site = site
+#   audio.user= User.all.sample
+#   audio.save!
+#   titles_audio.each do |title|
+#     audio = Audio.new(title: title )
+#     audio.site = site
+#     audio.user = User.all.sample
+#     audio.save!
+  # end
+  # video seeds
+  # video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded")
+  # video.site = site
+  # video.user = User.all.sample
+  # video.save!
+
+# end
 
 ## CONTENT SEEDS-----------------------------------------------------------------------------------------------------------------
 # GALATA TOWER
@@ -246,6 +294,9 @@ puts "created #{Site.count} new sites"
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
   file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
+
+
+  # videos
   video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'I attended film school at the University of Mardin with a minor in history. The tower of Galata had inspired me to make this short documentary on my first visit to Istanbul. I hope that you all enjoy it.', url: 'https://youtu.be/-d1IPIYI9fs')
   video.site = site
   video.user = User.second
@@ -340,7 +391,7 @@ puts "created #{Site.count} new sites"
   Audio.create(user: User.second, site: site, title: 'Beautiful Islamic Prayer Call', description: 'Experience the atmosphere of the prayer call by listening to this beautiful recording', spotify_uri: 'spotify:track:3WHXlVfA2lKpe3EQLPn0q3')
   Audio.create(user: User.third, site: site, title: 'Irfan - Hagia Sophia', description: 'Inspiring Ottaman-style music to get into the right mood when visiting the historic, religious site of Hagia Sophia', spotify_uri: 'spotify:track:05MTZxYxNYDM5kQsiT5pdX')
   Audio.create(user: User.last, site: site, title: 'Everything Everywhere Podcast: The Hagia Sophia', description: 'Listen to this episode of the renowned Everything Everywhere podcast on the Hagia Sophia and learn more about this amazing piece of living history', spotify_uri: 'spotify:episode:2j3Uf9IG8OijNwXFrJAdkQ')
-  
+
   # HALIC BRIDGE
   site = halic_bridge
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_Sunset_golden_horn_tl3mf7.jpg'))
