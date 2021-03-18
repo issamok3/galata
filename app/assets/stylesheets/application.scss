@@ -14,11 +14,7 @@
 @import "pages/index";
 
 body {
-  p {
-    font-size: 10px;
-    margin-bottom: 0;
-  }
-  h4 {
-    font-size: 15px; 
-  }
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }

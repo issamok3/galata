@@ -1,0 +1,53 @@
+.card-conversation {
+  overflow: hidden;
+  height: 70px;
+  background: #F8F2EC;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+.card-conversation i {
+  object-fit: cover;
+  width: 20%;
+  text-align: center;
+}
+
+.card-conversation h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-conversation p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-conversation .card-product-infos {
+  padding: 16px;
+}
+
+.conv-avatar{
+
+}
+
+.card-conversation-infos {
+  text-align: center;
+  a{
+    color: $green;
+    font-size: 20px;
+    margin-left: 20px;
+    font-weight: bolder;
+    &:hover{
+      color:$orange;
+      text-decoration: none;
+      transition: ease 0.5s;
+    }
+  }
+}
