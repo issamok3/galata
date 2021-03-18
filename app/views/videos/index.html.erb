@@ -1,21 +1,26 @@
-<div class="container navbar-margin">
+<div class="videos-container navbar-margin">
   <% @videos.each do |video| %>
     <div class="card-video">
-        <div class="card-video-infos my-5">
-          <% if video.url != nil %>
-            <% match_data = video.url.match(/.*\/(.*)/) %>
-            <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-            <iframe src=<%= source_url %> height="300" width="400" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
-          <% end %>
+      <% if video.url != nil %>
+        <% match_data = video.url.match(/.*\/(.*)/) %>
+        <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+        <iframe src=<%= source_url %> height="200" width="100%" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+      <% end %>
+      <div class="card-video-infos">
+        <div class="card-video-description">
           <div>
             <p><strong><%= video.title%></strong></p>
             <p><%= video.description %></p>
-            <p><strong>Contributor:</strong> -<%= video.user.username %></p>
           </div>
         </div>
-        <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %>
-        <span><%= video.likes.count  %></span>
-          <p><%= link_to "See reviews", content_reviews_path(video)  %></p>
+        <div class= "card-video-infos-extra">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{video.user.username}", class:'card-video-avatar'%>
+          <div class="card-video-likes">
+            <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %></span>
+            <span><%= video.likes.count  %></span>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
   <%= link_to site_path(@site), class: 'button' do %>
