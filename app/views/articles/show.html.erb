@@ -2,5 +2,7 @@
   <h1><%= @article.title %></h1>
   <p><%= @article.body %></p>
   <%= link_to "See reviews", content_reviews_path(@article)  %>
-  <p><%= link_to 'Back', site_articles_path(@site) %></p>
+  <%= link_to site_articles_path(@site), class: 'button' do %>
+    <i class="fas fa-chevron-left back-btn"></i>
+  <% end %>
 </div>
