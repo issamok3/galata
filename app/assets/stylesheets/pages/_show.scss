@@ -16,14 +16,17 @@
 }
 
 .site-info {
+  margin: 1rem;
   h3{
     color: $green;
     text-align: center;
+    margin-top:20px;
+    font-size: 24px;
     }
   }
 
 .description {
-  text-align: left;
+  text-align: justify;
 }
 
 .address{

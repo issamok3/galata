@@ -1,10 +1,9 @@
-<div class="container navbar-margin">
-  <div><%= cl_image_tag @site.photos.first.key %></div>
-  <h1><%= @article.title %></h1>
-  <p><strong><%= @article.description %></strong></p>
+<span class="banner">
+  <%= cl_image_tag @site.photos.first.key, height: 200, width: '100%' %>
+</span>
+<div class="container my-3">
+  <h3><%= @article.title %></h3>
   <p><%= @article.body %></p>
-  <p><strong>Contributor:</strong> -<%= @article.user.username %></p>
-  <%= link_to "See reviews", content_reviews_path(@article)  %>
   <%= link_to site_articles_path(@site), class: 'button' do %>
     <i class="fas fa-chevron-left back-btn"></i>
   <% end %>

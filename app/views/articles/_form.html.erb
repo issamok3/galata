@@ -1,4 +1,4 @@
-<div>
+<div class="container m-2">
   <%= simple_form_for(@article) do |f| %>
     <%= f.association :site, label: 'Select a site' %>
     <%= f.input :title %>
@@ -7,3 +7,4 @@
     <%= f.button :submit, class: 'btn-green' %>
   <% end %>
 </div>
+
