@@ -1,32 +1,47 @@
-<div class="container navbar-margin">
-  <h1> My Uploads</h1>
-  <%= link_to "Add a new article", new_article_path, class: 'btn btn-primary'  %>
-  <%= link_to "Add new photos", new_photo_path, class: 'btn btn-primary'  %>
-  <%= link_to "Add new audio", new_audio_path, class: 'btn btn-primary'  %>
-  <%= link_to "Add a new video", new_video_path, class: 'btn btn-primary'  %>
+<div class="container navbar-margin dashboard-pg">
+  <h2> My Uploads</h2>
+  <div class="add-content">
+    <h3>Add a new:</h3>
+    <div class="d-flex btns-dashboard">
+      <%= link_to new_article_path, class: 'btn-dashboard m-2 text-align-center' do  %>
+        <h4><i class="fas fa-book-open"></i></h4>
+      <% end %>
+      <%= link_to new_photo_path, class: 'btn-dashboard m-2' do %>
+        <h4><i class="fas fa-images"></i></h4>
+      <% end %>
+      <%= link_to new_audio_path, class: 'btn-dashboard m-2' do %>
+        <h4><i class="fas fa-headphones"></i></h4>
+      <% end %>
+      <%= link_to new_video_path, class: 'btn-dashboard m-2' do %>
+        <h4><i class="fas fa-play-circle"></i></h4>
+      <% end %>
+    </div>
+  </div>
   <% @my_uploads.each do |content| %>
     <div class="card-uploads">
-      <%= image_tag "https://source.unsplash.com/random" %>
       <div class="card-uploads-infos">
         <h2><%= "#{content.title}" %></h2>
         <p><%= "Description:#{content.description}" %></p>
-        <p><%= "Format: #{content.type}" %></p>
-        <% if content.type == 'Audio' && content.spotify_uri != nil %>
-          <% split_uri = content.spotify_uri.split(':') %>
-          <% spotify_uri_type = split_uri.second %>
-          <% spotify_uri_id = split_uri.last %>
-          <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
-          <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-        <% elsif content.type == 'Video' && content.url != nil %>
-          <% match_data = content.url.match(/.*\/(.*)/) %>
-          <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-          <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
-          <%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-        <% elsif content.type == 'Article' %>
-          <%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-        <% elsif content.type == 'Audio' %>
-          <%= link_to "X", audio_path(content), method: :delete, data: {confirm: "Are you sure?"} %>
-        <% end %>
+        <div class="upload-type justify-content-center">
+          <% if content.type == 'Audio' && content.spotify_uri != nil %>
+            <% split_uri = content.spotify_uri.split(':') %>
+            <% spotify_uri_type = split_uri.second %>
+            <% spotify_uri_id = split_uri.last %>
+            <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+            <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+          <% elsif content.type == 'Video' && content.url != nil %>
+            <% match_data = content.url.match(/.*\/(.*)/) %>
+            <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+            <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+            <p><%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %></p>
+          <% elsif content.type == 'Article' %>
+            <p><%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %></p>
+          <% elsif content.type == 'Audio' %>
+            <p><%= link_to "X", audio_path(content), method: :delete, data: {confirm: "Are you sure?"} %></p>
+          <% elsif content.type == 'Photo' %>
+            <p><%= link_to "X", photo_path(content), method: :delete, data: {confirm: "Are you sure?"} %><p>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
