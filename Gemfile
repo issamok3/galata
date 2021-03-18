@@ -74,3 +74,6 @@ gem 'geocoder'
 
 # adds functionality for user-side picture upload
 gem 'cloudinary', '~> 1.16.0'
+
+# seed sites around the world
+gem 'faker'
