@@ -47,8 +47,17 @@
 .card-site-infos {
   display: flex;
   justify-content: space-between;
+ .site-infos-text {
+  padding: 10px 5px;
+  width: 90%;
+ }
 }
 .card-site-icons {
-  // display: flex;
-  // flex-direction: row;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 7px;
+  div {
+    display: flex;
+    font-size: 10px;
+  }
 }

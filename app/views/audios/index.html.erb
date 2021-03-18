@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container navbar-margin">
   <% @audios.each do |audio| %>
       <div class="card-product">
       <i class="fas fa-headphones"></i>
@@ -18,5 +18,7 @@
         <span><%= audio.likes.count  %></span>
       </div>
   <% end %>
-  <%= link_to 'Back', site_path(@site) %>
+  <%= link_to site_path(@site), class: 'button' do %>
+    <i class="fas fa-chevron-left back-btn"></i>
+  <% end %>
 </div>
