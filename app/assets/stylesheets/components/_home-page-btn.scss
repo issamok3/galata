@@ -1,6 +1,6 @@
 .nearby-btn {
   position: absolute;
-  z-index: 100;
+  z-index: 0;
   top: 130px;
   font-weight: bolder;
     &:hover {
@@ -11,7 +11,7 @@
 
 .geo-btn {
   position: absolute;
-  z-index: 100;
+  z-index: 0;
   top: 130px;
   right: 20px;
   font-weight: bolder;
@@ -22,7 +22,7 @@
 }
 .address-btn {
   position: absolute;
-  z-index: 100;
+  z-index: 0;
   top: 80px;
   right:20px;
   font-weight: bolder;
@@ -33,6 +33,6 @@
 }
 .filter-modal {
   position: absolute;
-  z-index: 100;
+  z-index: 0;
   top: 80px;
 }

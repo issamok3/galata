@@ -182,7 +182,7 @@ haydarpasa = Site.new(name: "Haydarpasa Railway Station",
                       description: "Funded by the German government, this railway station was built in the first decade of the 20th century
                       as the İstanbul stop for a planned Berlin to Baghdad railway service. The station building was designed by German architects,
                       but the lovely tile-adorned station iskele (ferry dock) was designed by noted Turkish architect Vedat Tek.")
-file = URI.open('https://www.lomography.com.tr/homes/liliumm/photos/24820966haydarpasa')
+file = URI.open('https://assets.community.lomography.com/3c/84414484364cb4c153f20980549cf336338813/2048x2048x2.jpg?auth=a2393840a4d9a10b94dd88f66ed188a7705b9273')
 haydarpasa.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 haydarpasa.save!
 
