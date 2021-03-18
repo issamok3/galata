@@ -1,8 +1,10 @@
-<div id="messages" data-conversation-id="<%= @conversation.id %>">
-  <% @conversation.messages.each do |message| %>
-    <%= render "messages/message", message: message %>
+<div class="navbar-margin">
+  <div id="messages" data-conversation-id="<%= @conversation.id %>">
+    <% @conversation.messages.each do |message| %>
+      <%= render "messages/message", message: message %>
+    <% end %>
+  </div>
+  <%= simple_form_for [ @conversation, @message ], remote: true do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message" %>
   <% end %>
 </div>
-<%= simple_form_for [ @conversation, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Message" %>
-<% end %>
