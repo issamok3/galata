@@ -3,7 +3,9 @@
   background: $green;
   color: $beige;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 5px;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
 }
 
 .navbar-lewagon .navbar-collapse {
