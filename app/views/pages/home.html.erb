@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="loaderd-none">
+  <div class="loader d-none navbar-margin">
     <span></span>
     <span></span>
     <span></span>
@@ -21,7 +20,7 @@
   <div>
     <% if user_signed_in? %>
       <%= link_to "Search by address", root_path(location: true), class: "btn-green address-btn" %>
-      <a class="btn-green geo-btn">Search by location</a>
+      <a class="btn-green geo-btn" id="js-geolocate-btn" >Search by location</a>
     <% end %>
   </div>
 </div>
@@ -40,4 +39,4 @@
       </div>
     </div>
   </div>
-</div>
+

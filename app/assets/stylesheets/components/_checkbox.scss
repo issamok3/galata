@@ -23,11 +23,6 @@ input[name="categories[]"]:checked + label {
 }
 // Modal style
 
-.filter-modal {
-  position: absolute;
-  z-index: 100;
-  top: 70px;
-}
 
 .filter-by-category{
   opacity: 0.8;
