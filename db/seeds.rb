@@ -249,7 +249,7 @@ CSV.foreach(Rails.root.join('lib/cities.csv'), csv_options) do |row|
   city_names << row[0]
 end
 
-100.times do
+30.times do
   Site.create(name: Faker::Mountain.name, address: city_names.sample, description: Faker::Lorem.sentence)
 end
 
