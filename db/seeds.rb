@@ -286,7 +286,7 @@ puts "created #{Site.count} new sites"
   # video.user = User.all.sample
   # video.save!
 
-end
+# end
 
 ## CONTENT SEEDS-----------------------------------------------------------------------------------------------------------------
 # GALATA TOWER
