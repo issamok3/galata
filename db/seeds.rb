@@ -26,7 +26,7 @@ User.create(username: 'tournz', full_name: "Zacharie", location: 'Cihangir Stair
 
 puts "created #{User.count} new users"
 
-# -SITE SEEDS------------------------------------------
+## SITE SEEDS------------------------------------------
 
 galata_tower = Site.new(name: 'Galata Tower',
                       category: 'History',
@@ -238,64 +238,30 @@ file = URI.open('https://i2.milimaj.com/i/milliyet/75/0x0/5ed77cff55427e1638064a
 pera_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 pera_museum.save!
 
-
 puts "created #{Site.count} new sites"
-# CONTENT SEEDS
-# Without actual content or thumbnail images for now
-# Should also add description to each piece of content
 
-# type = %w[article audio photo video]
-titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
-titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
-Site.all.each do |site|
-  # text seeds
-  titles_text.each do |title|
-    text = Article.new(title: "#{title} #{site.name}" )
-    text.site = site
-    text.user = User.all.sample
-    text.save!
-  end
-  # audio seeds
-  audio = Audio.new(title: "Ten minute audioguide for #{site.name}" )
-  audio.site = site
-  audio.user= User.all.sample
-  audio.save!
-  titles_audio.each do |title|
-    audio = Audio.new(title: title )
-    audio.site = site
-    audio.user = User.all.sample
-    audio.save!
-  end
-  # video seeds
-  # video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded")
-  # video.site = site
-  # video.user = User.all.sample
-  # video.save!
-
-end
-
+## CONTENT SEEDS-----------------------------------------------------------------------------------------------------------------
+# GALATA TOWER
   site = Site.first
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
   file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
+  
+  # videos
   video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'I attended film school at the University of Mardin with a minor in history. The tower of Galata had inspired me to make this short documentary on my first visit to Istanbul. I hope that you all enjoy it. Please feel free to leave your comments. Let me know what other type of content you would like to see about Galata tower in the future. Thanks for watching', url: 'https://youtu.be/-d1IPIYI9fs')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.first
+  video.user = User.second
   video.save!
   video = Video.create(title: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', description: 'A short magical film about the history of the Galata Tower and the significant symbolisms in it that demonstrate the different historical eras this monument has been through. Please consider supporting my work on patreon.', url: 'https://youtu.be/mLAwnocHaL0')
-  # galata_video = Video.new()
-  # galata_video.user = User.first
-  # galata_video.save
   video.site = site
-  video.user = User.all.sample
-  video.user = User.second
+  video.user = User.third
   video.save!
   video = Video.create(title: 'Galata Tower Istanbul in Details ( Istanbul Guide )', description: 'Here is your Istanbul Guide, I am Fatih and I make videos about istanbul. I travel around the world and make travel videos all over the world. Istanbul is one of my favorite city in the world. The best place to see in Istanbul is the Galata Tower. In this video I showed you the galata tower in details and what to do in istanbul I will keep showing you.', url: 'https://youtu.be/D0RSppm1oW4')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.third
+  video.user = User.fourth
   video.save!
+
+  # photos
   photo = Photo.new(user: User.all.sample, title: 'Galata')
   photo.site = site
   photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -309,6 +275,12 @@ end
   photo.photos.attach(io: file3, filename: 'nes.jpg', content_type: 'image/jpg')
   photo.save!
 
+  #audios
+  Audio.create(user: User.second, site: site, title: 'Memo Aslan - Galata Kulesi', description: 'This famous Turkish song is an ode to the Galata Tower, a building that every inhabitant of Istanbul feels passionate about. I hope you enjoy it.', spotify_uri: 'spotify:track:28LLqIH6gKmbKDWxjlqmMX')
+  Audio.create(user: User.third, site: site, title: 'Ahmet Kaya - Kum Gibi', description: 'One of the greatest Turkish songs of all time, this song will get you into the right mood while visiting one of the iconic buildings of Turkey', spotify_uri: 'spotify:track:28LLqIH6gKmbKDWxjlqmMX')
+  Audio.create(user: User.fourth, site: site, title: 'Ümit Yasar Oguzcan - Galata Kulesi', description: 'A sad story of love, life and death involving the Galata Tower', spotify_uri: 'spotify:episode:10x7pYix68IkHu2S77ttc6')
+
+  # HAGIA SOPHIA
   site = Site.fourth
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_1216x1217x2_b8ivq5.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_2240x3360x2_oi6vog.jpg'))
@@ -317,21 +289,22 @@ end
   file5 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_efwe_d7hdw2.jpg'))
   file6 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_lx3qamaqhbqalzp35fszmye2d5yk.jpg'))
   file7 = File.open(File.join(File.dirname(__FILE__), './seed_photos/hagia_sf_gxohlv.jpg'))
+
+  # videos
   video = Video.create(title: 'Hagia Sophia Museum Turkey İstanbul documentary', description: 'Hagia Sophia Museum Turkey İstanbul documentary', url: 'https://youtu.be/Y2WNUWDoAM4')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.fourth
+  video.user = User.fifth
   video.save!
   video = Video.create(title: 'Why Hagia Sophia is So Important? The Whole History is Explained', description: 'Hagia Sophia is also known as the great mosque of the Ayasofya and as the church of Hagia Sophia is a place of worship situated in the country of Turkey. This church was initially built in the year of 360 AD. It has been demolished and reconstructed many times in the past and it is one of the best architecture places of worship in Istanbul.', url: 'https://youtu.be/v6BAPskdJXc')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.fifth
+  video.user = User.last
   video.save!
   video = Video.create(title: 'Hagia Sophia " The Sacred Wisdom " Director: Hikmet Yaşar Yenigün', description: 'A  wonder of the world dedicated the Sacred Wisdom… One of the most glorius monuments of human history…  Its beauty architectural proportions and harmony making it a singular structure…  For 916 years this monument has been the treasure of the Byzantine Empire and the center of the Orthodox world… And for 418 years it has been the jewel of the Islamic World and the Ottoman… As the most precious and most  important  mosque to the  Ottoman Sultans, it has been subject of countless legends...  Hagia Sophia is considered as the embodiment of “Divine Power” in both Byzantine and Ottoman sources… Today it is a museum that enthralls and deeply affects visitors... Hagia Sophia…The documentary presents Hagia Sophia through elabrote cinematography.', url: 'https://youtu.be/9cdLqE9NBJw')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.fourth
+  video.user = User.last
   video.save!
+
+  # photos
   photo = Photo.new(user: User.all.sample, title: 'Hagia Sophia')
   photo.site = site
   photo.photos.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
@@ -361,22 +334,25 @@ end
   photo.photos.attach(io: file7, filename: 'nes.jpg', content_type: 'image/jpg')
   photo.save!
 
+  # audios
+  Audio.create(user: User.second, site: site, title: 'Beautiful Islamic Prayer Call', description: 'Experience the atmosphere of the prayer call by listening to this beautiful recording', spotify_uri: 'spotify:track:3WHXlVfA2lKpe3EQLPn0q3')
+  Audio.create(user: User.third, site: site, title: 'Irfan - Hagia Sophia', description: 'Inspiring Ottaman-style music to get into the right mood when visiting the historic, religious site of Hagia Sophia', spotify_uri: 'spotify:track:05MTZxYxNYDM5kQsiT5pdX')
+  Audio.create(user: User.last, site: site, title: 'Everything Everywhere Podcast: The Hagia Sophia', description: 'Listen to this episode of the renowned Everything Everywhere podcast on the Hagia Sophia and learn more about this amazing piece of living history', spotify_uri: 'spotify:episode:2j3Uf9IG8OijNwXFrJAdkQ')
+  
+  # HALIC BRIDGE
   site = halic_bridge
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_Sunset_golden_horn_tl3mf7.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_the_golden_horn_from_r9acxr.jpg'))
   video = Video.create(title: 'İstanbul Halic Bridge Drone view, Haliç Köprüsü, Muhteşem Mimarisi', description: 'Haliç Bridge is a highway bridge on the Golden Horn in Istanbul, Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries the O-1 motorway, also known as the Istanbul Inner Beltway. It was constructed between 1971 and 1974, and entered service on 10 September 1974. The engineering firms which undertook the construction works were IHI Corporation of Japan and Julius Berger-Bauboag AG of Germany. The bridge has a length of 995 m (3,264 ft), a width of 32 m (105 ft), and a height of 22 m (72 ft) above sea level.', url: 'https://youtu.be/dYpIvT4ykvw')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.first
+  video.user = User.second
   video.save!
   video = Video.create(title: 'Haliç Bridge | Walking Tour | Istanbul 🇹🇷 [4K]', description: 'It is one of the 4 bridges on Istanbul Golden Horn Bay, one of which has not been opened yet.  It is located between Ayvansaray and Halicioglu.  Haliç Bridge was opened in 1974;  The Atatürk Bridge (Unkapanı Bridge) was opened in 1936 and the Historic Galata Bridge became the present in 1994.  A sister bridge to the Golden Horn Bridge will be the Haliç Metro Crossing Bridge which will be opened on 29 October 2013.  It frightened with the collapse that occurred in 2012 and caused hard time for the residents of Istanbul due to maintenance and repair works.', url: 'https://youtu.be/D-qTiSy_hXU')
   video.site = site
-  video.user = User.all.sample
-  video.user = User.second
+  video.user = User.third
   video.save!
   video = Video.create(title: 'Haliç Bridge view - İstanbul, Turkey', description: 'Peaceful moments at 4:20  in the afternoon with my homies as we were blazing and enjoying this serene view at the golden horn in Istanbul right across from Balat neighborhood.', url: 'https://youtu.be/fjDnVH97bLI')
   video.site = site
-  video.user = User.all.sample
   video.user = User.third
   video.save!
   photo = Photo.new(user: User.all.sample, title: 'Haliç Bridge')
