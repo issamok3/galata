@@ -1,21 +1,19 @@
 <div class="container navbar-margin">
   <% @articles.each do |article| %>
-    <%= link_to site_article_path(@site, article) do %>
-      <div class="card-product">
-        <i class="fas fa-book-open"></i>
-        <div class="card-product-infos d-inline-flex">
-          <%= cl_image_tag @site.photos.first.key, height: 60, width: 90 %>
-          <div class="ml-3">
-            <p><strong><%= article.title %></strong></p>
-            <p><%= article.description %></p>
-            <p><strong>Contributor:</strong> -<%= article.user.username %></p>
+      <div class="card-article">
+        <%= cl_image_tag @site.photos.first.key %>
+        <div class="card-article-infos"
+          <h4><strong><%= article.title %></strong></h4>
+          <p><%= article.description %></p>
+          <div class="card-article-icons">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{article.user.username}", class:'card-article-avatar'%>
+            <div class="card-article-likes">
+              <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
+              <span><%= article.likes.count  %></span>
+            </div>
           </div>
-         
         </div>
       </div>
-    <% end %>
-  <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %>
-  <span><%= article.likes.count  %></span>
   <% end %>
   <%= link_to site_path(@site), class: 'button' do %>
     <i class="fas fa-chevron-left back-btn"></i>
