@@ -18,3 +18,25 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
+// TYPOGRAPHY
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 25px;
+}
+h3, h4 {
+  font-size: 24px;
+  color: $green;
+}
+
+h5 {
+  font-size: 16px;
+  color: $green;
+}
+
+p {
+  font-size: 13px;
+  color: $darkgray
+}
