@@ -1,4 +1,4 @@
-<div id="js-conversations">
+<div id="js-conversations navbar-margin">
   <% @conversations.each do |conversation| %>
     <div class="card-product">
       <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{conversation.find_other_participant(current_user).username}", class: "avatar dropdown-toggle" %>
