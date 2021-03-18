@@ -1,0 +1,34 @@
+.add-content{
+  padding: 8px;
+  text-align: center;
+  border-radius: 5px;
+    h3{
+      color: $green;
+    }
+}
+.btns-dashboard{
+  justify-content: center;
+}
+
+.dashboard-pg{
+  h2{
+    color: $green;
+    text-align: center;
+    font-weight: bolder;
+  }
+}
+.upload-type {
+  text-align: center;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+  padding: 5px;
+  margin: 5px;
+  a{
+    margin-top: 5px;
+    color: $green;
+    font-weight: bolder;
+    &:hover{
+      color: $orange;
+      text-decoration: none;
+    }
+  }
+}

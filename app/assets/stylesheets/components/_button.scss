@@ -26,3 +26,17 @@
       opacity: 1;
     }
 }
+
+.btn-dashboard {
+  padding: 8px 16px;
+  border: 2px solid $green;
+  border-radius: 16px;
+  color: $green;
+    &:hover{
+      font-weight: bold;
+      transition: ease 0.5s;
+      text-decoration: none;
+      color: $orange;
+      border: 2px solid $orange;
+    }
+}
