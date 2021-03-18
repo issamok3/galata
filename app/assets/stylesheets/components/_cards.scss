@@ -48,14 +48,14 @@
   display: flex;
   justify-content: space-between;
  .site-infos-text {
-  margin: 10px 5px;
+  padding: 10px 5px;
   width: 90%;
  }
 }
 .card-site-icons {
   display: flex;
   flex-direction: column;
-  margin: 10px 5px;
+  padding: 15px 7px;
   div {
     display: flex;
     font-size: 10px;

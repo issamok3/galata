@@ -18,5 +18,7 @@
           <p><%= link_to "See reviews", content_reviews_path(video)  %></p>
     </div>
   <% end %>
-  <%= link_to 'Back', site_path(@site) %>
+  <%= link_to site_path(@site), class: 'button' do %>
+    <i class="fas fa-chevron-left back-btn"></i>
+  <% end %>
 </div>

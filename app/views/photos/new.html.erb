@@ -1,5 +1,7 @@
 <div class="container navbar-margin">
   <h2>Upload new photos</h2>
   <%= render 'form' %>
-  <%= link_to 'Back', dashboard_path %>
+  <%= link_to dashboard_path, class: 'button' do %>
+    <i class="fas fa-chevron-left back-btn"></i>
+  <% end %>
 </div>

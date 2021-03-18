@@ -44,6 +44,7 @@
           <%= link_to "Messages", conversations_path %>
         </li></a>
         <a href="#"><li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li></a>
+
       <% else %>
         <a href="#"><li><%= link_to "Login", new_user_session_path %>
       </li></a>
