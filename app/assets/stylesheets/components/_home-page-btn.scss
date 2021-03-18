@@ -31,3 +31,11 @@
       transition: ease 0.5s;
     }
 }
+.back-btn {
+  color: $green;
+  font-size: 25px;
+    &:hover{
+      transition-duration: easein 0.5;
+      opacity: 0.8;
+    }
+}

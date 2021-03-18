@@ -1,34 +1,36 @@
+<span class="banner"><%= cl_image_tag @site.photos.first.key, height: 200, width: '100%' %></span>
 <div class="container justify-content-center">
   <div>
     <div class="site-info m-2">
-        <%= cl_image_tag @site.photos.first.key, height: 200, width: 300  %>
-      <%= link_to 'Back', sites_path, class: 'button' %>
-      <h1 class="my-2"><%= @site.name %></h1>
-      <p>Address: <%= @site.address %></p>
-      <p class="description"><%= @site.description %></p>
-      <div class="cards">
+        <h3 class="my-2"><%= @site.name %></h3>
+        <p class="address"><strong>Address:</strong> <%= @site.address %></p>
+        <p class="description"><%= @site.description %></p>
+
+      <div class="content-cards">
         <%= link_to site_videos_path(@site) do   %>
-        <div class="category-card w-100 bg-white rounded d-flex justify-content-center align-items-center p-5 my-4">
-          <h1><i class="fas fa-play-circle"></i></h1>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-play-circle content-icon"></i></h1>
         </div>
         <% end %>
         <%= link_to site_audios_path(@site) do   %>
-        <div class="category-card w-100 bg-white rounded d-flex justify-content-center align-items-center p-5 my-4">
-          <h1><i class="fas fa-headphones"></i></h1>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-headphones content-icon"></i></h1>
         </div>
         <% end %>
         <%= link_to site_articles_path(@site) do   %>
-        <div class="category-card w-100 bg-white rounded d-flex justify-content-center align-items-center p-5 my-4">
-          <h1><i class="fas fa-book-open"></i></h1>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-book-open content-icon"></i></h1>
         </div>
         <% end %>
         <%= link_to site_photos_path(@site) do   %>
-        <div class="category-card w-100 bg-white rounded d-flex justify-content-center align-items-center p-5 my-4">
-          <h1><i class="fas fa-images"></i></h1>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-images content-icon"></i></h1>
         </div>
         <% end %>
       </div>
-      <%= link_to 'Back', sites_path, class: 'button' %>
+      <%= link_to sites_path, class: 'button' do %>
+        <i class="fas fa-chevron-left back-btn"></i>
+      <% end %>
     </div>
   </div>
 </div>
