@@ -1,15 +1,16 @@
 .card-article {
   overflow: hidden;
-  height: 150px;
-  background: white;
+  height: 90px;
+  background: $lightbeige;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   margin: 20px 0;
   border-radius: 4px;
   img {
-  // height: 100%;
-  // width: 120px;
+  border-radius: 2px solid $lightbeige;
+  height: 100%;
+  width: 120px;
   object-fit: cover;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -26,6 +27,7 @@
     margin-top: 8px;
   }
   .card-article-infos {
+    color: $green;
     padding: 0 10px;
     // position: relative;
     .card-article-icons {
@@ -35,7 +37,8 @@
       .card-article-likes {
         display: flex;
         position: relative;
-        top: 10px;
+        left: 150px;
+        top: 24px;
         i {
           color: $orange;
         }
@@ -45,8 +48,17 @@
         border-radius: 50%;
         position: relative;
         top: 10px;
-      } 
+      }
     }
   }
+}
+
+.book-icon {
+  font-size: 36px;
+  text-align: center;
+  color:$green;
+  border-bottom: 1px solid $green;
+  font-weight: bolder;
+  padding-bottom: 20px;
 }
 
