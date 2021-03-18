@@ -1,9 +1,10 @@
-input[type="checkbox"] {
+// Filter by categories - checkbox style
+input[name="categories[]"] {
   position: absolute;
   transform: scale(0);
 }
 
-input[type="checkbox"] + label {
+input[name="categories[]"] + label {
   cursor: pointer;
   padding: 4px 10px;
   border: 1px solid $green;
@@ -14,10 +15,13 @@ input[type="checkbox"] + label {
     }
 }
 
-input[type="checkbox"]:checked + label {
+input[name="categories[]"]:checked + label {
+  transition: ease 0.5s;
+  color: $orange;
   opacity: 0.7;
-  transition-duration: 0.5s;
+  border: 2px solid $orange;
 }
+// Modal style
 
 .filter-modal {
   position: absolute;
@@ -25,3 +29,14 @@ input[type="checkbox"]:checked + label {
   top: 70px;
 }
 
+.filter-by-category{
+  opacity: 0.8;
+}
+.modal-title {
+  color: $green;
+  font-weight: bolder;
+}
+
+.modal-content {
+  background-color: $beige;
+}
