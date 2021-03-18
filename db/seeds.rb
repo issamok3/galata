@@ -278,12 +278,12 @@ end
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
   file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
-  video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'I attended film school at the University of Mardin with a minor in history. The tower of Galata had inspired me to make this short documentary on my first visit to Istanbul. I hope that you all enjoy it. Please feel free to leave your comments. Let me know what other type of content you would like to see about Galata tower in the future. Thanks for watching', url: 'https://youtu.be/-d1IPIYI9fs')
+  video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'I attended film school at the University of Mardin with a minor in history. The tower of Galata had inspired me to make this short documentary on my first visit to Istanbul. I hope that you all enjoy it.', url: 'https://youtu.be/-d1IPIYI9fs')
   video.site = site
   video.user = User.all.sample
   video.user = User.first
   video.save!
-  video = Video.create(title: 'GALATA TOWER - HEZARFEN AHMET CELEBI | Istanbul - Tales of Turkey [EN]', description: 'A short magical film about the history of the Galata Tower and the significant symbolisms in it that demonstrate the different historical eras this monument has been through. Please consider supporting my work on patreon.', url: 'https://youtu.be/mLAwnocHaL0')
+  video = Video.create(title: 'Galata Tower - Hezarfen Ahmet Celebi | Istanbul - Tales of Turkey', description: 'A short magical film about the history of the Galata Tower and the significant symbolisms in it that demonstrate the different historical eras this monument has been through. Please consider supporting my work on patreon.', url: 'https://youtu.be/mLAwnocHaL0')
   # galata_video = Video.new()
   # galata_video.user = User.first
   # galata_video.save
@@ -291,7 +291,7 @@ end
   video.user = User.all.sample
   video.user = User.second
   video.save!
-  video = Video.create(title: 'Galata Tower Istanbul in Details ( Istanbul Guide )', description: 'Here is your Istanbul Guide, I am Fatih and I make videos about istanbul. I travel around the world and make travel videos all over the world. Istanbul is one of my favorite city in the world. The best place to see in Istanbul is the Galata Tower. In this video I showed you the galata tower in details and what to do in istanbul I will keep showing you.', url: 'https://youtu.be/D0RSppm1oW4')
+  video = Video.create(title: 'Galata Tower Istanbul in detail', description: 'Here is your Istanbul Guide, I am Fatih and I make videos about Istanbul. I travel around the world and make travel videos all over the world. Istanbul is one of my favorite cities in the world. The best place to see in Istanbul is the Galata Tower. In this video I show you the Galata Tower in detail and what to do in Istanbul.', url: 'https://youtu.be/D0RSppm1oW4')
   video.site = site
   video.user = User.all.sample
   video.user = User.third
