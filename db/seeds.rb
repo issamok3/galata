@@ -18,7 +18,7 @@ User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Taksi
 User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobanoglu Sokak, Sisli, Istanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'edvarterhaar', full_name: "Edvar ter Haar", location: 'Dibek Sk. 10-2, 34425 Beyoğlu/İstanbul', email: 'example1@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'issamok3', full_name: "Issam", location: 'Sishane', email: 'example2@gmail.com', password: 'asdasd', locatable: true, range: 5 )
-User.create(username: 'Shahabal', full_name: "Shahabal", location: 'Galata Tower', email: 'example3@gmail.com', password: 'asdasd', locatable: true, range: 5 )
+User.create(username: 'Bruh-what', full_name: "Shahabal", location: 'Galata Tower', email: 'example3@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'nikiforov5000', full_name: "Boris", location: 'Halic Bridge', email: 'example4p@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'syrashid', full_name: "Sy Rashid", location: 'Besiktas', email: 'example5@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'tournz', full_name: "Zacharie", location: 'Cihangir Stairs', email: 'example6@gmail.com', password: 'asdasd', locatable: true, range: 5 )
@@ -246,7 +246,7 @@ puts "created #{Site.count} new sites"
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_27cw86a2srlhypizaso44feayx9c.jpg'))
   file2 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_2213x1568x2_himhcg.jpg'))
   file3 = File.open(File.join(File.dirname(__FILE__), './seed_photos/galata_seen_from_suleymaniye_mosque_utrdqk.jpg'))
-  
+
   # videos
   video = Video.create(title: 'Galata Kulesi Belgeseli / Documentary', description: 'I attended film school at the University of Mardin with a minor in history. The tower of Galata had inspired me to make this short documentary on my first visit to Istanbul. I hope that you all enjoy it. Please feel free to leave your comments. Let me know what other type of content you would like to see about Galata tower in the future. Thanks for watching', url: 'https://youtu.be/-d1IPIYI9fs')
   video.site = site
@@ -338,7 +338,7 @@ puts "created #{Site.count} new sites"
   Audio.create(user: User.second, site: site, title: 'Beautiful Islamic Prayer Call', description: 'Experience the atmosphere of the prayer call by listening to this beautiful recording', spotify_uri: 'spotify:track:3WHXlVfA2lKpe3EQLPn0q3')
   Audio.create(user: User.third, site: site, title: 'Irfan - Hagia Sophia', description: 'Inspiring Ottaman-style music to get into the right mood when visiting the historic, religious site of Hagia Sophia', spotify_uri: 'spotify:track:05MTZxYxNYDM5kQsiT5pdX')
   Audio.create(user: User.last, site: site, title: 'Everything Everywhere Podcast: The Hagia Sophia', description: 'Listen to this episode of the renowned Everything Everywhere podcast on the Hagia Sophia and learn more about this amazing piece of living history', spotify_uri: 'spotify:episode:2j3Uf9IG8OijNwXFrJAdkQ')
-  
+
   # HALIC BRIDGE
   site = halic_bridge
   file = File.open(File.join(File.dirname(__FILE__), './seed_photos/halic_bridge_Sunset_golden_horn_tl3mf7.jpg'))
