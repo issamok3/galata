@@ -1,5 +1,8 @@
 class DashboardsController < ApplicationController
   def show
-    @my_uploads = Content.where(user: current_user)
+    @articles = Article.where(user: current_user)
+    @photos = Photo.where(user: current_user)
+    @audios = Audio.where(user: current_user)
+    @videos = Video.where(user: current_user)
   end
 end
