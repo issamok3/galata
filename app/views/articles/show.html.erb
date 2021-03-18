@@ -1,5 +1,5 @@
 <div class="container">
-  <%= cl_image_tag @site.photos.first.key, height: 200, width: 300  %>
+  <div><%= cl_image_tag @site.photos.first.key %></div>
   <h1><%= @article.title %></h1>
   <p><strong><%= @article.description %></strong></p>
   <p><%= @article.body %></p>

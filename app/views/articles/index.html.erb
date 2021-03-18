@@ -3,11 +3,14 @@
     <%= link_to site_article_path(@site, article) do %>
       <div class="card-product">
         <i class="fas fa-book-open"></i>
-        <div class="card-product-infos">
-          
-          <p><strong><%= article.title %></strong></p>
-          <p><%= article.description %></p>
-          <p><strong>Contributor:</strong> -<%= article.user.username %></p>
+        <div class="card-product-infos d-inline-flex">
+          <%= cl_image_tag @site.photos.first.key, height: 60, width: 90 %>
+          <div class="ml-3">
+            <p><strong><%= article.title %></strong></p>
+            <p><%= article.description %></p>
+            <p><strong>Contributor:</strong> -<%= article.user.username %></p>
+          </div>
+         
         </div>
       </div>
     <% end %>
