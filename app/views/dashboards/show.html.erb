@@ -2,7 +2,7 @@
   <h2> My Uploads</h2>
   <div class="add-content">
     <div class="d-flex btns-dashboard">
-      <%= link_to new_article_path, class: 'btn-dashboard m-2' do  %>
+      <%= link_to new_article_path, class: 'btn-dashboard m-2 justify-content-center align-items-center' do  %>
         <h1><i class="fas fa-book-open"></i></h1>
       <% end %>
       <%= link_to new_photo_path, class: 'btn-dashboard m-2' do %>
@@ -16,32 +16,4 @@
       <% end %>
     </div>
   </div>
-  <% @my_uploads.each do |content| %>
-    <div class="card-uploads">
-      <div class="card-uploads-infos">
-        <h2><%= "#{content.title}" %></h2>
-        <p><%= "Description:#{content.description}" %></p>
-        <div class="upload-type justify-content-center">
-          <% if content.type == 'Audio' && content.spotify_uri != nil %>
-            <% split_uri = content.spotify_uri.split(':') %>
-            <% spotify_uri_type = split_uri.second %>
-            <% spotify_uri_id = split_uri.last %>
-            <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
-            <iframe src=<%= complete_url %> width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          <% elsif content.type == 'Video' && content.url != nil %>
-            <% match_data = content.url.match(/.*\/(.*)/) %>
-            <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-            <iframe src=<%= source_url %> height="150" width="200" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
-            <p><%= link_to "X", video_path(content), method: :delete, data: {confirm: "Are you sure?"} %></p>
-          <% elsif content.type == 'Article' %>
-            <p><%= link_to "X", article_path(content), method: :delete, data: {confirm: "Are you sure?"} %></p>
-          <% elsif content.type == 'Audio' %>
-            <p><%= link_to "X", audio_path(content), method: :delete, data: {confirm: "Are you sure?"} %></p>
-          <% elsif content.type == 'Photo' %>
-            <p><%= link_to "X", photo_path(content), method: :delete, data: {confirm: "Are you sure?"} %><p>
-          <% end %>
-        </div>
-      </div>
-    </div>
-  <% end %>
 </div>
