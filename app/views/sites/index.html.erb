@@ -2,31 +2,34 @@
   <%= link_to 'Show Map', root_path, class: 'btn-green' %>
     <% @sites.each do |site| %>
       <div class="card-site-container">
-        <%= cl_image_tag site.photos.first.key, height: 100, width: '100%' %>
+        <%= link_to site_path(site) do %>
+          <%= cl_image_tag site.photos.first.key, height: 100, width: '100%' %>
+        <% end %>
         <div class="card-site-infos">
-          <div>
-            <h4><%= site.name %></h4>
-            <p><%= site.description %></p>
+          <div class="site-infos-text">
+            <h4><strong><%= site.name %></strong></h4>
+            <p><%= "#{site.description[0..300]...}" %></p>
           </div>
           <div class= "card-site-icons">
-            <span>
-              <%= site.contents.where(type: "Article").count %> 
+            <div>
               <i class="fas fa-book-open"></i>
-            </span>
-              <%= site.contents.where(type: "Photo").count %> 
+              <span><%= site.contents.where(type: "Article").count %></span>
+            </div>
+            <div>
               <i class="fas fa-images"></i>
-            </span>
-            <span>
-              <%= site.contents.where(type: "Audio").count %>
+              <span><%= site.contents.where(type: "Photo").count %></span>
+            </div>
+            <div>
               <i class="fas fa-headphones"></i>
-            </span>
-            <span>
-              <%= site.contents.where(type: "Video").count %>
+              <span><%= site.contents.where(type: "Audio").count %></span>
+            </div>
+            <div>
               <i class="fab fa-youtube"></i>
-            </span>
+              <span><%= site.contents.where(type: "Video").count %></span>
+            </div>
           </div>
         </div>
       </div>
-    <% end %>
+  <% end %>
   </div>
 </div>
