@@ -1,12 +1,9 @@
 <span class="banner"><%= cl_image_tag @site.photos.first.key, height: 200, width: '100%' %></span>
 <div class="container justify-content-center">
-
   <div>
     <div class="site-info m-2">
         <h3 class="my-2"><%= @site.name %></h3>
         <p class="address"><strong>Address:</strong> <%= @site.address %></p>
-        <p class="description"><%= @site.description %></p>
-
       <div class="content-cards">
         <%= link_to site_videos_path(@site) do   %>
         <div class="category-card rounded justify-content-center p-5 my-4">
