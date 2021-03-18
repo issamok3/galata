@@ -1,4 +1,6 @@
 require 'open-uri'
+require 'faker'
+require 'csv'
 
 #CLEANING UP DATABASE
 User.destroy_all
@@ -28,6 +30,7 @@ puts "created #{User.count} new users"
 
 ## SITE SEEDS------------------------------------------
 
+# Istanbul sites
 galata_tower = Site.new(name: 'Galata Tower',
                       category: 'History',
                       address: 'Galata Tower',
@@ -238,7 +241,52 @@ file = URI.open('https://i2.milimaj.com/i/milliyet/75/0x0/5ed77cff55427e1638064a
 pera_museum.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
 pera_museum.save!
 
+# Faker sites outside of Turkey
+# read out csv file of city names
+csv_options = { col_sep: ',', headers: :first_row }
+city_names = []
+CSV.foreach(Rails.root.join('lib/cities.csv'), csv_options) do |row|
+  city_names << row[0]
+end
+
+30.times do
+  Site.create(name: Faker::Mountain.name, address: city_names.sample, description: Faker::Lorem.sentence)
+end
+
 puts "created #{Site.count} new sites"
+# CONTENT SEEDS
+# Without actual content or thumbnail images for now
+# Should also add description to each piece of content
+
+# type = %w[article audio photo video]
+# titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
+# titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
+# Site.all.where do |site|
+#   # text seeds
+#   titles_text.each do |title|
+#     text = Article.new(title: "#{title} #{site.name}" )
+#     text.site = site
+#     text.user = User.all.sample
+#     text.save!
+#   end
+#   # audio seeds
+#   audio = Audio.new(title: "Ten minute audioguide for #{site.name}" )
+#   audio.site = site
+#   audio.user= User.all.sample
+#   audio.save!
+#   titles_audio.each do |title|
+#     audio = Audio.new(title: title )
+#     audio.site = site
+#     audio.user = User.all.sample
+#     audio.save!
+  # end
+  # video seeds
+  # video = Video.new(title: "Cool drone footage of #{site.name}", description: " to be seeded")
+  # video.site = site
+  # video.user = User.all.sample
+  # video.save!
+
+# end
 
 ## CONTENT SEEDS-----------------------------------------------------------------------------------------------------------------
 # GALATA TOWER
