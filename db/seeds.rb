@@ -14,7 +14,7 @@ Message.destroy_all
 Conversation.destroy_all
 
 # USER SEEDS
-User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Dibek Sk. 15-2, 34425 Beyoğlu/İstanbul', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: true, range: 5 )
+User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Schoonzichtlaan 3, 3020 Herent', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: false, range: 5 )
 User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Sultanahmet', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Taksim Square', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobanoglu Sokak, Sisli, Istanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true, range: 5 )
@@ -252,6 +252,8 @@ end
 30.times do
   Site.create(name: Faker::Mountain.name, address: city_names.sample, description: Faker::Lorem.sentence)
 end
+
+Site.create(name: 'Manneke Pis', address: 'Brussels', description: Faker::Lorem.sentence)
 
 puts "created #{Site.count} new sites"
 # CONTENT SEEDS
