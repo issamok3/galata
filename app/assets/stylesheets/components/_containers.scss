@@ -1,6 +1,6 @@
 .card-site-container {
   margin: 20px 0;
-  background-color:#FFFFFF;
+  background-color: $lightbeige;
   text-decoration: none;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
   border-radius: 4px;
@@ -8,6 +8,9 @@
     object-fit: cover;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+  }
+  p, span{
+    color: $darkgray;
   }
 }
 .videos-container {
