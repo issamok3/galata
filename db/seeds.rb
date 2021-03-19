@@ -14,7 +14,7 @@ Message.destroy_all
 Conversation.destroy_all
 
 # USER SEEDS
-User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Schoonzichtlaan 3, 3020 Herent', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: false, range: 5 )
+User.create(username: 'Henniver', full_name: "Hendrik Vermeersch", location: 'Schaarbeek', email: 'hendrik.vermeersch@protonmail.com', password: 'password', locatable: false, range: 5 )
 User.create(username: 'Sevil-h', full_name: "Sevil Hatipoglu", location: 'Sultanahmet', email: 'sevilhatipogluu93@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'Lilium', full_name: "Sabriye Hatipoglu", location: 'Taksim Square', email: 'sabriyesevilhatip@gmail.com', password: 'asdasd', locatable: true, range: 5 )
 User.create(username: 'Euydice', full_name: "Merve Hatipoglu", location: 'Cobanoglu Sokak, Sisli, Istanbul', email: 'example@gmail.com', password: 'asdasd', locatable: true, range: 5 )
