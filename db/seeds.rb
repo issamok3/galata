@@ -208,7 +208,7 @@ rumelian_castle.photos.attach(io: file, filename: 'temp.jpg', content_type: 'ima
 rumelian_castle.save!
 
 halic_bridge = Site.new(name: 'Haliç Bridge',
-                        category: 'View point',
+                        category: 'Viewpoint',
                         address: 'Haliç Bridge',
                         description: "Known as the Golden Horn Bridge, is a highway bridge on the Golden Horn (Turkish: Haliç) in Istanbul,
                         Turkey. It connects the neighborhoods of Ayvansaray in the southwest and Halıcıoğlu in the northwest. The bridge carries
