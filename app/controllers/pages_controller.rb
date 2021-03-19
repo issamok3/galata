@@ -19,6 +19,7 @@ class PagesController < ApplicationController
         {
           lat: site.latitude,
           lng: site.longitude,
+          image_url: helpers.asset_path("galata_logo.png"),
           infoWindow: render_to_string(partial: "info_window_sites", locals: { site: site })
         }
       end
