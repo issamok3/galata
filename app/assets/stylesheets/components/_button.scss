@@ -6,7 +6,7 @@
   background: rgba(255,247,236, 0.5);
     &:hover{
       font-weight: bold;
-      transition: ease 0.5s;
+      transition: all 0.5s ease-in-out;
       text-decoration: none;
       color: $green;
     }
@@ -19,7 +19,7 @@
   background: rgba(255,247,236, 0.5);
   font-weight: bolder;
     &:hover{
-      transition: ease 0.5s;
+      transition: all 0.5s ease-in-out;
       font-weight: bold;
       text-decoration: none;
       color: $orange;
@@ -34,9 +34,23 @@
   color: $green;
     &:hover{
       font-weight: bold;
-      transition: ease 0.5s;
+      transition: all 0.5s ease-in-out;
       text-decoration: none;
       color: $orange;
       border: 2px solid $orange;
     }
+}
+.btn-col {
+  color: $darkgray;
+  font-size: 16px;
+  &:hover{
+    color: $darkgray;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.fa-mouse-pointer{
+  font-size: 13px;
 }
