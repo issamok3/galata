@@ -23,7 +23,7 @@
       <%= link_to site_article_path(article.site, article) do %>
         <%= cl_image_tag article.site.photos.first.key, height: '100%', width: 120 %>
       <% end %>
-        <div class="card-article-infos"
+        <div class="card-article-infos">
           <h4><strong><%= article.title %></strong></h4>
           <p><%= article.description %></p>
           <div class="card-article-icons">
@@ -85,8 +85,10 @@
         <% end %>
         <div class="card-audio-infos">
           <div class="card-audio-description">
-            <div>
+            <div class="link">
+              <%= link_to site_audios_path(audio.site, audio) do %>
               <h5><strong><%= audio.title %></strong></h5>
+              <% end %>
               <p><%= audio.description %></p>
             </div>
           </div>
@@ -112,8 +114,10 @@
         <% end %>
         <div class="card-video-infos">
           <div class="card-video-description">
-            <div>
+            <div class="link">
+              <%= link_to site_videos_path(video.site, video) do %>
               <h5><strong><%= video.title%></strong></h5>
+              <% end %>
               <p><%= video.description %></p>
             </div>
           </div>
@@ -127,5 +131,8 @@
         </div>
       </div>
     <% end %>
+  <% end %>
+    <%= link_to sites_path, class: 'button' do %>
+    <i class="fas fa-chevron-left back-btn"></i>
   <% end %>
 </div>
