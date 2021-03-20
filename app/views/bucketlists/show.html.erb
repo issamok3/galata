@@ -7,9 +7,9 @@
         <% @articles.each do |article| %>
          <div class="card-article">
           <%= link_to site_article_path(article.site, article) do %>
-            <%= cl_image_tag @site.photos.first.key, height: '100%', width: 120 %>
+            <%= cl_image_tag @site.photos.first.key, height: '100px', width: '120px' %>
           <% end %>
-            <div class="card-article-infos"
+            <div class="card-article-infos">
               <h4><strong><%= article.title %></strong></h4>
               <p><%= article.description %></p>
               <div class="card-article-icons">
