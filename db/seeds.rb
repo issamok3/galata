@@ -250,7 +250,12 @@ CSV.foreach(Rails.root.join('lib/cities.csv'), csv_options) do |row|
 end
 
 30.times do
-  Site.create(name: Faker::Mountain.name, address: city_names.sample, description: Faker::Lorem.sentence)
+  fakersite = Site.create(name: Faker::Mountain.name,
+                          address: city_names.sample,
+                          description: Faker::Lorem.sentence)
+file = URI.open('https://i2.milimaj.com/i/milliyet/75/0x0/5ed77cff55427e1638064a21.jpg')
+fakersite.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+fakersite.save!
 end
 
 Site.create(name: 'Manneke Pis', address: 'Brussels', description: Faker::Lorem.sentence)
@@ -418,5 +423,44 @@ puts "created #{Site.count} new sites"
   photo.site = halic_bridge
   photo.photos.attach(io: file2, filename: 'nes.jpg', content_type: 'image/jpg')
   photo.save!
+
+  # FAKER SEEDS
+  titles_text = %w[A\ brief\ history\ of 5\ things\ you\ should\ know\ about\  All\ you\ need\ to\ know\ about ]
+titles_audio = ["Get into the right mood with this Ottoman-style music", "The greatest Turkish songs of all time"]
+Site.all.each do |site|
+  # text seeds
+  titles_text.each do |title|
+    text = Article.new(title: "#{title} #{site.name}" )
+    text.site = site
+    text.user = User.all.sample
+    text.save!
+  end
+  # audio seeds
+  2.times do
+    audio = Audio.new(title: "Ten minute audioguide for #{site.name}", spotify_uri: 'spotify:track:1vmzfiQsd8PHgt8Kgp7TgR')
+    audio.site = site
+    audio.user= User.all.sample
+    audio.save!
+    titles_audio.each do |title|
+      audio = Audio.new(title: title )
+      audio.site = site
+      audio.user = User.all.sample
+      audio.save!
+    end
+  end
+  # video seeds
+  video = Video.new(title: "Cool drone footage of #{site.name}", url: 'https://youtu.be/mLAwnocHaL0')
+  video.site = site
+  video.user = User.all.sample
+  video.save!
+
+  4.times do
+    photo = Photo.new(user: User.all.sample, title: "Galata Tower")
+    photo.site = site
+    file = URI.open('https://i.pinimg.com/originals/82/96/0a/82960a7f3f35cfd1e2688cf16089c62b.png')
+    photo.photos.attach(io: file, filename: 'temp.jpg', content_type: 'image.jpg')
+    photo.save!
+  end
+end
 
 puts "created #{Content.count} new pieces of content"
