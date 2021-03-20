@@ -13,13 +13,9 @@
                   <p>
                     <a class="btn-col" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Description <i class="fas fa-mouse-pointer"></i></a>
                   </p>
-                  <div class="row">
-                    <div class="col">
-                      <div class="collapse multi-collapse" id="multiCollapseExample1">
-                        <div class="card card-body">
-                          <p><%= "#{site.description[0..300]...}" %></p>
-                        </div>
-                      </div>
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card card-body">
+                      <p><%= "#{site.description[0..300]...}" %></p>
                     </div>
                   </div>
               </div>
