@@ -1,115 +1,119 @@
 <div class="container navbar-margin">
-  <h3>My Liked Content</h3>
-  <h3>Articles</h3>
-  <% unless @articles.nil? %>
-    <% @articles.each do |article| %>
-     <div class="card-article">
-      <%= link_to site_article_path(article.site, article) do %>
-        <%= cl_image_tag @site.photos.first.key, height: '100%', width: 120 %>
-      <% end %>
-        <div class="card-article-infos"
-          <h4><strong><%= article.title %></strong></h4>
-          <p><%= article.description %></p>
-          <div class="card-article-icons">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{article.user.username}", class:'card-article-avatar'%>
-            <div class="card-article-likes">
-              <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
-              <span><%= article.likes.count  %></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-  <h3>Photos</h3>
-  <% unless @photos.nil? || @photos.empty? %>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <%= cl_image_tag @photos.first.photos.first.key, height: 300, width: 350, crop: :fill %>
-          <div class="carousel-likes">
-            <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(@photos.first), method: "post" %>
-            <span><%= @photos.first.likes.count %></span>
-          </div>
-        </div>
-        <% @photos.to_a.slice(1, @photos.length).each do |photo| %>
-          <div class="carousel-item">
-            <%= cl_image_tag photo.photos.first.key, height: 300, width: 350, crop: :fill %>
-            <div class="carousel-likes">
-              <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(photo), method: "post" %>
-              <span><%= photo.likes.count %></span>
-            </div>
-          </div>
-        <% end %>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  <% end %>
-  <h3>Tracks & Podcasts</h3>
-  <% unless @audios.nil? %>
-    <% @audios.each do |audio| %>
-      <div class="card-audio">
-        <% if audio.spotify_uri != nil %>
-          <% split_uri = audio.spotify_uri.split(':') %>
-          <% spotify_uri_type = split_uri.second %>
-          <% spotify_uri_id = split_uri.last %>
-          <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
-          <% if spotify_uri_type == 'track' %>
-            <iframe src=<%= complete_url %> width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          <% elsif spotify_uri_type == 'episode' %>
-            <iframe src=<%= complete_url %> width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <h3>My Liked Content</h3>
+      <h3>Articles</h3>
+      <% unless @articles.nil? %>
+        <% @articles.each do |article| %>
+         <div class="card-article">
+          <%= link_to site_article_path(article.site, article) do %>
+            <%= cl_image_tag @site.photos.first.key, height: '100px', width: '120px' %>
           <% end %>
+            <div class="card-article-infos">
+              <h4><strong><%= article.title %></strong></h4>
+              <p><%= article.description %></p>
+              <div class="card-article-icons">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{article.user.username}", class:'card-article-avatar'%>
+                <div class="card-article-likes">
+                  <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
+                  <span><%= article.likes.count  %></span>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-        <div class="card-audio-infos">
-          <div class="card-audio-description">
-            <div>
-              <h5><strong><%= audio.title %></strong></h5>
-              <p><%= audio.description %></p>
+      <% end %>
+      <h3>Photos</h3>
+      <% unless @photos.nil? || @photos.empty? %>
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <%= cl_image_tag @photos.first.photos.first.key, height: 300, width: 350, crop: :fill %>
+              <div class="carousel-likes">
+                <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(@photos.first), method: "post" %>
+                <span><%= @photos.first.likes.count %></span>
+              </div>
             </div>
+            <% @photos.to_a.slice(1, @photos.length).each do |photo| %>
+              <div class="carousel-item">
+                <%= cl_image_tag photo.photos.first.key, height: 300, width: 350, crop: :fill %>
+                <div class="carousel-likes">
+                  <%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(photo), method: "post" %>
+                  <span><%= photo.likes.count %></span>
+                </div>
+              </div>
+            <% end %>
           </div>
-          <div class= "card-audio-infos-extra">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{audio.user.username}", class:'card-audio-avatar' %>
-            <div class="card-audio-likes">
-              <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(audio), method: "post" %></span>
-              <span><%= audio.likes.count  %></span>
-            </div>
-          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-      </div>
-    <% end %>
-  <% end %>
-  <h3>Videos</h3>
-  <% unless @videos.nil? %>
-    <% @videos.each do |video| %>
-      <div class="card-video">
-        <% if video.url != nil %>
-          <% match_data = video.url.match(/.*\/(.*)/) %>
-          <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-          <iframe src=<%= source_url %> height="200" width="100%" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+      <% end %>
+      <h3>Tracks & Podcasts</h3>
+      <% unless @audios.nil? %>
+        <% @audios.each do |audio| %>
+          <div class="card-audio">
+            <% if audio.spotify_uri != nil %>
+              <% split_uri = audio.spotify_uri.split(':') %>
+              <% spotify_uri_type = split_uri.second %>
+              <% spotify_uri_id = split_uri.last %>
+              <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
+              <% if spotify_uri_type == 'track' %>
+                <iframe src=<%= complete_url %> width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <% elsif spotify_uri_type == 'episode' %>
+                <iframe src=<%= complete_url %> width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <% end %>
+            <% end %>
+            <div class="card-audio-infos">
+              <div class="card-audio-description">
+                <div>
+                  <h5><strong><%= audio.title %></strong></h5>
+                  <p><%= audio.description %></p>
+                </div>
+              </div>
+              <div class= "card-audio-infos-extra">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{audio.user.username}", class:'card-audio-avatar' %>
+                <div class="card-audio-likes">
+                  <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(audio), method: "post" %></span>
+                  <span><%= audio.likes.count  %></span>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-        <div class="card-video-infos">
-          <div class="card-video-description">
-            <div>
-              <h5><strong><%= video.title%></strong></h5>
-              <p><%= video.description %></p>
+      <% end %>
+      <h3>Videos</h3>
+      <% unless @videos.nil? %>
+        <% @videos.each do |video| %>
+          <div class="card-video">
+            <% if video.url != nil %>
+              <% match_data = video.url.match(/.*\/(.*)/) %>
+              <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+              <iframe src=<%= source_url %> height="200" width="100%" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+            <% end %>
+            <div class="card-video-infos">
+              <div class="card-video-description">
+                <div>
+                  <h5><strong><%= video.title%></strong></h5>
+                  <p><%= video.description %></p>
+                </div>
+              </div>
+              <div class= "card-video-infos-extra">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{video.user.username}", class:'card-video-avatar'%>
+                <div class="card-video-likes">
+                  <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %></span>
+                  <span><%= video.likes.count  %></span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class= "card-video-infos-extra">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{video.user.username}", class:'card-video-avatar'%>
-            <div class="card-video-likes">
-              <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %></span>
-              <span><%= video.likes.count  %></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>

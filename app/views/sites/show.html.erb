@@ -1,35 +1,39 @@
-<div class="banner">
-  <%= cl_image_tag @site.photos.first.key, height: 200, width: '100%' %>
-<div>
-<div class="site-info">
-  <h3 class="my-2"><%= @site.name %></h3>
-  <p class="description"><%= @site.description %></p>
-  <div class="content-cards">
-    <%= link_to site_videos_path(@site) do   %>
-    <div class="category-card rounded justify-content-center p-5 my-4">
-      <h1><i class="fas fa-play-circle content-icon"></i></h1>
+<div class="row justify-content-center">
+  <div class="col-sm-6">
+    <div class="banner">
+      <%= cl_image_tag @site.photos.first.key, height: 200, width: '100%' %>
+    <div>
+    <div class="site-info">
+      <h3 class="my-2"><%= @site.name %></h3>
+      <p class="description"><%= @site.description %></p>
+      <div class="content-cards">
+        <%= link_to site_videos_path(@site) do   %>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-play-circle content-icon"></i></h1>
+        </div>
+        <% end %>
+        <%= link_to site_audios_path(@site) do   %>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-headphones content-icon"></i></h1>
+        </div>
+        <% end %>
+        <%= link_to site_articles_path(@site) do   %>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-book-open content-icon"></i></h1>
+        </div>
+        <% end %>
+        <%= link_to site_photos_path(@site) do   %>
+        <div class="category-card rounded justify-content-center p-5 my-4">
+          <h1><i class="fas fa-images content-icon"></i></h1>
+        </div>
+        <% end %>
+      </div>
+      <div>
+      <%= link_to sites_path, class: 'button' do %>
+        <i class="fas fa-chevron-left back-btn"></i>
+      <% end %>
+      </div>
     </div>
-    <% end %>
-    <%= link_to site_audios_path(@site) do   %>
-    <div class="category-card rounded justify-content-center p-5 my-4">
-      <h1><i class="fas fa-headphones content-icon"></i></h1>
-    </div>
-    <% end %>
-    <%= link_to site_articles_path(@site) do   %>
-    <div class="category-card rounded justify-content-center p-5 my-4">
-      <h1><i class="fas fa-book-open content-icon"></i></h1>
-    </div>
-    <% end %>
-    <%= link_to site_photos_path(@site) do   %>
-    <div class="category-card rounded justify-content-center p-5 my-4">
-      <h1><i class="fas fa-images content-icon"></i></h1>
-    </div>
-    <% end %>
-  </div>
-  <div>
-  <%= link_to sites_path, class: 'button' do %>
-    <i class="fas fa-chevron-left back-btn m-4"></i>
-  <% end %>
   </div>
 </div>
-
+</div>

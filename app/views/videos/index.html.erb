@@ -1,32 +1,36 @@
 <div class="container navbar-margin">
-  <h4 class="photo-info"><i class="fas fa-play-circle"></i></h4>
-  <div class="videos-container">
-    <% @videos.each do |video| %>
-      <div class="card-video">
-        <% if video.url != nil %>
-          <% match_data = video.url.match(/.*\/(.*)/) %>
-          <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
-          <iframe src=<%= source_url %> height="200" width="100%" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <h4 class="photo-info"><i class="fas fa-play-circle"></i></h4>
+      <div class="videos-container">
+        <% @videos.each do |video| %>
+          <div class="card-video">
+            <% if video.url != nil %>
+              <% match_data = video.url.match(/.*\/(.*)/) %>
+              <% source_url = "https://www.youtube.com/embed/#{match_data[1]}" %>
+              <iframe src=<%= source_url %> height="200" width="100%" frameborder="0" allowfullscreen mozallowfullscreen></iframe>
+            <% end %>
+            <div class="card-video-infos">
+              <div class="card-video-description">
+                <div>
+                  <h5><strong><%= video.title%></strong></h5>
+                  <p><%= video.description %></p>
+                </div>
+              </div>
+              <div class= "card-video-infos-extra">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{video.user.username}", class:'card-video-avatar'%>
+                <div class="card-video-likes">
+                  <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %></span>
+                  <span><%= video.likes.count  %></span>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-        <div class="card-video-infos">
-          <div class="card-video-description">
-            <div>
-              <h5><strong><%= video.title%></strong></h5>
-              <p><%= video.description %></p>
-            </div>
-          </div>
-          <div class= "card-video-infos-extra">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{video.user.username}", class:'card-video-avatar'%>
-            <div class="card-video-likes">
-              <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(video), method: "post" %></span>
-              <span><%= video.likes.count  %></span>
-            </div>
-          </div>
-        </div>
+        <%= link_to site_path(@site), class: 'button' do %>
+          <i class="fas fa-chevron-left back-btn"></i>
+        <% end %>
       </div>
-    <% end %>
-    <%= link_to site_path(@site), class: 'button' do %>
-      <i class="fas fa-chevron-left back-btn"></i>
-    <% end %>
+    </div>
   </div>
 </div>

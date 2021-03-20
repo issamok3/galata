@@ -1,86 +1,90 @@
 <div class="container navbar-margin">
-  <table>
-    <thead>
-        <tr>
-          <th colspan="2">My Settings</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td>Username</td>
-          <td><%= @user.username %></td>
-        </tr>
-        <tr>
-          <td>Full Name</td>
-          <td><%= @user.full_name %></td>
-        </tr>
-        <tr>
-          <td>Age</td>
-          <td><%= @user.age %></td>
-        </tr>
-        <tr>
-          <td>Location</td>
-          <td><%= @user.location %></td>
-        </tr>
-        <tr>
-          <td>Range of near me filter</td>
-          <td><%= "#{@user.range} km" %></td>
-        </tr>
-        <tr>
-          <td>Share your location?</td>
-          <% if @user.locatable %>
-            <td>Yes</td>
-          <% else %>
-            <td>No</td>
-          <% end %>
-        </tr>
-        <tr>
-        <tr>
-          <th colspan="2">Edit</th>
-        </tr>
-        <%= simple_form_for(@user) do |f| %>
-          <tr>
-            <td>Username</td>
-            <td>
-              <%= f.input :username, label: false %>
-            </td>
-          </tr>
-          <tr>
-            <td>Full Name</td>
-            <td>
-              <%= f.input :full_name, label: false %>
-            </td>
-          </tr>
-          <tr>
-            <td>Age</td>
-            <td>
-              <%= f.input :age, label: false %>
-            </td>
-          </tr>
-          <tr>
-            <td>Location</td>
-            <td>
-              <%= f.input :location, label: false , class: "setting-checkbox" %>
-            </td>
-          </tr>
-          <tr>
-            <td>Range(km)</td>
-            <td>
-              <%= f.input :range, label: false %>
-            </td>
-          </tr>
-          <tr>
-            <td>Share your location?</td>
-            <td>
-              <%= f.input :locatable, as: :boolean, label: false %>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.button :submit ,class: "btn-green"%>
-            </td>
-          </tr>
-        <% end %>
-    </tbody>
-</table>
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <table>
+        <thead>
+            <tr>
+              <th colspan="2">My Settings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Username</td>
+              <td><%= @user.username %></td>
+            </tr>
+            <tr>
+              <td>Full Name</td>
+              <td><%= @user.full_name %></td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td><%= @user.age %></td>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td><%= @user.location %></td>
+            </tr>
+            <tr>
+              <td>Range of near me filter</td>
+              <td><%= "#{@user.range} km" %></td>
+            </tr>
+            <tr>
+              <td>Share your location?</td>
+              <% if @user.locatable %>
+                <td>Yes</td>
+              <% else %>
+                <td>No</td>
+              <% end %>
+            </tr>
+            <tr>
+            <tr>
+              <th colspan="2">Edit</th>
+            </tr>
+            <%= simple_form_for(@user) do |f| %>
+              <tr>
+                <td>Username</td>
+                <td>
+                  <%= f.input :username, label: false %>
+                </td>
+              </tr>
+              <tr>
+                <td>Full Name</td>
+                <td>
+                  <%= f.input :full_name, label: false %>
+                </td>
+              </tr>
+              <tr>
+                <td>Age</td>
+                <td>
+                  <%= f.input :age, label: false %>
+                </td>
+              </tr>
+              <tr>
+                <td>Location</td>
+                <td>
+                  <%= f.input :location, label: false , class: "setting-checkbox" %>
+                </td>
+              </tr>
+              <tr>
+                <td>Range(km)</td>
+                <td>
+                  <%= f.input :range, label: false %>
+                </td>
+              </tr>
+              <tr>
+                <td>Share your location?</td>
+                <td>
+                  <%= f.input :locatable, as: :boolean, label: false %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= f.button :submit ,class: "btn-green"%>
+                </td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
