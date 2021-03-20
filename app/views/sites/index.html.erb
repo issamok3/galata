@@ -1,46 +1,50 @@
 <div class="container navbar-margin">
-  <%= link_to 'Show Map', root_path, class: 'btn-green' %>
-    <% @sites.each do |site| %>
-      <div class="card-site-container">
-        <%= link_to site_path(site) do %>
-          <%= cl_image_tag site.photos.first.key, height: 100, width: '100%' %>
-        <% end %>
-        <div class="card-site-infos">
-          <div class="site-infos-text">
-            <h4><strong><%= site.name %></strong></h4>
-              <p>
-                <a class="btn-col" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Description <i class="fas fa-mouse-pointer"></i></a>
-              </p>
-              <div class="row">
-                <div class="col">
-                  <div class="collapse multi-collapse" id="multiCollapseExample1">
-                    <div class="card card-body">
-                      <p><%= "#{site.description[0..300]...}" %></p>
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <%= link_to 'Show Map', root_path, class: 'btn-green' %>
+        <% @sites.each do |site| %>
+          <div class="card-site-container">
+            <%= link_to site_path(site) do %>
+              <%= cl_image_tag site.photos.first.key, height: 100, width: '100%' %>
+            <% end %>
+            <div class="card-site-infos">
+              <div class="site-infos-text">
+                <h4><strong><%= site.name %></strong></h4>
+                  <p>
+                    <a class="btn-col" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Description <i class="fas fa-mouse-pointer"></i></a>
+                  </p>
+                  <div class="row">
+                    <div class="col">
+                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                        <div class="card card-body">
+                          <p><%= "#{site.description[0..300]...}" %></p>
+                        </div>
+                      </div>
                     </div>
                   </div>
+              </div>
+              <div class= "card-site-icons">
+                <div>
+                  <i class="fas fa-book-open"></i>
+                  <span><%= site.contents.where(type: "Article").count %></span>
+                </div>
+                <div>
+                  <i class="fas fa-images"></i>
+                  <span><%= site.contents.where(type: "Photo").count %></span>
+                </div>
+                <div>
+                  <i class="fas fa-headphones"></i>
+                  <span><%= site.contents.where(type: "Audio").count %></span>
+                </div>
+                <div>
+                  <i class="fab fa-youtube"></i>
+                  <span><%= site.contents.where(type: "Video").count %></span>
                 </div>
               </div>
-          </div>
-          <div class= "card-site-icons">
-            <div>
-              <i class="fas fa-book-open"></i>
-              <span><%= site.contents.where(type: "Article").count %></span>
-            </div>
-            <div>
-              <i class="fas fa-images"></i>
-              <span><%= site.contents.where(type: "Photo").count %></span>
-            </div>
-            <div>
-              <i class="fas fa-headphones"></i>
-              <span><%= site.contents.where(type: "Audio").count %></span>
-            </div>
-            <div>
-              <i class="fab fa-youtube"></i>
-              <span><%= site.contents.where(type: "Video").count %></span>
             </div>
           </div>
-        </div>
+      <% end %>
       </div>
-  <% end %>
+    </div>
   </div>
 </div>
