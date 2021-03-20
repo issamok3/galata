@@ -2,9 +2,13 @@
   <%= cl_image_tag @site.photos.first.key, height: 200, width: '100%' %>
 </span>
 <div class="container my-3">
-  <h3><%= @article.title %></h3>
-  <p><%= @article.body %></p>
-  <%= link_to site_articles_path(@site), class: 'button' do %>
-    <i class="fas fa-chevron-left back-btn"></i>
-  <% end %>
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <h3><%= @article.title %></h3>
+      <p><%= @article.body %></p>
+      <%= link_to site_articles_path(@site), class: 'button' do %>
+        <i class="fas fa-chevron-left back-btn"></i>
+      <% end %>
+    </div>
+  </div>
 </div>

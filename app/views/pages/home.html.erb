@@ -1,43 +1,42 @@
-  <div class="loader d-none navbar-margin">
-    <div class="loader-inner">
-       <div class="loader-line-wrap">
-         <div class="loader-line"></div>
-       </div>
-       <div class="loader-line-wrap">
-         <div class="loader-line"></div>
-       </div>
-       <div class="loader-line-wrap">
-         <div class="loader-line"></div>
-       </div>
-       <div class="loader-line-wrap">
-         <div class="loader-line"></div>
-       </div>
-       <div class="loader-line-wrap">
-         <div class="loader-line"></div>
-       </div>
+<div class="loader d-none navbar-margin">
+  <div class="loader-inner">
+     <div class="loader-line-wrap">
+       <div class="loader-line"></div>
      </div>
-  </div>
-  <div id="map"
-    style="width: 100%; height: 100vh;"
-    data-markers="<%= @site_markers.to_json %>"
-    data-usermarkers="<%= @user_markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <button type="button" class="btn-orange filter-modal" data-toggle="modal" data-target="#exampleModal">
-    Filter
-  </button>
-  <div>
-  <%= link_to  "Nearby sites", sites_path, class: 'btn-orange nearby-btn' %>
-  </div>
-  <div>
-    <% if user_signed_in? %>
-      <%= link_to "Search by address", root_path(location: true), class: "btn-green address-btn" %>
-      <a class="btn-green geo-btn" id="js-geolocate-btn" >Search by location</a>
-    <% end %>
-  </div>
+     <div class="loader-line-wrap">
+       <div class="loader-line"></div>
+     </div>
+     <div class="loader-line-wrap">
+       <div class="loader-line"></div>
+     </div>
+     <div class="loader-line-wrap">
+       <div class="loader-line"></div>
+     </div>
+     <div class="loader-line-wrap">
+       <div class="loader-line"></div>
+     </div>
+   </div>
+</div>
+<div id="map"
+  style="width: 100%; height: 100vh;"
+  data-markers="<%= @site_markers.to_json %>"
+  data-usermarkers="<%= @user_markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<button type="button" class="btn-orange filter-modal" data-toggle="modal" data-target="#exampleModal">
+  Filter
+</button>
+<div>
+<%= link_to  "Nearby sites", sites_path, class: 'btn-orange nearby-btn' %>
+</div>
+<div>
+  <% if user_signed_in? %>
+    <%= link_to "Search by address", root_path(location: true), class: "btn-green address-btn" %>
+    <a class="btn-green geo-btn" id="js-geolocate-btn" >Search by location</a>
+  <% end %>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="m-3">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -51,4 +50,4 @@
       </div>
     </div>
   </div>
-
+</div>
