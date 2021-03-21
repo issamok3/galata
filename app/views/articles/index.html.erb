@@ -12,8 +12,8 @@
               <div class="card-article-icons">
                 <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{article.user.username}", class:'card-article-avatar'%>
                 <div class="card-article-likes">
-                  <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
-                  <span><%= article.likes.count  %></span>
+                  <span><%#= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
+                  <span><%#= article.likes.count  %></span>
                 </div>
               </div>
             </div>

@@ -10,9 +10,9 @@
             <% spotify_uri_id = split_uri.last %>
             <% complete_url = "https://open.spotify.com/embed/#{spotify_uri_type}/#{spotify_uri_id}" %>
             <% if spotify_uri_type == 'track' %>
-              <iframe src=<%= complete_url %> width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <iframe src=<%= complete_url %> width="345px" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             <% elsif spotify_uri_type == 'episode' %>
-              <iframe src=<%= complete_url %> width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+              <iframe src=<%= complete_url %> width="345px" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             <% end %>
           <% end %>
           <div class="card-audio-infos">

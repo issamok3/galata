@@ -1,6 +1,7 @@
 .card-article {
   overflow: hidden;
   height: 90px;
+  width: 345px;
   background: $lightbeige;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -44,8 +45,8 @@
         width: 30px;
         border-radius: 50%;
         position: relative;
-        top: -45px;
-        right: -178px;
+        // top: -45px;
+        right: -176px;
         border: 1px solid $darkgray;
         box-shadow: 0 0 10px rgba(0,0,0,0.2);
       }
