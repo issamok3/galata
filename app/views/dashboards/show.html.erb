@@ -23,15 +23,15 @@
         <% @articles.each do |article| %>
          <div class="card-article">
           <%= link_to site_article_path(article.site, article) do %>
-            <%= cl_image_tag article.site.photos.first.key, height: '100%', width: 120 %>
+            <%= cl_image_tag article.site.photos.first.key, height: '100%', width: '120px' %>
           <% end %>
             <div class="card-article-infos">
               <h5><strong><%= article.title %></strong></h5>
               <div class="card-article-icons">
                 <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{article.user.username}", class:'card-article-avatar'%>
                 <div class="card-article-likes">
-                  <span><%#= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
-                  <span><%#= article.likes.count  %></span>
+                  <span><%= link_to ('<i class="fas fa-heart"></i>').html_safe, content_likes_path(article), method: "post" %></span>
+                  <span><%= article.likes.count  %></span>
                 </div>
               </div>
             </div>

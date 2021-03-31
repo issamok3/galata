@@ -4,11 +4,13 @@
       <h1 class="book-icon"><i class="fas fa-book-open"></i></h1>
       <% @articles.each do |article| %>
           <div class="card-article">
-          <%= link_to site_article_path(article.site, article) do %>
-            <%= cl_image_tag @site.photos.first.key, height: '100px', width: '120px' %>
-          <% end %>
+            <%= link_to site_article_path(article.site, article) do %>
+              <%= cl_image_tag @site.photos.first.key, height: '100px', width: '120px', class: "article-img" %>
+            <% end %>
             <div class="card-article-infos">
-              <h5><strong><%= article.title %></strong></h5>
+              <div>
+                <h5 class="article-title"><strong><%= article.title %></strong></h5>
+              </div>
               <div class="card-article-icons">
                 <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{article.user.username}", class:'card-article-avatar'%>
                 <div class="card-article-likes">
