@@ -5,17 +5,8 @@
           box-sizing: border-box;
 }
 
-h1{
-  font-size: 2.5rem;
-  font-family: 'Montserrat';
-  font-weight: normal;
-  color: #444;
-  text-align: center;
-  margin: 2rem 0;
-}
-
 .wrapper{
-  width: 90%;
+  width: 70%;
   margin: 0 auto;
   max-width: 80rem;
 }
@@ -23,7 +14,9 @@ h1{
 .cols{
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-pack: center;
@@ -58,7 +51,8 @@ h1{
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   text-align: center;
-  min-height: 280px;
+  min-height: 300px;
+  min-width: 300px;
   height: auto;
   border-radius: 10px;
   color: #fff;
@@ -66,15 +60,18 @@ h1{
 }
 
 .back{
-  background: #cedce7;
-  background: -webkit-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: -o-linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
-  background: linear-gradient(45deg,  #cedce7 0%,#596a72 100%);
+  background: #F8F2E9;
+  background: -webkit-linear-gradient(45deg,  #FFFCF8 0%,#F8F2E9 100%);
+  background: -o-linear-gradient(45deg,  #FFFCF8 0%,#F8F2E9 100%);
+  background: linear-gradient(45deg,  #FFFCF8 0%,#F8F2E9 100%);
+}
+.front{
+  background-color: #F8F2E9;
+  background: -webkit-linear-gradient(45deg,  #FFFCF8 0%,#F8F2E9 100%);
+  background: -o-linear-gradient(45deg,  #FFFCF8 0%,#F8F2E9 100%);
+  background: linear-gradient(45deg,  #FFFCF8 0%,#F8F2E9 100%);
 }
 
-.front{
-  background: #F8F2E9;
-}
 .front:after{
   position: absolute;
     top: 0;
@@ -85,7 +82,6 @@ h1{
     content: '';
     display: block;
     opacity: .6;
-    background-color: #000;
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     border-radius: 10px;
@@ -191,5 +187,39 @@ h1{
   .col{
     width: 100%;
     margin: 0 0 2rem 0;
+  }
+}
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cols {
+    grid-template-columns: 1fr 1fr;
   }
 }

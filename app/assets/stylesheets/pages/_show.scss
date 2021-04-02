@@ -1,11 +1,11 @@
 .content-icon{
   color: $green;
-  font-size: 70px;
+  font-size: 80px;
   &:hover {
-    font-size: 80px;
+    font-size: 110px;
     text-decoration: none;
-    color: $green;
-    transition: all 0.5s ease-in-out
+    color: $orange;
+    transition: all 1s ease-in-out
   }
 }
 .category-card {
