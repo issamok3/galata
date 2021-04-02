@@ -1,8 +1,6 @@
 .card-video {
   background: #F8F2EC;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  display: flex;
-  flex-direction: column;
   margin: 20px 0;
   border-radius: 4px;
   width: 100%;
@@ -13,23 +11,17 @@
   }
   .card-video-infos {
     display: flex;
+    position: relative;
     .card-video-description {
       padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      width: 80%;
     }
     .card-video-infos-extra{
-      margin-right: 5px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
       .card-video-likes {
         display: flex;
         position: absolute;
         bottom: 0;
-        right: -3px;
+        right: 10px;
         // font-size: 10px;
         i {
           color: $orange;
@@ -38,8 +30,9 @@
       .card-video-avatar {
         width: 30px;
         border-radius: 50%;
-        position: relative;
-        top:-15px;
+        position: absolute;
+        top: -20px;
+        right: 10px;
         border: 1px solid $darkgray;
       }
     }
