@@ -1,21 +1,19 @@
-<div class="conrainer">
-  <div class="row justify-content-center">
-    <div class="col-sm-12 col-md-10">
-      <div class="conversation-margin conversation-show">
-        <div class="conv-info">
-          <p><i class="far fa-comments"></i>
-          <span><%= @conversation.participants.second.user.username %></span></p>
-        </div>
-        <div id="messages" data-conversation-id="<%= @conversation.id %>">
-            <% @conversation.messages.each do |message| %>
-              <%= render "messages/message", message: message %>
-            <% end %>
-        </div>
-        <div>
-          <%= simple_form_for [ @conversation, @message ], remote: true do |f| %>
-            <%= f.input :content, label: false, placeholder: "Message" %>
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-md-10">
+    <div class="conversation-margin conversation-show">
+      <div class="conv-info">
+        <p><i class="far fa-comments"></i>
+        <span><%= @conversation.participants.second.user.username %></span></p>
+      </div>
+      <div id="messages" data-conversation-id="<%= @conversation.id %>">
+          <% @conversation.messages.each do |message| %>
+            <%= render "messages/message", message: message %>
           <% end %>
-        </div>
+      </div>
+      <div>
+        <%= simple_form_for [ @conversation, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, placeholder: "Message" %>
+        <% end %>
       </div>
     </div>
   </div>
