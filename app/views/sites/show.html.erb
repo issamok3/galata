@@ -2,32 +2,87 @@
   <%= cl_image_tag @site.photos.first.key, height: 260, width: '100%' %>
 <div>
 <div class="row justify-content-center">
-  <div class="col-sm-12 col-md-10"">
+  <div class="col-sm-12 col-md-10">
     <div class="site-info">
       <h3 class="my-2"><%= @site.name %></h3>
       <p class="description"><%= @site.description %></p>
       <div class="content-cards">
-        <%= link_to site_videos_path(@site) do   %>
-        <div class="category-card rounded justify-content-center">
-          <h1><i class="fas fa-play-circle content-icon"></i></h1>
-        </div>
-        <% end %>
-        <%= link_to site_audios_path(@site) do   %>
-        <div class="category-card rounded justify-content-center">
-          <h1><i class="fas fa-headphones content-icon"></i></h1>
-        </div>
-        <% end %>
-        <%= link_to site_articles_path(@site) do   %>
-        <div class="category-card rounded justify-content-center">
-          <h1><i class="fas fa-book-open content-icon"></i></h1>
-        </div>
-        <% end %>
-        <%= link_to site_photos_path(@site) do   %>
-        <div class="category-card rounded justify-content-center">
-          <h1><i class="fas fa-images content-icon"></i></h1>
-        </div>
-        <% end %>
-      </div>
+        <div class="wrapper">
+          <div class="cols">
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                  <div class="front">
+                    <div class="inner">
+                      <%= link_to site_videos_path(@site) do   %>
+                        <%= render "video-svg" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="inner">
+                      <%= link_to site_videos_path(@site) do   %>
+                        <h1><i class="fas fa-play-circle content-icon"></i></h1>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                  <div class="front">
+                    <div class="inner">
+                      <%= link_to site_audios_path(@site) do %>
+                        <%= render "audio-svg" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="inner">
+                      <%= link_to site_audios_path(@site) do %>
+                        <h1><i class="fas fa-headphones content-icon"></i></h1>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                  <div class="front">
+                    <div class="inner">
+                      <%= link_to site_articles_path(@site) do %>
+                        <%= render "article-svg" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="inner">
+                      <%= link_to site_articles_path(@site) do %>
+                        <h1><i class="fas fa-book-open content-icon"></i></h1>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col" ontouchstart="this.classList.toggle('hover');">
+                <div class="container">
+                  <div class="front">
+                    <div class="inner">
+                      <%= link_to site_photos_path(@site) do %>
+                        <%= render "photo-svg" %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="inner">
+                      <%= link_to site_photos_path(@site) do %>
+                        <h1><i class="fas fa-images content-icon"></i></h1>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
       <div>
       <%= link_to sites_path, class: 'button' do %>
         <i class="fas fa-chevron-left back-btn"></i>
