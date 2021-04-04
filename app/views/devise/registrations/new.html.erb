@@ -34,6 +34,7 @@
                     input_html: { autocomplete: "range" }%>
         <%= f.input :photo,
                     as: :file,
+                    label: ("Profile Picture"),
                     input_html: { autocomplete: "photo"} %>
         <%= f.input :password,
                     required: true,
@@ -45,7 +46,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn-green" %>
+        <%= f.button :submit, "Sign up", class: "btn-green", id: "js-geolocate-btn" %>
       </div>
     <% end %>
 

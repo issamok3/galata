@@ -2,10 +2,10 @@
     <a class="navbar-brand" href="#"></a>
   <div class="d-flex">
     <% if user_signed_in? %>
-      <% if  current_user.photo.not.nil? %>
+      <% if  current_user.photo.key.nil? %>
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{current_user.username}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% else %>
-        <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%= cl_image_tag current_user.photo.key, height: '200px', width: '200px', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
       <span data-behavior="unread-count" id="js-notifications" class="badge mx-1"></span></i></li></a>
       <% else %>
