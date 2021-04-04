@@ -31,7 +31,7 @@
   display: flex;
   width: calc(380px * 6); // 320px + 60px margin
   .photo-item {
-    filter: sepia(25%);
+    filter: grayscale(25%);
     width: 320px;
     height: 200px;
     margin-right: 40px;
@@ -52,7 +52,7 @@
 }
 .animation-2 {
   margin-left: 150px;
-  animation: scroller 30s linear infinite;
+  animation: scroller 70s linear infinite;
   display: flex;
   width: calc(380px * 12);
 }
