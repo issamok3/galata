@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:full_name, :location, :locatable, :username, :range, :photo])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :location, :locatable, :username, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:full_name, :location, :locatable, :username, :range, :photo])
   end
 
   def default_url_options
