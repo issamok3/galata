@@ -10,9 +10,10 @@ class User < ApplicationRecord
   has_many :conversations, through: :participants
   has_many :conversations, through: :messages
   has_many :likes, dependent: :destroy
+  has_one_attached :photo
   validates :username, presence: true, uniqueness: true
   validates :full_name, presence: true
-  validates :location, presence: true
+  # validates :location, presence: true
   # validates :locatable, presence: true
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
