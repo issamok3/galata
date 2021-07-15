@@ -10,6 +10,7 @@ import "channels"
 import { initConversationCable } from '../channels/conversation_channel';
 import { initNotifications } from '../components/init_notifications';
 import { initMarkNotificationAsRead } from '../components/init_mark_as_read';
+import { initScrollAnimation } from "../components/init_scroll_animation";
 
 Rails.start()
 Turbolinks.start()
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initNotifications();
   initMarkNotificationAsRead();
   initGeolocateBtn();
+  initScrollAnimation();
 });
 
 require("trix")
